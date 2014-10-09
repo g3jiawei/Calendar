@@ -34,4 +34,4 @@ Email address: ljw3673146@hotmail.com
 Github name: g3jiawei
 
 ![Image of Yaktocat]
-(https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/301team.jpg)
+(/Users/Edward/Dropbox)
