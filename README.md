@@ -2,7 +2,7 @@ Proj-Morning-Team10-repo
 ========================
 
 ##Team Members
-From left to right
+**From left to right**
 
 
 Chuan-Keng Chou(g3chouch)
