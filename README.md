@@ -1,8 +1,7 @@
 Proj-Morning-Team10-repo
 ========================
 
-###Team Members####
-#From left to right
+##Team Members
 
 Chuan-Keng Chou(g3chouch)
 Phone number: 647-227-6530
