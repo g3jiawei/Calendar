@@ -3,12 +3,9 @@ Proj-Morning-Team10-repo
 
 ##Team Members
 
-Chuan-Keng Chou(g3chouch)
-
-Phone number: 647-227-6530
-
-Email address: chuankengchou@gmail.com
-
+Chuan-Keng Chou(g3chouch)\n
+Phone number: 647-227-6530\n
+Email address: chuankengchou@gmail.com\n
 Github name: chouchua
 
 Chidinma Nwaka (g3nwakac)
