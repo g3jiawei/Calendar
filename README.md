@@ -5,7 +5,7 @@ Proj-Morning-Team10-repo
 **From left to right**
 
 
-Chuan-Keng Chou(g3chouch)
+Chuan-Keng Chou (g3chouch)
 Phone number: 647-227-6530
 Email address: chuankengchou@gmail.com 
 Github name: chouchua
@@ -20,12 +20,12 @@ Phone number: 647-627-1718
 Email address: willzhaoshihao@gmail.com 
 Github name: Shihao66
 
-Hongyi Guo(g3guohon)
+Hongyi Guo (g3guohon)
 Phone number: 647-821-7666
 Email address: hongyi.guo@mail.utoronto.ca 
 Github name: guohongyi
 
-Zhonghao Liu(g3liuzho)
+Zhonghao Liu (g3liuzho)
 Phone number: 647-926-0328
 Email address: zhonghao.liu@mail.utoronto.ca 
 Github name: liuzhon4
