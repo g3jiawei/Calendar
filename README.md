@@ -33,5 +33,5 @@ Phone number: 647-979-2499
 Email address: ljw3673146@hotmail.com
 Github name: g3jiawei
 
-![Image of Yaktocat]
-(/Users/Edward/Dropbox)
+![Image of team10]
+(https://www.dropbox.com/s/dio5qi3rooir6hg/301team.jpg?dl=0)
