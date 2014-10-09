@@ -34,4 +34,4 @@ Email address: ljw3673146@hotmail.com
 Github name: g3jiawei
 
 ![Image of team10]
-(https://www.dropbox.com/s/dio5qi3rooir6hg/301team.jpg?dl=0)
+(https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/301Team.jpg)
