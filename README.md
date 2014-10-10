@@ -30,6 +30,11 @@ Phone number: 647-926-0328
 Email address: zhonghao.liu@mail.utoronto.ca 
 Github name: liuzhon4
 
+Manke Luo (g3teemo)
+Phone number: 647-896-2345
+Email address: luo.manke@hotmail.com 
+Github name: luomanke
+
 Kevin Li (g3jiawei)
 Phone number: 647-979-2499
 Email address: ljw3673146@hotmail.com 
