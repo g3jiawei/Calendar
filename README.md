@@ -1,12 +1,12 @@
 Proj-Morning-Team10-repo
 ========================
 
-![Image of team10]
-(https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/301Team.jpg)
-
-
 ##Team Members
 **From left to right**
+
+
+![Image of team10]
+(https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/301Team.jpg)
 
 
 Chuan-Keng Chou (g3chouch)
