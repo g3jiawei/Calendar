@@ -19,6 +19,7 @@ Chidinma Nwaka (g3nwakac)  //Second from the left.
 Phone number: 416-254-1070
 Email address: chidinma.nwaka@mail.utoronto.ca 
 Github name: ChidiNwaka
+
 Hi, my name is Chidinma Nwaka and I am a computer science student at the University of Toronto. I really like my program because of the hands-on experience I constantly get while taking all my courses, and the sense of accomplishment I feel when I complete every programming assignment. I just started a hobby, which is programming on the web and I love it. I find it fascinating to see how multiple connection requests are sent across the web from clients to servers and vice versa within seconds. My dream is to become a sunday school teacher, successful entrepreneur and philanthropist. Aside from computer science, I enjoy learning about how businesses start up and operate. I enjoy reading about success startup stories at my leisure time because they inspire me. I also love spending time with my immediate family and my little cousins. My love for junk food will never allow me to become a vegetarian.
 
 
