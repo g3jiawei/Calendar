@@ -7,7 +7,7 @@ Proj-Morning-Team10-repo
 ![Image of team10]
 (https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/301Team.jpg)
 
-**From left to right** Chuan-Keng Chou, Chidinma Nwaka, 
+**From left to right** Chuan-Keng Chou, Chidinma Nwaka, Shihao Zhao, Hongyi Guo, Zhonghao Liu, Manke Luo, Jiawei Li
 
 Chuan-Keng Chou (g3chouch)
 Phone number: 647-227-6530
