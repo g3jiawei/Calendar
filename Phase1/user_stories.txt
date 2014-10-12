@@ -6,3 +6,7 @@ As a student, I want to be able to share my schedule with my friends so that the
 Hongyi:
 As a student, I want to be able to create and modify schedules and due dates because instructors will not be cooperative.
 As a student, I want to prevent external personnel from modifying the schedules.
+Zhonghao:
+As a student, I want an app that has count-down feature. 
+As a student, I want to receive alert of my term tests' times. 
+As a student, I want to see other courses' time that I am in waiting list or even I am not registed.
