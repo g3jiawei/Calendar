@@ -1,6 +1,15 @@
 ##Team Members
 
 Chuan-Keng Chou:
+My name is Jimmy (Chuan-Keng) Chou. Entrepreneurship is my passion. I believe that a startup cannot
+begin without a business model, nor success without proper mindset. Application is the direction to
+completion or success. Despite having direction for a project/startup, there will be many factors
+that inhibit the completion of the MVP. On the other hand, even with a committed mindset, learning
+when to quit (or even less extreme to pivot) is an essential observational skill to have. The
+enthusiasm may render one to be oblivious of signs to quit, and blindlessly continue in the wrong
+direction. Having the balance between commitment and enthusiasm is important in the process of
+creating value; weighing constantly and become aware of signs. An analogy that I like to make is to
+be a raging bull with direction. 
 
 Chidinma Nwaka:
 Hi, my name is Chidinma Nwaka and I am a computer science student at the University of Toronto.
