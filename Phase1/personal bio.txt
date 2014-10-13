@@ -15,6 +15,13 @@ I also love spending time with my immediate family and my little cousins. My lov
 will never allow me to become a vegetarian.
 
 Shihao Zhao:
+Hello, I am Shihao. I'm currently a third year computer science student and I am from China.
+In terms of programming language, I have experience with python, java, c, assemblly and SQL,
+and I am currently learning HTML, CSS, JS and etc. I really like team working, because it makes
+problems and projects easier to approach and brings more fun, especially when you solved some tough 
+problems together. Also, I would love to communicate because it is a efficient way to learn and make 
+what you did makes more sense to others, which is really crucial. So for now, I am really exited about 
+what we will face later in our project and hopefully we will get what we expect.
 
 Hongyi Guo:
 My name is Hongyi Guo and I am a 3rd year student in computer science specialist program.
