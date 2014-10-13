@@ -36,7 +36,8 @@ Hongyi Guo:
 My name is Hongyi Guo and I am a 3rd year student in computer science specialist program.
 I am familiar with programming languages like Python, Java, C, Racket, javascript and PHP. 
 I took CSC309, CSC343 so I have knowledge on programming on the web and databases. I also have 
-a little bit expierence on web api and database design. I am hard-working and easy to work with, and I prefer communicating via internet such as email or some other messaging software, as they are 
+a little bit expierence on web api and database design. I am hard-working and easy to work with, 
+and I prefer communicating via internet such as email or some other messaging software, as they are 
 convenient and efficient.
 
 Zhonghao Liu:
@@ -53,4 +54,8 @@ There are some programming languages I am familiar with, like Visual Basic, C, J
 this group is an excellent group according to our first meeting. Hopefully, this project would 
 be a good coding experience for all of us.
 
-Kevin Li:
+Jiawei Li:
+My name is Kevin.I am a third year specialist computer science student, and also I am major in  
+statustic. I have experience with Python, Java, C, Racket and SQL. And I am looking forward to
+improve my team working skill through this project. I will work hard on this project and try to 
+get along well with my teammates. Good luck to all. 
