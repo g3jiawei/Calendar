@@ -14,3 +14,7 @@ Manke:
 As a student, I want to be alerted when the assignments are posted. 
 As a student, I want to know the due dates of my assignments. 
 As a student, I want to be able to change my schedules according to the prof's office hour. 
+Will(Shihao):
+As a student, I want a calendar which I can easily access at almost any time.
+As a student, I want a calendar which consists not only course info, but also all the assignments deadline and test dates.
+As a student, I want to be able to get professor and TA's office hour on the calendar.
