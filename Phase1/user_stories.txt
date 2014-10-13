@@ -18,3 +18,7 @@ Will(Shihao):
 As a student, I want a calendar which I can easily access at almost any time.
 As a student, I want a calendar which consists not only course info, but also all the assignments deadline and test dates.
 As a student, I want to be able to get professor and TA's office hour on the calendar.
+Kevin(Jiawei):
+As a student, I want to see all the dead-lines for all my enrolled course.
+As a student, I want to be able to wirte my personal events on the canlendar as notifications.
+As a student, I want to have some aggregation function in this calendar such as calculate how many days left before the due date. 
