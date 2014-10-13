@@ -1,0 +1,15 @@
+Conveniently manage your schedule, INTERACTIVELY and COOPERATIVELY.
+It is important to note that the MVP provides the minimum capacity for interactions to occur. 
+Whether visually or contextually, the information/data will be displayed non-traditionally. 
+The user interface will be solely as calendar, simple and plain. Notifications are sent as 
+push notifications and displayed non-traditionally in time blocks; to achieve the time-relevant manner.
+Cooperativity will rely on the application’s backend processing of multiple schedules to find the common 
+available slot. Students enrolled in the same class will have privileged access to their designated discussion board, to further explore the details of common interest.
+Since the value we want to emphasize is convenience, there is no better hosting platform than the mobile platform.
+Nevertheless, it is a goal to be across all platforms. Not only academic information can be fed to users, club/organizations can utilize this platform to feed
+time-specific and thereby more relevant information to the students at the right time. It is important to highlight. 
+To summarize, the minimal viable product consists the interactive calendar and push notifications, which can be routed to their own designated privileged
+discussion board. The incentive of volunteered user generated data originates from the students who already use other
+popular calendars to plan their schedule. We will provide the option of importing their calendars, as they will see the
+benefit of this application. Meanwhile, the management will generate information to allow users to receive immediate 
+feedback/reward as an incentive.
