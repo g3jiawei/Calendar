@@ -1,0 +1,12 @@
+In our first iteration, we decided to implement Hongyi’s first user story. The users are able to 
+add/modify dates and info. This is the key feature to our whole product and it’s also the minimum 
+feature that we have to achieve. In our phase 2, we decide to implement add/modify and count-down.
+These features are come from almost everyone’s user stories. They are necessary features for our 
+product. However, there are some user stories that we decided to exclude from our release. 
+For example, as Birkhoff, he doesn’t want others to see his timetable. In that case, this product
+requires login. Also, Both Zhonghao and Chidinma mentioned that as Claire, she wants to share her
+calendar and wants to see others shared calendar as well. The reasons that we do not want to 
+implement these features in our first release are simple. Compared with add/modify date and push
+notifications, login and synchronization just become less important. Users may not have to 
+use login to keep their timetable private, but they have to be able to add dates and receive
+notifications. Otherwise, this product is useless. 

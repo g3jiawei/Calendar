@@ -1,0 +1,13 @@
+##Time Management Tool for Students.
+
+Time management is a necessary skill everyone needs to have in order to be very successful in whatever he or she does.
+Our team chose the ‘Time Management Tool for Students’ to work on as our project. We as students have seen ourselves 
+and other students having a hard time keeping up with all the many things we need to do at every point in time. 
+Some of us also work part-time and having work shifts times might vary every week. Having all this in mind, we plan to
+create an application which allows every student put in his or her lecture and tutorial times, as well as all due dates,
+in one place. We will also integrate a reminder / notification system which would notify its users on things that are 
+due before hand. We as human beings think in pictures. Our application will provide a pictorial view of when everything 
+is due to its users as they work towards meeting all they have to do before the deadlines. We as a team casted a vote and 
+the majority of us preferred we do this project instead of the other one. We also believe that it is feasible to complete 
+within the given period of time and students can use our application in their day-to-day lives as they all work towards 
+managing their time effectively.

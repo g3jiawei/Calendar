@@ -1,0 +1,65 @@
+User Stories:
+Chidinma:
+As Birkhoff, I want to have all my lecture times, tutorial times and due dates all in one place so that it can be easier for me to manage. 
+As Birkhoff, I want to receive notifications of things that are due before hand so I won’t miss any deadline.
+As Claire, I want to be able to share my schedule with my friends so that they can know my availability. 
+
+Hongyi:
+As a student, Birkhoff wants to be able to create and modify schedules and due dates because instructors will not be cooperative.
+As a student, Birkhoff wants to prevent external personnel from modifying the schedules, because we don't want some arbitrary people 
+to mess the system up. Therefore the app should authorize user before they can make changes to the data.
+
+Zhonghao:
+As Birkhoff, I need pressure to finish my job. In that case, I need count-down feature 
+to keep reminding me the deadline. 
+As Birkhoff, sometimes I forget time when I am doing my own project. I need notification 
+before the due date.
+As Claire, sometimes I am in waiting list and I cannot find the time of the course. Also, if this course
+have many assignments, I need to finish that even before I am approved by this course. In 
+that case, I need to see everyting of this course (deadline of assignments, test date, 
+office hours, etc).
+
+Manke: 
+As a student, I want to be alerted when the assignments are posted so that I won't start to work on it at the last minute. 
+As a student, I want to know the due dates of my assignments so that I won't suffer from the late penalty. 
+As a student, I want to be able to change my schedules according to the prof's office hour so that I won't miss anything valuable. 
+
+Will(Shihao):
+As Birkhoff, I want a calendar which I can easily access at almost any time since I am not always at lab or library.
+As Birkhoff, I want a calendar which consists not only course info, but also all the assignments deadline and test dates, so
+that I can keep pace with the school work.
+As Claire, I want to be able to get professor and TA's office hour on the calendar, so I can ask my quetions at the first time.
+
+Kevin(Jiawei):
+I am Birkoff, I want to see all the dead-lines for all my enrolled course, to make sure I didn't forget anything.
+As Claire, I want to be able to wirte my personal events on the canlendar as notifications, to make everything clear.
+I am Clarire, I want to have some aggregation function in this calendar such as calculate how many days left before the due date,
+so that I can manage my time easilier.
+
+
+After analyzing all of our user stories, our group extracts five features that we would like to 
+implement for this project. They are:
+	A.	add/modify dates, course-info, office hours (from Kevin, Shihao) 
+	B.	login (from Hongyi)
+	C.	push notification (from Manke, Kevin)
+	D.	count-down (from Zhonghao)
+	E.	synchronization (from Chidinma, Hongyi)
+
+Priority of implementation: 
+	A, C, D, B, E
+
+The top priority stories are come from Hongyi. The student needs to create and modify schedules 
+and due dates. This is the least feature that we have to achieve in this project, which is also 
+what we plan to do in our first iteration. Add/modify info is the key point of this project. If 
+we want to design a message app for university students, we need to focus on their most needs, 
+which is deadline. Many students forget to submit their assignment simply because they miss the 
+due date. Without feature A, this product is useless. 
+
+In our phase 1, we decide to have feature A and hopefully feature D and C. After we finished 
+add/modify part, we will immediately start to implement count-down (feature D) and 
+notification (feature C). The reason is that people may not check our product regularly. 
+Pushing notifications and have project count-down becomes necessary. 
+
+Account security and synchronized between different devices are also important features for 
+our product. However, we all agree that login and synchronization might be the hardest part of 
+this project. In that case, we put these features at the end of implementation. 

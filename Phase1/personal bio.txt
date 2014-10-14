@@ -1,10 +1,44 @@
+##Team Members
+
 Chuan-Keng Chou:
+My name is Jimmy (Chuan-Keng) Chou. Entrepreneurship is my passion. I believe that a startup cannot
+begin without a business model, nor success without proper mindset. Application is the direction to
+completion or success. Despite having direction for a project/startup, there will be many factors
+that inhibit the completion of the MVP. On the other hand, even with a committed mindset, learning
+when to quit (or even less extreme to pivot) is an essential observational skill to have. The
+enthusiasm may render one to be oblivious of signs to quit, and blindlessly continue in the wrong
+direction. Having the balance between commitment and enthusiasm is important in the process of
+creating value; weighing constantly and become aware of signs. An analogy that I like to make is to
+be a raging bull with direction. 
 
 Chidinma Nwaka:
+Hi, my name is Chidinma Nwaka and I am a computer science student at the University of Toronto.
+I really like my program because of the hands-on experience I constantly get while taking all
+my courses, and the sense of accomplishment I feel when I complete every programming assignment. 
+I just started a hobby, which is programming on the web and I love it. I find it fascinating to 
+see how multiple connection requests are sent across the web from clients to servers and 
+vice versa within seconds. My dream is to become a sunday school teacher, successful entrepreneur a
+nd philanthropist. Aside from computer science, I enjoy learning about how businesses start up 
+and operate. I enjoy reading about success startup stories at my leisure time because they inspire me. 
+I also love spending time with my immediate family and my little cousins. My love for junk food
+will never allow me to become a vegetarian.
 
 Shihao Zhao:
+Hello, I am Shihao. I'm currently a third year computer science student and I am from China.
+In terms of programming language, I have experience with python, java, c, assemblly and SQL,
+and I am currently learning HTML, CSS, JS and etc. I really like team working, because it makes
+problems and projects easier to approach and brings more fun, especially when you solved some tough 
+problems together. Also, I would love to communicate because it is a efficient way to learn and make 
+what you did make more sense to others, which is really crucial. So for now, I am really exited about 
+what we will face later in our project and hopefully we will get what we expect.
 
 Hongyi Guo:
+My name is Hongyi Guo and I am a 3rd year student in computer science specialist program.
+I am familiar with programming languages like Python, Java, C, Racket, javascript and PHP. 
+I took CSC309, CSC343 so I have knowledge on programming on the web and databases. I also have 
+a little bit expierence on web api and database design. I am hard-working and easy to work with, 
+and I prefer communicating via internet such as email or some other messaging software, as they are 
+convenient and efficient.
 
 Zhonghao Liu:
 I am taking this course as part of the specialist in computer science program. 
@@ -18,6 +52,16 @@ I am Mike, and I am a third-year international student who is enrolled in Comput
 Specialist Program. There is no special skill I have, but I am really glad to learn stuff. 
 There are some programming languages I am familiar with, like Visual Basic, C, Java. I think 
 this group is an excellent group according to our first meeting. Hopefully, this project would 
+<<<<<<< HEAD
 be a good coding experience for all of us. 
 
 Kevin Li:
+=======
+be a good coding experience for all of us.
+
+Jiawei Li:
+My name is Kevin.I am a third year specialist computer science student, and also I am major in  
+statustic. I have experience with Python, Java, C, Racket and SQL. And I am looking forward to
+improve my team working skill through this project. I will work hard on this project and try to 
+get along well with my teammates. Good luck to all. 
+>>>>>>> 3c9d4770b73b832a23ddc26646380741606fe18a
