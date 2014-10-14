@@ -5,8 +5,9 @@ As a student, I want to receive notifications of things that are due before hand
 As a student, I want to be able to share my schedule with my friends so that they can know my availability. 
 
 Hongyi:
-As a student, I want to be able to create and modify schedules and due dates because instructors will not be cooperative.
-As a student, I want to prevent external personnel from modifying the schedules.
+As a student, Birkhoff wants to be able to create and modify schedules and due dates because instructors will not be cooperative.
+As a student, Birkhoff wants to prevent external personnel from modifying the schedules, because we don't want some arbitrary people 
+to mess the system up. Therefore the app should authorize user before they can make changes to the data.
 
 Zhonghao:
 As Birkhoff, I need pressure to finish my job. In that case, I need count-down feature 
