@@ -14,7 +14,7 @@ As Birkhoff, I need pressure to finish my job. In that case, I need count-down f
 to keep reminding me the deadline. 
 As Birkhoff, sometimes I forget time when I am doing my own project. I need notification 
 before the due date.
-Sometimes, I am in waiting list and I cannot find the time of the course. Also, if this course
+As Claire, sometimes I am in waiting list and I cannot find the time of the course. Also, if this course
 have many assignments, I need to finish that even before I am approved by this course. In 
 that case, I need to see everyting of this course (deadline of assignments, test date, 
 office hours, etc).
@@ -35,3 +35,31 @@ I am Birkoff, I want to see all the dead-lines for all my enrolled course, to ma
 As Claire, I want to be able to wirte my personal events on the canlendar as notifications, to make everything clear.
 I am Clarire, I want to have some aggregation function in this calendar such as calculate how many days left before the due date,
 so that I can manage my time easilier.
+
+
+After analyzing all of our user stories, our group extracts five features that we would like to 
+implement for this project. They are:
+	A.	add/modify dates, course-info, office hours (from Kevin, Shihao) 
+	B.	login (from Hongyi)
+	C.	push notification (from Manke, Kevin)
+	D.	count-down (from Zhonghao)
+	E.	synchronization (from Chidinma, Hongyi)
+
+Priority of implementation: 
+	A, C, D, B, E
+
+The top priority stories are come from Hongyi. The student needs to create and modify schedules 
+and due dates. This is the least feature that we have to achieve in this project, which is also 
+what we plan to do in our first iteration. Add/modify info is the key point of this project. If 
+we want to design a message app for university students, we need to focus on their most needs, 
+which is deadline. Many students forget to submit their assignment simply because they miss the 
+due date. Without feature A, this product is useless. 
+
+In our phase 1, we decide to have feature A and hopefully feature D and C. After we finished 
+add/modify part, we will immediately start to implement count-down (feature D) and 
+notification (feature C). The reason is that people may not check our product regularly. 
+Pushing notifications and have project count-down becomes necessary. 
+
+Account security and synchronized between different devices are also important features for 
+our product. However, we all agree that login and synchronization might be the hardest part of 
+this project. In that case, we put these features at the end of implementation. 
