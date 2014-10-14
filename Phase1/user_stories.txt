@@ -20,16 +20,10 @@ that case, I need to see everyting of this course (deadline of assignments, test
 office hours, etc).
 
 Manke: 
-<<<<<<< HEAD
-As a student, I want to be alerted when the assignments are posted. 
-As a student, I want to know the due dates of my assignments. 
-As a student, I want to be able to change my schedules according to the prof's office hour. 
-
-=======
 As a student, I want to be alerted when the assignments are posted so that I won't start to work on it at the last minute. 
 As a student, I want to know the due dates of my assignments so that I won't suffer from the late penalty. 
 As a student, I want to be able to change my schedules according to the prof's office hour so that I won't miss anything valuable. 
->>>>>>> 493c118b753bcdb9aa2e98d3e256c9ae8473cc38
+
 Will(Shihao):
 As a student, I want a calendar which I can easily access at almost any time.
 As a student, I want a calendar which consists not only course info, but also all the assignments deadline and test dates.
