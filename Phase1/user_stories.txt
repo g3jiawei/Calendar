@@ -11,9 +11,9 @@ As a student, I want an app that has count-down feature.
 As a student, I want to receive alert of my term tests' times. 
 As a student, I want to see other courses' time that I am in waiting list or even not registed.
 Manke: 
-As a student, I want to be alerted when the assignments are posted. 
-As a student, I want to know the due dates of my assignments. 
-As a student, I want to be able to change my schedules according to the prof's office hour. 
+As a student, I want to be alerted when the assignments are posted so that I won't start to work on it at the last minute. 
+As a student, I want to know the due dates of my assignments so that I won't suffer from the late penalty. 
+As a student, I want to be able to change my schedules according to the prof's office hour so that I won't miss anything valuable. 
 Will(Shihao):
 As a student, I want a calendar which I can easily access at almost any time.
 As a student, I want a calendar which consists not only course info, but also all the assignments deadline and test dates.
