@@ -31,6 +31,7 @@ that I can keep pace with the school work.
 As Claire, I want to be able to get professor and TA's office hour on the calendar, so I can ask my quetions at the first time.
 
 Kevin(Jiawei):
-As a student, I want to see all the dead-lines for all my enrolled course.
-As a student, I want to be able to wirte my personal events on the canlendar as notifications.
-As a student, I want to have some aggregation function in this calendar such as calculate how many days left before the due date. 
+I am Birkoff, I want to see all the dead-lines for all my enrolled course, to make sure I didn't forget anything.
+As Claire, I want to be able to wirte my personal events on the canlendar as notifications, to make everything clear.
+I am Clarire, I want to have some aggregation function in this calendar such as calculate how many days left before the due date,
+so that I can manage my time easilier.
