@@ -1,8 +1,8 @@
 User Stories:
-Chidi:
-As a student, I want to have all my lecture times, tutorial times and due dates all in one place so that it can be easier for me to manage. 
-As a student, I want to receive notifications of things that are due before hand so I won’t miss any deadline.
-As a student, I want to be able to share my schedule with my friends so that they can know my availability. 
+Chidinma:
+As Birkhoff, I want to have all my lecture times, tutorial times and due dates all in one place so that it can be easier for me to manage. 
+As Birkhoff, I want to receive notifications of things that are due before hand so I won’t miss any deadline.
+As Claire, I want to be able to share my schedule with my friends so that they can know my availability. 
 
 Hongyi:
 As a student, Birkhoff wants to be able to create and modify schedules and due dates because instructors will not be cooperative.
