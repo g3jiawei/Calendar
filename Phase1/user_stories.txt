@@ -3,21 +3,31 @@ Chidi:
 As a student, I want to have all my lecture times, tutorial times and due dates all in one place so that it can be easier for me to manage. 
 As a student, I want to receive notifications of things that are due before hand so I won’t miss any deadline.
 As a student, I want to be able to share my schedule with my friends so that they can know my availability. 
+
 Hongyi:
 As a student, I want to be able to create and modify schedules and due dates because instructors will not be cooperative.
 As a student, I want to prevent external personnel from modifying the schedules.
+
 Zhonghao:
-As a student, I want an app that has count-down feature. 
-As a student, I want to receive alert of my term tests' times. 
-As a student, I want to see other courses' time that I am in waiting list or even not registed.
+As Birkhoff, I need pressure to finish my job. In that case, I need count-down feature 
+to keep reminding me the deadline. 
+As Birkhoff, sometimes I forget time when I am doing my own project. I need notification 
+before the due date.
+Sometimes, I am in waiting list and I cannot find the time of the course. Also, if this course
+have many assignments, I need to finish that even before I am approved by this course. In 
+that case, I need to see everyting of this course (deadline of assignments, test date, 
+office hours, etc).
+
 Manke: 
 As a student, I want to be alerted when the assignments are posted. 
 As a student, I want to know the due dates of my assignments. 
 As a student, I want to be able to change my schedules according to the prof's office hour. 
+
 Will(Shihao):
 As a student, I want a calendar which I can easily access at almost any time.
 As a student, I want a calendar which consists not only course info, but also all the assignments deadline and test dates.
 As a student, I want to be able to get professor and TA's office hour on the calendar.
+
 Kevin(Jiawei):
 As a student, I want to see all the dead-lines for all my enrolled course.
 As a student, I want to be able to wirte my personal events on the canlendar as notifications.
