@@ -3,7 +3,8 @@ provides the minimum capacity for interactions to occur. Whether visually or con
 will be displayed non-traditionally. The user interface will be solely as calendar, simple and plain. As students already
 use their calendar, the use is solely to acquire the location and time of the lecture. We will emppower the users to 
 conveniently receive relevant time-based information. For example, Jack who does not go to class, will receive immediate 
-student-published information on his mobile phone. The user stories are elaborated in a seperate document.
+student-published information on his mobile phone. Information is layed out in the order of popularity based on views/comments.
+Furthermore, distinct sections are layed out for user visibility. The user stories are elaborated in a seperate document.
 Notifications are sent as push notifications and displayed non-traditionally in time blocks; to achieve
 the time-relevant manner. Cooperativity will rely on the application’s backend processing of multiple schedules
 to find the common available slot. This is the technical challenge to be solved; as more schedules are to be compared
