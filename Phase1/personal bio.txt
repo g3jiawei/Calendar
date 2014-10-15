@@ -29,7 +29,7 @@ In terms of programming language, I have experience with python, java, c, assemb
 and I am currently learning HTML, CSS, JS and etc. I really like team working, because it makes
 problems and projects easier to approach and brings more fun, especially when you solved some tough 
 problems together. Also, I would love to communicate because it is a efficient way to learn and make 
-what you did make more sense to others, which is really crucial. So for now, I am really exited about 
+what you did make more sense to others, which is really crucial. So for now, I am really excited about 
 what we will face later in our project and hopefully we will get what we expect.
 
 Hongyi Guo:
@@ -51,17 +51,11 @@ Manke Luo:
 I am Mike, and I am a third-year international student who is enrolled in Computer Science 
 Specialist Program. There is no special skill I have, but I am really glad to learn stuff. 
 There are some programming languages I am familiar with, like Visual Basic, C, Java. I think 
-this group is an excellent group according to our first meeting. Hopefully, this project would 
-<<<<<<< HEAD
+this group is an excellent group according to our first meeting. Hopefully, this project would
 be a good coding experience for all of us. 
-
-Kevin Li:
-=======
-be a good coding experience for all of us.
 
 Jiawei Li:
 My name is Kevin.I am a third year specialist computer science student, and also I am major in  
 statustic. I have experience with Python, Java, C, Racket and SQL. And I am looking forward to
 improve my team working skill through this project. I will work hard on this project and try to 
-get along well with my teammates. Good luck to all. 
->>>>>>> 3c9d4770b73b832a23ddc26646380741606fe18a
+get along well with my teammates. Good luck to all.
