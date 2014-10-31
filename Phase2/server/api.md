@@ -36,7 +36,7 @@ The api starts.
 Calendar
 --------
 ###calendar/course
-* ####calendar/course[GET]
+* ###calendar/course[GET]
     * Get all courses
     * no parameters
     * Response
@@ -51,7 +51,7 @@ Calendar
         "error_code":0,
         "error":"success",
         "courses":"[{\"id\":1,\"code\":\"CSC301\",\"title\":\"Introduction to Software Engineering\"}]"}
-* ####calendar/course/{id}[GET]
+* ###calendar/course/{id}[GET]
     * Get course by id
     * no parameters
     * Response
@@ -59,7 +59,7 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
         * course (Object) ... the course of that id
-* ####calendar/course[PUT]
+* ###calendar/course[PUT]
     * Create a course
     * Parameters
         * code (string) ... course code
@@ -68,7 +68,7 @@ Calendar
         * success (boolean) ... success or not
         * error_code (int) ... error code
         * error (string) ... error_message
-* ####calendar/course/{id}[POST]
+* ###calendar/course/{id}[POST]
     * Modify a course
     * Parameters
         * code (string) ... course code
@@ -77,7 +77,7 @@ Calendar
         * success (boolean) ... success or not
         * error_code (int) ... error code
         * error (string) ... error_message
-* ####calendar/course/{id}[DELETE]
+* ###calendar/course/{id}[DELETE]
     * Selete a course
     * no parameters
     * Response
@@ -87,7 +87,7 @@ Calendar
 
 
 ###calendar/lecture
-* ####calendar/lecture[GET]
+* ###calendar/lecture[GET]
     * Get all lectures for a course
     * Parameters
         * course_id (int) ... course id
@@ -96,7 +96,7 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
         * lectures (array of objects) ... the lectures
-* ####calendar/lecture/{id}[GET]
+* ###calendar/lecture/{id}[GET]
     * Get a lecture by its id
     * no parameters
     * Response
@@ -104,7 +104,7 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
         * lecture (Object) ... the lecture
-* ####calendar/lecture[PUT]
+* ###calendar/lecture[PUT]
     * Create a lecture
     * Parameters
         * course_id (int) ... course id
@@ -113,7 +113,7 @@ Calendar
         * success (boolean) ... success or not
         * error_code (int) ... error code
         * error (string) ... error_message
-* ####calendar/lecture/{id}[POST]
+* ###calendar/lecture/{id}[POST]
     * Modify a lecture
     * Parameters
         * course_id (int) ... the course it belongs to
@@ -122,7 +122,7 @@ Calendar
         * success (boolean) ... success or not
         * error_code (int) ... error code
         * error (string) ... error_message
-* ####calendar/lecture/{id}[DELETE]
+* ###calendar/lecture/{id}[DELETE]
     * Delete a lecture
     * no parameters
     * Response
@@ -131,7 +131,7 @@ Calendar
         * error (string) ... error_message
 
 ###calendar/assignment
-* ####calendar/assignment[GET]
+* ###calendar/assignment[GET]
     * Get all assignments for a lecture
     * Parameters
         * lecture_id (int) ... lecture id
@@ -140,7 +140,7 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
         * assignments (array of objects) ... the assignments
-* ####calendar/assignment/{id}[GET]
+* ###calendar/assignment/{id}[GET]
     * Get assignment by its id
     * no parameters
     * Response
@@ -148,7 +148,7 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
         * assignment (object) ... the assignment
-* ####calendar/assignment[PUT]
+* ###calendar/assignment[PUT]
     * Create a new assignment
     * Parameters
         * lecure_id (int) ... the lecture it belongs to
@@ -158,7 +158,7 @@ Calendar
         * success (boolean) ... success or not
         * error_code (int) ... error code
         * error (string) ... error_message
-* ####calendar/assignment/{id}[POST]
+* ###calendar/assignment/{id}[POST]
     * Modify an assignment
     * Parameters
         * lecure_id (int) ... the lecture it belongs to
@@ -168,7 +168,7 @@ Calendar
         * success (boolean) ... success or not
         * error_code (int) ... error code
         * error (string) ... error_message
-* ####calendar/assignment/{id}[DELETE]
+* ###calendar/assignment/{id}[DELETE]
     * Delete an assignment
     * no parameters
     * Response
@@ -177,7 +177,7 @@ Calendar
         * error (string) ... error_message
 
 ###calendar/lecture_time
-* ####calendar/lecture_time[GET]
+* ###calendar/lecture_time[GET]
     * Get all lecture times for a lecture
     * Parameters
         * lecture_id (int) the lecture of which you are checking the time
@@ -186,7 +186,7 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
         * lecture_times (array of objects) ... array of lecture_time objects
-* ####calendar/lecture_time/{id}[GET]
+* ###calendar/lecture_time/{id}[GET]
     * Get the lecture_time by its id
     * no parameters
     * Response
@@ -194,7 +194,7 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
         * lecture_time (object) ... lecture_time object
-* ####calendar/lecture_time[PUT]
+* ###calendar/lecture_time[PUT]
     * Create a lecture_time
     * Parameters
         * lecture_id (int) ... the lecture
@@ -205,7 +205,7 @@ Calendar
         * success (boolean) ... success or not
         * error_code (int) ... error code
         * error (string) ... error_message
-* ####calendar/lecture_time/{id}[POST]
+* ###calendar/lecture_time/{id}[POST]
     * Modify a lecture_time by its id
     * Parameters
         * lecture_id (int) ... the lecture
@@ -216,7 +216,7 @@ Calendar
         * success (boolean) ... success or not
         * error_code (int) ... error code
         * error (string) ... error_message
-* ####calendar/lecture_time/{id}[DELETE]
+* ###calendar/lecture_time/{id}[DELETE]
     * Delete a lecture time by its id
     * no parameters
     * Response
@@ -226,7 +226,7 @@ Calendar
 
 
 ###calendar/next_assignment
-* ####calendar/next_assignment/{lecture_id}[GET]
+* ###calendar/next_assignment/{lecture_id}[GET]
     * Get the next assignment for a lecture
     * no parameters
     * Response
