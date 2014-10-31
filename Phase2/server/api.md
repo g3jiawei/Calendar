@@ -1,8 +1,8 @@
-CSC301 Project Server API
+CSC301 Project Server API (Phase 2)
 =========================
 URL: {BASE_URL}/index.php/api/
 
-Basically, for the all 4 classes we focus on currently(course, lecture, assignment and lecture_time), we get to create, fetch(get), modify and delete them, plus another method to get the next assignment for a lecture.
+Basically, for the all 4 classes we focus on currently(course, lecture, assignment and lecture_time), we get to create, fetch(get), modify and delete them, plus another method to get the next assignment for a lecture. Use different http methods (GET, PUT, POST, DELETE) to perform different tasks. Be carefull to the URI and the parameters.
 
 In all responses I included success, error_code and error. But you might not need to use the error_code. I'm just thinking it might be useful in the future.
 
@@ -31,12 +31,12 @@ Sturcture for the objects:
 
 When creating an object you need to provide those fields (except the id which will generate automatically). For the cases that ids of other classes are required, you need to know those ids first.
 
-The api starts.
+The api starts below.
 
 Calendar
 --------
-###calendar/course
-* ###calendar/course[GET]
+###course
+* **calendar/courses[GET]**
     * Get all courses
     * no parameters
     * Response
@@ -87,8 +87,8 @@ Calendar
         * error (string) ... error_message
 
 
-###calendar/lecture
-* **calendar/lecture[GET]**
+###lecture
+* **calendar/lectures[GET]**
     * Get all lectures for a course
     * Parameters
         * course_id (int) ... course id
@@ -131,8 +131,8 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
 
-###calendar/assignment
-* **calendar/assignment[GET]**
+###assignment
+* **calendar/assignments[GET]**
     * Get all assignments for a lecture
     * Parameters
         * lecture_id (int) ... lecture id
@@ -177,8 +177,8 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
 
-###calendar/lecture_time
-* **calendar/lecture_time[GET]**
+###lecture_time
+* **calendar/lecture_times[GET]**
     * Get all lecture times for a lecture
     * Parameters
         * lecture_id (int) the lecture of which you are checking the time
@@ -226,7 +226,7 @@ Calendar
         * error (string) ... error_message
 
 
-###calendar/next_assignment
+###next_assignment
 * **calendar/next_assignment/{lecture_id}[GET]**
     * Get the next assignment for a lecture
     * no parameters
