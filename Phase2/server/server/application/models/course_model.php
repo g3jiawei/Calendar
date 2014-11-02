@@ -12,10 +12,10 @@ class course_model extends CI_Model {
   }
   
 	function createNew($code, $title){
-      $course = new Course();
-	    $course->code = $code;
-	    $course->title = $title;
-      return $course;
+    $course = new Course();
+	  $course->code = $code;
+	  $course->title = $title;
+    return $course;
 	}
   
   function insert($course){
