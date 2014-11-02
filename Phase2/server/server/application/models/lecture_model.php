@@ -1,5 +1,11 @@
 <?php
 class lecture_model extends CI_Model {
+  function getAll($course_id){
+    $this->db->where('course_id', $course_id);
+    $query = $this->db->get('lecture');
+    return $query->result;
+  }
+  
   function get($id){
     $this->db->where('id', $id);
     $query = $this->db->get('lecture');
@@ -8,10 +14,10 @@ class lecture_model extends CI_Model {
   }
   
 	function createNew($course_id, $code){
-      $lecture = new Lecture();
-	    $lecture->course_id = $course_id;
-	    $lecture->code = $code;
-      return $lecture;
+    $lecture = new Lecture();
+	  $lecture->course_id = $course_id;
+	  $lecture->code = $code;
+    return $lecture;
 	}
   
   function insert($lecture){
@@ -21,5 +27,10 @@ class lecture_model extends CI_Model {
   function update($lecture){
     $this->db->where('id', $lecture->id);
     return $this->db->update('lecture', array('code'=>$lecture->course_id, 'title'=>$lecture->code));
+  }
+  
+  function delete($id){
+    $this->db->where('id', $id);
+    $this->db->delete('lecture');
   }
 }
