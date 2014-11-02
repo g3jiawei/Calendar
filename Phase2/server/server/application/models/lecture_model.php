@@ -26,7 +26,7 @@ class lecture_model extends CI_Model {
   
   function update($lecture){
     $this->db->where('id', $lecture->id);
-    return $this->db->update('lecture', array('code'=>$lecture->course_id, 'title'=>$lecture->code));
+    return $this->db->update('lecture', array('course_id'=>$lecture->course_id, 'code'=>$lecture->code));
   }
   
   function delete($id){
