@@ -104,7 +104,7 @@ class Calendar extends REST_Controller {
   function lecture_put(){
     $_POST = $this->put();
     $this->load->library('form_validation');
-    $this->form_validation->set_rules('course_id', 'Course id', 'required|numerical');
+    $this->form_validation->set_rules('course_id', 'Course id', 'required|numeric');
     $this->form_validation->set_rules('code', 'Lecture Code', 'required');
     if($this->form_validation->run()){
       $lecture = $this->lecture_model->createNew($_POST['course_id'], $_POST['code']);
@@ -141,6 +141,162 @@ class Calendar extends REST_Controller {
   
   function lecture_delete($id){
     $this->lecture_model->delete($id);
+    $arr['success'] = true;
+    $arr['error'] = 'success';
+    $arr['error_code'] = 0;
+    $this->response($arr);
+  }
+  
+  function assignments_get(){
+  	if(isset($_GET['id'])){
+      $arr['assignments'] = $this->assignment_model->getAll($_GET['id']);
+      $arr['success'] = true;
+      $arr['error'] = 'success';
+      $arr['error_code'] = 0;
+    }else{
+      $arr['success'] = false;
+      $arr['error'] = 'lecture_id is required';
+      $arr['error_code'] = 1;
+    }
+    $this->response($arr);
+  }
+  
+  function assignment_get($id){
+    $result = $this->assignment_model->get($id);
+    if(!is_null($result)){
+      $arr['success'] = true;
+      $arr['error_code'] = 0;
+      $arr['error'] = 'success';
+      $arr['assignment'] = $result;
+    }else{
+      $arr['success'] = false;
+      $arr['error_code'] = 1;
+      $arr['error'] = 'No such assignment';
+    }
+    $this->response($arr);
+  }
+  
+  function assignment_put(){
+    $_POST = $this->put();
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('lecture_id', 'Lecture id', 'required|numeric');
+    $this->form_validation->set_rules('name', 'Assignment Name', 'required');
+    $this->form_validation->set_rules('deadline', 'Assignment deadline', 'required');
+    if($this->form_validation->run()){
+      $assignment = $this->assignment_model->createNew($_POST['lecture_id'], $_POST['name'], $_POST['deadline']);
+      $this->assignment_model->insert($assignment);
+      $arr['success'] = true;
+      $arr['error'] = 'success';
+      $arr['error_code'] = 0;
+    }else{
+      $arr['success'] = false;
+      $arr['error'] = "Parameters are not valid.";
+      $arr['error_code'] = 1;
+    }
+    $this->response($arr);
+  }
+  
+  function assignment_post($id){
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('lecture_id', 'Lecture id', 'required|numeric');
+    $this->form_validation->set_rules('name', 'Day of the Week', 'required');
+    $this->form_validation->set_rules('deadline', 'deadlineing time', 'required');
+    if($this->form_validation->run()){
+      $assignment = $this->assignment_model->createNew($_POST['lecture_id'], $_POST['name'], $_POST['deadline']);
+      $assignment->id = $id;
+      $this->course_model->update($assignment);
+      $arr['success'] = true;
+      $arr['error'] = 'success';
+      $arr['error_code'] = 0;
+    }else{
+      $arr['success'] = false;
+      $arr['error'] = "Parameters are not valid.";
+      $arr['error_code'] = 1;
+    }
+    $this->response($arr);
+  }
+  
+  function assignment_delete($id){
+    $this->assignment_model->delete($id);
+    $arr['success'] = true;
+    $arr['error'] = 'success';
+    $arr['error_code'] = 0;
+    $this->response($arr);
+  }
+  
+  function lecture_times_get(){
+  	if(isset($_GET['id'])){
+      $arr['lecture_times'] = $this->lecture_time_model->getAll($_GET['id']);
+      $arr['success'] = true;
+      $arr['error'] = 'success';
+      $arr['error_code'] = 0;
+    }else{
+      $arr['success'] = false;
+      $arr['error'] = 'lecture_id is required';
+      $arr['error_code'] = 1;
+    }
+    $this->response($arr);
+  }
+  
+  function lecture_time_get($id){
+    $result = $this->lecture_time_model->get($id);
+    if(!is_null($result)){
+      $arr['success'] = true;
+      $arr['error_code'] = 0;
+      $arr['error'] = 'success';
+      $arr['lecture_time'] = $result;
+    }else{
+      $arr['success'] = false;
+      $arr['error_code'] = 1;
+      $arr['error'] = 'No such lecture_time';
+    }
+    $this->response($arr);
+  }
+  
+  function lecture_time_put(){
+    $_POST = $this->put();
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('lecture_id', 'Lecture id', 'required|numeric');
+    $this->form_validation->set_rules('dow', 'Day of the Week', 'required|numeric');
+    $this->form_validation->set_rules('start', 'Starting time', 'required');
+    $this->form_validation->set_rules('end', 'Finishing time', 'required');
+    if($this->form_validation->run()){
+      $lecture_time = $this->lecture_time_model->createNew($_POST['lecture_id'], $_POST['dow'], $_POST['start'], $_POST['end']);
+      $this->lecture_time_model->insert($lecture_time);
+      $arr['success'] = true;
+      $arr['error'] = 'success';
+      $arr['error_code'] = 0;
+    }else{
+      $arr['success'] = false;
+      $arr['error'] = "Parameters are not valid.";
+      $arr['error_code'] = 1;
+    }
+    $this->response($arr);
+  }
+  
+  function lecture_time_post($id){
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('lecture_id', 'Lecture id', 'required|numeric');
+    $this->form_validation->set_rules('dow', 'Day of the Week', 'required|numeric');
+    $this->form_validation->set_rules('start', 'Starting time', 'required');
+    $this->form_validation->set_rules('end', 'Finishing time', 'required');
+    if($this->form_validation->run()){
+      $lecture_time = $this->lecture_time_model->createNew($_POST['lecture_id'], $_POST['dow'], $_POST['start'], $_POST['end']);
+      $lecture_time->id = $id;
+      $this->course_model->update($lecture_time);
+      $arr['success'] = true;
+      $arr['error'] = 'success';
+      $arr['error_code'] = 0;
+    }else{
+      $arr['success'] = false;
+      $arr['error'] = "Parameters are not valid.";
+      $arr['error_code'] = 1;
+    }
+    $this->response($arr);
+  }
+  
+  function lecture_time_delete($id){
+    $this->lecture_time_model->delete($id);
     $arr['success'] = true;
     $arr['error'] = 'success';
     $arr['error_code'] = 0;
