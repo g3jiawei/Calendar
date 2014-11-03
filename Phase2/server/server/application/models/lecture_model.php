@@ -3,7 +3,7 @@ class lecture_model extends CI_Model {
   function getAll($course_id){
     $this->db->where('course_id', $course_id);
     $query = $this->db->get('lecture');
-    return $query->result;
+    return $query->result();
   }
   
   function get($id){

@@ -2,8 +2,10 @@
 class lecture_time_model extends CI_Model {
   function getAll($lecture_id){
     $this->db->where('lecture_id', $lecture_id);
+    $this->db->order_by('dow', "asc");
+    $this->db->order_by('start', "asc");
     $query = $this->db->get('lecture_time');
-    return $query->result;
+    return $query->result();
   }
   
   function get($id){

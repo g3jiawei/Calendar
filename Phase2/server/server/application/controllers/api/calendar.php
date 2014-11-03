@@ -73,8 +73,8 @@ class Calendar extends REST_Controller {
   }
   
   function lectures_get(){
-  	if(isset($_GET['id'])){
-      $arr['lectures'] = $this->lecture_model->getAll($_GET['id']);
+  	if(isset($_GET['course_id'])){
+      $arr['lectures'] = $this->lecture_model->getAll($_GET['course_id']);
       $arr['success'] = true;
       $arr['error'] = 'success';
       $arr['error_code'] = 0;
@@ -148,8 +148,8 @@ class Calendar extends REST_Controller {
   }
   
   function assignments_get(){
-  	if(isset($_GET['id'])){
-      $arr['assignments'] = $this->assignment_model->getAll($_GET['id']);
+  	if(isset($_GET['lecture_id'])){
+      $arr['assignments'] = $this->assignment_model->getAll($_GET['lecture_id']);
       $arr['success'] = true;
       $arr['error'] = 'success';
       $arr['error_code'] = 0;
@@ -225,8 +225,8 @@ class Calendar extends REST_Controller {
   }
   
   function lecture_times_get(){
-  	if(isset($_GET['id'])){
-      $arr['lecture_times'] = $this->lecture_time_model->getAll($_GET['id']);
+  	if(isset($_GET['lecture_id'])){
+      $arr['lecture_times'] = $this->lecture_time_model->getAll($_GET['lecture_id']);
       $arr['success'] = true;
       $arr['error'] = 'success';
       $arr['error_code'] = 0;
@@ -300,6 +300,22 @@ class Calendar extends REST_Controller {
     $arr['success'] = true;
     $arr['error'] = 'success';
     $arr['error_code'] = 0;
+    $this->response($arr);
+  }
+  
+  function next_assignment_get($lecture_id){
+    $dt = date('Y-m-d H:i:s');
+    $assignment=$this->assignment_model->nextAssignment($lecture_id);
+    if(!isset($assignment)){
+      $arr['success'] = false;
+      $arr['error'] = "No next assignment for this lecture.";
+      $arr['error_code'] = 1;
+    }else{
+      $arr['success'] = true;
+      $arr['error'] = 'success';
+      $arr['error_code'] = 0;
+      $arr['next_assignment'] = $assignment;
+    }
     $this->response($arr);
   }
 }

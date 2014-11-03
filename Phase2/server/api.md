@@ -234,5 +234,5 @@ Calendar
         * success (boolean) ... success or not
         * error_code (int) ... error code
         * error (string) ... error_message
-        * next_assignment_id (int) ... the id of the next assignment
+        * next_assignment (object) ... the next assignment
 

@@ -3,7 +3,7 @@ class assignment_model extends CI_Model {
   function getAll($lecture_id){
     $this->db->where('lecture_id', $lecture_id);
     $query = $this->db->get('assignment');
-    return $query->result;
+    return $query->result();
   }
   
   function get($id){
@@ -33,5 +33,13 @@ class assignment_model extends CI_Model {
   function delete($id){
     $this->db->where('id', $id);
     $this->db->delete('assignment');
+  }
+  
+  function nextAssignment($id){
+    $sql = "SELECT * FROM assignment WHERE deadline >= STR_TO_DATE('".date('Y-m-d H:i:s')."', '%Y-%m-%d %H:%i:%s') ORDER BY deadline ASC;";
+    $query = $this->db->query($sql);
+    if ($query && $query->num_rows()>0){
+      return $query->row(0,'assignment');
+    }
   }
 }
