@@ -31,6 +31,16 @@ Sturcture for the objects:
 
 When creating an object you need to provide those fields (except the id which will generate automatically). For the cases that ids of other classes are required, you need to know those ids first.
 
+About time format:
+The format of time/date in assignment and lecture_time are different.
+
+Format of deadline in assignment is "Y-m-d H:i:s", for example, "2014-11-03 00:00:00".
+
+dow in lecture_time is just an int.
+
+Format for start and end in lecture_time is "H:i", for example, "14:00".
+
+
 The api starts below.
 
 Calendar
