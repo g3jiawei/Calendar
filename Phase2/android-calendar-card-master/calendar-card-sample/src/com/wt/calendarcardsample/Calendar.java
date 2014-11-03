@@ -3,12 +3,16 @@ package com.wt.calendarcardsample;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -24,6 +28,7 @@ public class Calendar extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sample2);
+		//setupActionBar();
 		mCalendarCardPager = (CalendarCardPager)findViewById(R.id.calendarCard1);
 		mCalendarCardPager.setOnCellItemClick(new OnCellItemClick() {
 			@Override
@@ -83,11 +88,38 @@ public class Calendar extends Activity {
 	private void launchIntentAddEventActivity() {
 		// Only sends nurse to the adding patient screen, as only nurses can
 		// access it.
-		Intent intent = new Intent(this, AddEventActivity.class);
+		Intent intent = new Intent(this, AddCourseActivity.class);
 		Bundle bundle = new Bundle();
 		//bundle.putSerializable("nurse", nurse);
 		intent.putExtras(bundle);
 		startActivity(intent);
+	}
+    
+	/**
+	 * Set up the {@link android.app.ActionBar}, if the API is available.
+	 */
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	private void setupActionBar() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+			getActionBar().setDisplayHomeAsUpEnabled(true);
+		}
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			// This ID represents the Home or Up button. In the case of this
+			// activity, the Up button is shown. Use NavUtils to allow users
+			// to navigate up one level in the application structure. For
+			// more details, see the Navigation pattern on Android Design:
+			//
+			// http://developer.android.com/design/patterns/navigation.html#
+			// up-vs-back
+			NavUtils.navigateUpFromSameTask(this);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 }

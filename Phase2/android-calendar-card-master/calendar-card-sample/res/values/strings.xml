@@ -14,6 +14,12 @@
     <string name="label_time">Time</string>
     <string name="hint_time">00:00</string>
     <string name="button_save">Save</string>
+    <string name="title_activity_menu">calendar card sample</string>
+    <string name="course">Add a course</string>
+    <string name="lecture">Add a lecture</string>
+    <string name="assignment">Save</string>
+    <string name="addCourse">+ New Course</string>
+
     
 
 </resources>
