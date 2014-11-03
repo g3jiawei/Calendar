@@ -245,4 +245,14 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
         * next_assignment (object) ... the next assignment
-
+	* Response example
+```
+		{"success":true,
+		"error":"success",
+		"error_code":0,
+		"next_assignment":{
+			"id":"3",
+			"lecture_id":"1",
+			"name":"A3",
+			"deadline":"2014-11-03 00:00:00"}}
+```
