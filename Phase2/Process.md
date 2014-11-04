@@ -14,7 +14,7 @@ Manke Luo
 
 Jiawei Li
 
-__Scrum master__: _None_ ([reason](#Major Decisions))
+__Scrum master__: _None_ ([reason](###Major Decisions))
 
 
 #### Daily Scrum Meetings (4 meetings in total):
