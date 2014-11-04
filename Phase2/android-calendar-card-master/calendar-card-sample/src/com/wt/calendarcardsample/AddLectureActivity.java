@@ -40,7 +40,7 @@ public class AddLectureActivity extends Activity{
 		EditText editDateOfBirth = (EditText)
 				findViewById(R.id.edit_date);
 		EditText editArrivalTime = (EditText)
-				findViewById(R.id.edit_time);
+				findViewById(R.id.edit_fromtime);
 		
 		String title = editName.getText().toString();
 		String date = editDateOfBirth.getText().toString();

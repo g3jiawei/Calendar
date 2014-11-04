@@ -93,7 +93,6 @@
             android:padding="8dp" />
 
         
-
         <TextView
             android:id="@+id/label_tilltime"
             android:layout_width="wrap_content"
