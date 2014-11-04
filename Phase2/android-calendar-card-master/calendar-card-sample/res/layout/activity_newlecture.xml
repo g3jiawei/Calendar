@@ -109,6 +109,8 @@
             android:layout_alignBaseline="@+id/label_tilltime"
             android:layout_alignBottom="@+id/label_tilltime"
             android:layout_alignStart="@+id/edit_date"
+            
+            android:layout_alignLeft="@+id/edit_date"
             android:layout_toRightOf="@+id/label_title"
             android:background="@drawable/text_border"
             android:digits="0123456789:"
