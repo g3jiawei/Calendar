@@ -49,6 +49,15 @@ public class Student implements Serializable {
 		return false;
 	}
 	
+	public Course getCourse(int courseID) {
+		
+		for (Course cur : this.getPersonalEvents()) {
+			if (cur.getCourseID() == courseID) {
+				return cur;
+			}
+		}
+		return null;
+	}
 
 	/**
 	 * Add the new course into the course set
@@ -61,9 +70,8 @@ public class Student implements Serializable {
 	/**
 	 * Add the new course into the course set
 	 */
-	public void deleteCourse(int courseID, String code, String title) {
-		
-		
+	public void deleteCourse(int courseID) {
+		this.personalCourses.remove(this.getCourse(courseID));
 	}
 	
 	public void saveData(File file) {

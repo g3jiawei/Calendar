@@ -18,10 +18,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/edit_title"
-            android:layout_alignLeft="@+id/label_time"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignStart="@+id/label_time"
+            android:layout_centerHorizontal="true"
             android:text="@string/label_title" />
 
         <EditText
@@ -45,11 +44,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/edit_date"
-            android:layout_alignEnd="@+id/label_time"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignRight="@+id/label_time"
             android:layout_below="@id/edit_title"
+            android:layout_centerHorizontal="true"
             android:text="@string/label_date" />
 
         <EditText
@@ -73,14 +71,14 @@
             android:id="@+id/label_fromtime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/edit_time"
+            android:layout_alignBaseline="@+id/edit_fromtime"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/edit_date"
-            android:text="@string/label_time" />
+            android:text="@string/label_fromtime" />
 
         <EditText
-            android:id="@+id/edit_time"
+            android:id="@+id/edit_fromtime"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/edit_date"
@@ -94,42 +92,19 @@
             android:maxLength="12"
             android:padding="8dp" />
 
-        <TextView
-            android:id="@+id/label_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/edit_time"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/edit_date"
-            android:text="@string/label_time" />
-
-        <EditText
-            android:id="@+id/edit_time"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/edit_date"
-            android:layout_alignStart="@+id/edit_date"
-            android:layout_below="@id/edit_date"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/text_border"
-            android:digits="0123456789:"
-            android:hint="@string/hint_time"
-            android:inputType="time"
-            android:maxLength="12"
-            android:padding="8dp" />
+        
 
         <TextView
             android:id="@+id/label_tilltime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/edit_time"
+            android:layout_below="@+id/edit_fromtime"
             android:layout_marginTop="23dp"
             android:text="@string/label_tilltime" />
 
         <EditText
-            android:id="@+id/EditText01"
+            android:id="@+id/edit_tilltime"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/label_tilltime"
@@ -143,7 +118,6 @@
             android:inputType="time"
             android:maxLength="12"
             android:padding="8dp" />
-
     </RelativeLayout>
 	
 	<LinearLayout
