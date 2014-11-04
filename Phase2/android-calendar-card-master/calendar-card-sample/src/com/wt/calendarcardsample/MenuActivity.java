@@ -1,5 +1,7 @@
 package com.wt.calendarcardsample;
 
+import com.calendarcardsample.backend.Student;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
@@ -17,19 +19,29 @@ public class MenuActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 		//setupActionBar();
+		
 	}
 	
 
 	public void handleSample1(View v) {
-		startActivity(new Intent(this, Sample1.class));
+		Student student = new Student();
+		Intent intent = new Intent(this, Sample1.class);
+		intent.putExtra("studentKey", student);
+		startActivity(intent);
 	}
 
 	public void handleSample2(View v) {
-		startActivity(new Intent(this, CalendarActivity.class));
+		Student student = new Student();
+		Intent intent = new Intent(this, CalendarActivity.class);
+		intent.putExtra("studentKey", student);
+		startActivity(intent);
 	}
 	
 	public void handleadd(View v) {
-		startActivity(new Intent(this, AddCourseActivity.class));
+		Student student = new Student();
+		Intent intent = new Intent(this, AddCourseActivity.class);
+		intent.putExtra("studentKey", student);
+		startActivity(intent);
 	}
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.

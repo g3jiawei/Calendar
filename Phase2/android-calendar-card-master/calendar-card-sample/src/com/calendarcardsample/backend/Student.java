@@ -65,6 +65,7 @@ public class Student implements Serializable {
 	public void addCourse(int courseID, String code, String title)  {
 		Course newCourse = new Course(courseID, code, title);
 		this.personalCourses.add(newCourse);
+		
 	}
 	
 	/**

@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity{
 	
+	
+	
 	/** The amount of time this activity will display the splash screen. */
 	protected int SPLASH_TIME = 1000;
 	
@@ -17,7 +19,6 @@ public class MainActivity extends Activity{
 		setContentView(R.layout.splash);
 		displaySplashScreen();
 	}
-	
 	
 
 	/**

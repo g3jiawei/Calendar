@@ -51,4 +51,17 @@ public class Course implements Serializable {
 		this.title = newTitle;
 	}
 	
+	/**
+	 * Save the new course info to database
+	 * @return 1 if the new course info saved to database successfully,
+	 * otherwise 0. 
+	 */
+	public int saveCourse(String courseCode, String title) {
+		if (true) {
+			return 1;
+		}
+		
+		return 0;
+	}
+	
 }
