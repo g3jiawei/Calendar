@@ -12,7 +12,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Animation.Toast" >
+        android:theme="@android:style/Animation" >
         
         <activity android:name="com.wt.calendarcardsample.MainActivity" android:label="@string/title_activity_menu" >
             <intent-filter>  

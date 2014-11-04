@@ -103,12 +103,9 @@ public class CalendarActivity extends Activity {
                // The 'which' argument contains the index position
                // of the selected item
             	   if (which == 0) {
-            		   launchIntentAddCourseActivity();
-            	   }
-            	   else if (which == 1) {
             		   launchIntentAddAssignmentActivity();
             	   }
-            	   else if (which == 2) {
+            	   else if (which == 1) {
             		   launchIntentAddLectureActivity();
             	   }
                }
