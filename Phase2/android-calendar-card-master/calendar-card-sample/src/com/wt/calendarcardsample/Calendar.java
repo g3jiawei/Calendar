@@ -65,7 +65,7 @@ public class Calendar extends Activity {
 						int id) {
 					// Needs to get context in order to read
 					// values from the text boxes.
-					launchIntentAddEventActivity();
+					createChooseEventDialog(dialog);
 					// Checks if a patient exists with the inputted health
 					// card number.
 				}
@@ -85,10 +85,88 @@ public class Calendar extends Activity {
 		alertDialog.show();
 	}
 	
-	private void launchIntentAddEventActivity() {
+	private void createChooseEventDialog(DialogInterface dialog){
+		// Uses a view from xml files in order to allow edittext boxes.
+		//LayoutInflater li = LayoutInflater.from(this);
+		//View promptsView = li.inflate(R.layout.activity_newevent_dialog,null);
+		// Builds the dialog box.
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.
+				Builder(this);
+		//alertDialogBuilder.setView(promptsView);
+		
+		alertDialogBuilder
+			// Makes user unable to leave dialog by clicking
+			// outside its borders.
+			.setTitle("Which event you want to add")
+			.setItems(R.array.events_array, new DialogInterface.OnClickListener() {
+               public void onClick(DialogInterface dialog, int which) {
+               // The 'which' argument contains the index position
+               // of the selected item
+            	   if (which == 0) {
+            		   launchIntentAddCourseActivity();
+            	   }
+            	   else if (which == 1) {
+            		   launchIntentAddAssignmentActivity();
+            	   }
+            	   else if (which == 2) {
+            		   launchIntentAddLectureActivity();
+            	   }
+               }
+			})
+
+			
+			.setCancelable(true)
+			// Sets a button on the left for submitting data.
+			.setPositiveButton("Add", 
+					new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog,
+						int id) {
+					// Needs to get context in order to read
+					// values from the text boxes.
+					launchIntentAddAssignmentActivity();
+					// Checks if a patient exists with the inputted health
+					// card number.
+				}
+		  	})
+		  	// Sets a button on the right for exiting the dialog.
+		  	.setNegativeButton("Cancel",
+		  			new DialogInterface.OnClickListener() {
+		  		public void onClick(DialogInterface dialog,
+		  				int id) {
+		  			// Closes dialog when user chooses to cancel.
+		  			dialog.cancel();
+		  		}
+		  	});
+
+		// Create and show the alert dialog.
+		AlertDialog alertDialog = alertDialogBuilder.create();
+		alertDialog.show();
+	}
+	
+	private void launchIntentAddCourseActivity() {
 		// Only sends nurse to the adding patient screen, as only nurses can
 		// access it.
 		Intent intent = new Intent(this, AddCourseActivity.class);
+		Bundle bundle = new Bundle();
+		//bundle.putSerializable("nurse", nurse);
+		intent.putExtras(bundle);
+		startActivity(intent);
+	}
+	
+	private void launchIntentAddAssignmentActivity() {
+		// Only sends nurse to the adding patient screen, as only nurses can
+		// access it.
+		Intent intent = new Intent(this, AddCourseActivity.class);
+		Bundle bundle = new Bundle();
+		//bundle.putSerializable("nurse", nurse);
+		intent.putExtras(bundle);
+		startActivity(intent);
+	}
+	
+	private void launchIntentAddLectureActivity() {
+		// Only sends nurse to the adding patient screen, as only nurses can
+		// access it.
+		Intent intent = new Intent(this, AddLectureActivity.class);
 		Bundle bundle = new Bundle();
 		//bundle.putSerializable("nurse", nurse);
 		intent.putExtras(bundle);

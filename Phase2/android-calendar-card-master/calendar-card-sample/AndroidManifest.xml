@@ -33,6 +33,7 @@
         <activity android:name="com.wt.calendarcardsample.Sample1" />
         <activity android:name="com.wt.calendarcardsample.Calendar" />
         <activity android:name="com.wt.calendarcardsample.AddCourseActivity" android:label="@string/title_activity_menu"></activity>
+        <activity android:name="com.wt.calendarcardsample.AddLectureActivity"></activity>
         
         
     </application>
