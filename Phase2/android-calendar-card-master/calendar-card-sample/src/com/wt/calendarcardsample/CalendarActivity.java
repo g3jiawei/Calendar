@@ -20,14 +20,14 @@ import com.wt.calendarcard.CalendarCardPager;
 import com.wt.calendarcard.CardGridItem;
 import com.wt.calendarcard.OnCellItemClick;
 
-public class Calendar extends Activity {
+public class CalendarActivity extends Activity {
 	
 	private CalendarCardPager mCalendarCardPager;
 	//private TextView mTextView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.sample2);
+		setContentView(R.layout.activity_calendar);
 		//setupActionBar();
 		mCalendarCardPager = (CalendarCardPager)findViewById(R.id.calendarCard1);
 		mCalendarCardPager.setOnCellItemClick(new OnCellItemClick() {
@@ -59,7 +59,7 @@ public class Calendar extends Activity {
 			.setTitle(getResources().getString(R.string.sel_date,new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(item.getDate().getTime())))
 			.setCancelable(true)
 			// Sets a button on the left for submitting data.
-			.setPositiveButton("Add", 
+			.setNegativeButton("Add", 
 					new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog,
 						int id) {
@@ -71,7 +71,7 @@ public class Calendar extends Activity {
 				}
 		  	})
 		  	// Sets a button on the right for exiting the dialog.
-		  	.setNegativeButton("Cancel",
+		  	.setPositiveButton("Cancel",
 		  			new DialogInterface.OnClickListener() {
 		  		public void onClick(DialogInterface dialog,
 		  				int id) {
@@ -116,20 +116,8 @@ public class Calendar extends Activity {
 
 			
 			.setCancelable(true)
-			// Sets a button on the left for submitting data.
-			.setPositiveButton("Add", 
-					new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog,
-						int id) {
-					// Needs to get context in order to read
-					// values from the text boxes.
-					launchIntentAddAssignmentActivity();
-					// Checks if a patient exists with the inputted health
-					// card number.
-				}
-		  	})
 		  	// Sets a button on the right for exiting the dialog.
-		  	.setNegativeButton("Cancel",
+		  	.setPositiveButton("Cancel",
 		  			new DialogInterface.OnClickListener() {
 		  		public void onClick(DialogInterface dialog,
 		  				int id) {

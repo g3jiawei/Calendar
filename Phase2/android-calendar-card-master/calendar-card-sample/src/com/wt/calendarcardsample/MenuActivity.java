@@ -25,7 +25,7 @@ public class MenuActivity extends Activity {
 	}
 
 	public void handleSample2(View v) {
-		startActivity(new Intent(this, Calendar.class));
+		startActivity(new Intent(this, CalendarActivity.class));
 	}
 	
 	public void handleadd(View v) {

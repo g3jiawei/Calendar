@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="events_array">
-        <item>Course</item>
-        <item>Assignment</item>
-        <item>Lecture</item>
+        <item>\t\t\t\t\t\t\t\t\t\t\t\t\t\tCourse</item>
+        <item>\t\t\t\t\t\t\t\t\t\t\t\t\t\tAssignment</item>
+        <item>\t\t\t\t\t\t\t\t\t\t\t\t\t\tLecture</item>
     </string-array>
 </resources>
