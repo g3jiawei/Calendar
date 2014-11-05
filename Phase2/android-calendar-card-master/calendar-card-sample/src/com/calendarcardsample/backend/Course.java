@@ -20,19 +20,19 @@ public class Course implements Serializable {
 	private String code;
 	private String title;
 	
-	public Course(int courseID, String code, String title){
-		this.courseID = courseID;
+	public Course(String code, String title){
+		//this.courseID = courseID;
 		this.code = code;
 		this.title = title;
 	}
 	
-	public int getCourseID() {
-		return this.courseID;
-	}
-	
-	public void setCourseID(int newID) {
-		this.courseID = newID;
-	}
+//	public int getCourseID() {
+//		return this.courseID;
+//	}
+//	
+//	public void setCourseID(int newID) {
+//		this.courseID = newID;
+//	}
 	
 	//add some getters and setters here
 	public String getCode(){

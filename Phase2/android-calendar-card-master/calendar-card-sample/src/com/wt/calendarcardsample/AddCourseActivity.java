@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.calendarcardsample.backend.Course;
 import com.calendarcardsample.backend.Student;
 
 import android.os.Bundle;
@@ -40,26 +41,14 @@ public class AddCourseActivity extends Activity{
      * * @param view The layouts view.
      */
 	public void saveNewEvent(View view) {
-		EditText editName = (EditText) findViewById(R.id.edit_title);
-		EditText editDateOfBirth = (EditText)
-				findViewById(R.id.edit_date);
-		EditText editArrivalTime = (EditText)
-				findViewById(R.id.edit_time);
+		EditText editCourseCode = (EditText) findViewById(R.id.edit_coursecode);
+		EditText editCourseTitle = (EditText) findViewById(R.id.edit_coursetitle);
 		
-		String title = editName.getText().toString();
-		String date = editDateOfBirth.getText().toString();
-		String time = editArrivalTime.getText().toString();
+		String courseCode = editCourseCode.getText().toString();
+		String courseTitle = editCourseTitle.getText().toString();
 		
-		if (validateInput(title, date, time)) {
-			// Gets current date from built-in calendar as the default date
-			// for arrival time.
-			Calendar calendar = Calendar.getInstance();
-			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-			String currentDate = df.format(calendar.getTime());
-
-		}
-			// Save things into database
-
+		student.addCourse(courseCode, courseTitle);
+		
 	}
 	
 	/**

@@ -42,9 +42,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/button2"
-        android:layout_marginBottom="60dp"
-        android:layout_marginRight="26dp"
+        android:layout_marginBottom="75dp"
         android:onClick="handleadd"
         android:text="@string/addCourse" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button3"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_marginRight="57dp"
+        android:layout_toLeftOf="@+id/button3"
+        android:text="@string/button_current_courses"
+        android:onClick="viewCourseList" />
 
 </RelativeLayout>

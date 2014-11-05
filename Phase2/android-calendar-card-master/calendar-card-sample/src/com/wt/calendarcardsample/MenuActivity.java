@@ -1,5 +1,8 @@
 package com.wt.calendarcardsample;
 
+import java.util.HashSet;
+
+import com.calendarcardsample.backend.Course;
 import com.calendarcardsample.backend.Student;
 
 import android.annotation.TargetApi;
@@ -43,6 +46,28 @@ public class MenuActivity extends Activity {
 		intent.putExtra("studentKey", student);
 		startActivity(intent);
 	}
+	
+//	public String getCurrentCourses(View view) {
+//		String str = "";
+//		for (Course cur : student.getPersonalEvents()) {
+//			str += cur.getCode() + "\n";
+//		}
+//		
+//		return str;
+//	}
+	
+	/**
+	 * Attempt to go back to menu page when back button is clicked.
+	 * @param view
+	 */
+	public void viewCourseList(View view) {
+		Intent intent = new Intent(this, CourseListActivity.class);
+		intent.putExtra("studentKey", student);
+		startActivity(intent);
+	}
+	
+	
+	
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */

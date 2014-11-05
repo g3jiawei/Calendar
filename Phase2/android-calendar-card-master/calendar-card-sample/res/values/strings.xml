@@ -20,6 +20,7 @@
     <string name="button_save">Save</string>
  
     <string name="button_back_home">Back to menu</string>
+    <string name="button_current_courses">Current Courses</string>
     
     <string name="title_activity_menu">iCalendar</string>
     <string name="course">Add a course</string>
