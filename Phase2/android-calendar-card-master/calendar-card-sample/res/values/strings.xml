@@ -7,19 +7,24 @@
     <string name="card">This Month</string>
     <string name="card_pager">Calendar</string>
     <string name="sel_date">%s</string>
-    <string name="label_title">Course</string>
-    <string name="hint_title">ex. csc301</string>
-    <string name="label_date">Date</string>
-    <string name="hint_date">DD/MM/YYYY</string>
-    <string name="label_time">Time</string>
     
-    <string name="label_fromtime">From</string>
-    <string name="label_tilltime">Till</string>
+    <string name="label_course_test">Course:</string>
+    <string name="label_course_assignment">Course:</string>
+    <string name="hint_course">ex. csc301</string>
+    
+    <string name="label_date_test">Date:</string>
+    <string name="label_date_assignment">Date:</string>
+    <string name="hint_date">DD/MM/YYYY</string>
     
     <string name="hint_time">00:00</string>
+    
+    <string name="label_time">Time:</string>
+    <string name="label_fromtime">From:</string>
+    <string name="label_totime">To:</string>
+    
     <string name="button_save">Save</string>
  
-    <string name="button_back_home">Back to menu</string>
+
     <string name="button_current_courses">Current Courses</string>
     
     <string name="title_activity_menu">iCalendar</string>

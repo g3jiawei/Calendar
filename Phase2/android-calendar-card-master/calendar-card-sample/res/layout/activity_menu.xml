@@ -8,21 +8,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MenuActivity" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/title"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
     <Button
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
         android:layout_marginTop="27dp"
         android:onClick="handleSample1"
         android:text="@string/card" />
@@ -52,10 +42,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button3"
         android:layout_alignBottom="@+id/button3"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_marginRight="57dp"
-        android:layout_toLeftOf="@+id/button3"
-        android:text="@string/button_current_courses"
-        android:onClick="viewCourseList" />
+        android:layout_alignParentLeft="true"
+        android:onClick="viewCourseList"
+        android:text="@string/button_current_courses" />
 
 </RelativeLayout>

@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/tv_course_assignment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/et_course_assignment"
+        android:layout_alignLeft="@+id/tv_time"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/tv_time"
+        android:text="@string/label_course_assignment" />
+
+    <EditText
+        android:id="@+id/et_course_assignment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/tv_course_assignment"
+        android:layout_toRightOf="@+id/tv_course_assignment"
+        android:background="@drawable/text_border"
+        android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
+        android:hint="@string/hint_course"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="35"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tv_date_assignment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/et_date_assignment"
+        android:layout_alignEnd="@+id/tv_time"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/tv_time"
+        android:layout_below="@id/et_course_assignment"
+        android:text="@string/label_date_assignment" />
+
+    <EditText
+        android:id="@+id/et_date_assignment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/et_course_assignment"
+        android:layout_alignStart="@+id/et_course_assignment"
+        android:layout_below="@id/et_course_assignment"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text_border"
+        android:digits="0123456789/"
+        android:hint="@string/hint_date"
+        android:imeOptions="actionNext"
+        android:inputType="date"
+        android:maxLength="10"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/et_time"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/et_date_assignment"
+        android:text="@string/label_time" />
+
+    <EditText
+        android:id="@+id/et_time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/et_date_assignment"
+        android:layout_alignStart="@+id/et_date_assignment"
+        android:layout_below="@id/et_date_assignment"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text_border"
+        android:digits="0123456789:"
+        android:hint="@string/hint_time"
+        android:inputType="time"
+        android:maxLength="12"
+        android:padding="8dp"
+        android:textColor="#000000" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="52dp"
+        android:onClick="saveNewAssignment"
+        android:text="@string/button_save" />
+
+</RelativeLayout>

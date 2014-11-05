@@ -1,97 +1,72 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:orientation="vertical"
     tools:context=".AddCourseActivity" >
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
+    <TextView
+        android:id="@+id/tv_coursecode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/et_coursecode"
+        android:layout_alignBottom="@+id/et_coursecode"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/label_coursecode" />
+
+    <EditText
+        android:id="@+id/et_coursecode"
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2" >
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/et_coursetitle"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text_border"
+        android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
+        android:hint="@string/hint_course"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="35"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:textColor="#000000" />
 
-        <EditText
-            android:id="@+id/edit_coursecode"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/edit_coursetitle"
-            android:layout_marginTop="8dp"
-            android:layout_toEndOf="@+id/label_title"
-            android:background="@drawable/text_border"
-            android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
-            android:hint="@string/hint_title"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:maxLength="35"
-            android:padding="8dp"
-            android:singleLine="true" >
+    <TextView
+        android:id="@+id/tv_coursetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/et_coursetitle"
+        android:layout_alignBottom="@+id/et_coursetitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/label_coursetitle" />
 
-            <requestFocus />
-        </EditText>
+    <EditText
+        android:id="@+id/et_coursetitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/et_coursecode"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/tv_coursecode"
+        android:background="@drawable/text_border"
+        android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
+        android:ems="10"
+        android:hint="@string/hint_coursetitle"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="10"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:textColor="#000000" />
 
-        <TextView
-            android:id="@+id/label_coursecode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/edit_coursecode"
-            android:layout_alignBottom="@+id/edit_coursecode"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:text="@string/label_coursecode" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="56dp"
+        android:onClick="saveNewCourse"
+        android:text="@string/button_save" />
 
-        <EditText
-            android:id="@+id/edit_coursetitle"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignStart="@+id/edit_title"
-            android:layout_below="@+id/edit_coursecode"
-            android:layout_marginTop="14dp"
-            android:layout_toRightOf="@+id/label_coursecode"
-            android:background="@drawable/text_border"
-            android:ems="10"
-            android:hint="@string/hint_coursetitle"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.'- "
-            android:maxLength="10"
-            android:padding="8dp"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/label_coursetitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/edit_coursetitle"
-            android:layout_alignBottom="@+id/edit_coursetitle"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:text="@string/label_coursetitle" />
-
-        
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="22dp"
-            android:text="@string/button_back_home" 
-            android:onClick="backToMenu"	/>
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button1"
-            android:layout_alignParentLeft="true"
-            android:onClick="saveNewEvent"
-            android:text="@string/button_save" />
-
-    </RelativeLayout>
-
-</LinearLayout>
+</RelativeLayout>

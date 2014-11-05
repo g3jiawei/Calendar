@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_weight="1"
-    android:textColor="#FFFF0000"
+    android:textColor="#FE2E2E"
     style="@style/CalendarCard.Cell"
     android:clickable="true">
 
