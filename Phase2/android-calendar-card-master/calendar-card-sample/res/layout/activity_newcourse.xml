@@ -52,11 +52,11 @@
             android:layout_marginTop="14dp"
             android:layout_toRightOf="@+id/label_coursecode"
             android:background="@drawable/text_border"
-            android:digits="0123456789/"
             android:ems="10"
             android:hint="@string/hint_coursetitle"
             android:imeOptions="actionNext"
-            android:inputType="date"
+            android:inputType="text"
+            android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.'- "
             android:maxLength="10"
             android:padding="8dp"
             android:singleLine="true" />

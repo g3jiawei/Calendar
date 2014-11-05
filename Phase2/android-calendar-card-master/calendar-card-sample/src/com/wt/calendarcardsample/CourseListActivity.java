@@ -38,15 +38,11 @@ public class CourseListActivity extends Activity{
 		student = (Student) intent.getSerializableExtra("studentKey");
 
 	    final ListView listview = (ListView) findViewById(R.id.listview);
-	    String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-	        "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-	        "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-	        "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-	        "Android", "iPhone", "WindowsMobile" };
+	    HashSet<Course> values = student.getPersonalEvents();
 
 	    final ArrayList<String> list = new ArrayList<String>();
-	    for (int i = 0; i < values.length; ++i) {
-	      list.add(values[i]);
+	    for (Course cur : values) {
+	      list.add(cur.getCode());
 	    }
 	    final StableArrayAdapter adapter = new StableArrayAdapter(this,
 	        android.R.layout.simple_list_item_1, list);
