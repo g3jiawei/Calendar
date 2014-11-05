@@ -1,6 +1,6 @@
 # Develop Process
 #### Team member:
-Chuan-Keng Chou
+Chuan-Keng Chou (Jimmy)
 
 Chidinma Nwaka
 
@@ -29,17 +29,17 @@ Meeting #1: 27/10 - BA2210
 	* Oct 27th – Nov 1st (5 days) 
 		* Android interface, Classes, functions, GUI, server, database.
 	* Nov 2nd – Nov 5th (4 days)
-		* Integrate everything together. Finish stuffs left from 
+		* Integrated everything together. Finish stuffs left from last time.
 * Job Distribution
 	* G1: Deal with server and database (Hongyi)
-	* G2: Deal with classes and functions (Jimmy, Chidi and Manke)
+	* G2: Deal with classes and functions (Chuan-Keng(Jimmy), Chidi and Manke)
 	* G3: Deal with UI and interactions (Jiawei, Shihao and Zhonghao)
 
 Meeting #2: 30/11 - BA2210
 
 * Server side and database basically finished
-	* Hongyi briefly demonstrate how to interact with his database
-* We decide to write calendar-view by ourself instead of using build-in Android calendar
+	* Hongyi briefly demonstrated how to interact with his database.
+* We decided to implement calendar-view by ourself instead of using build-in Android calendar
 
 Meeting #3: 01/11 - BA2210
 
