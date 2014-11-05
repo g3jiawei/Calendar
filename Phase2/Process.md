@@ -19,7 +19,15 @@ __Scrum master__: _None_ ([reason](#major-decisions))
 
 #### Daily Scrum Meetings (4 meetings in total):
 Meeting #1: 27/10 - BA2210
-
+* Server & Clients. 
+* Implement on Android for the live demo. 
+-	Simple functions like add/modify for this phase. 
+-	2-3 members will work on the UI, and 3-4 people will work on the server. 
+-	2 sprints: 
+	* 1. Oct 27th – Nov 1st (5 days) 
+		* Android interface, Classes, functions, GUI, server, database.
+	* 2. Nov 2nd – Nov 5th (4 days)
+		* Integrate everything together. Finish stuffs left from 
 * Job Distribution
 	* G1: Deal with server and database (Hongyi)
 	* G2: Deal with classes and functions (Jimmy, Chidi and Manke)
