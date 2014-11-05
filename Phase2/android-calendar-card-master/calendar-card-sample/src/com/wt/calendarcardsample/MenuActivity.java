@@ -13,32 +13,32 @@ import android.view.View;
 
 public class MenuActivity extends Activity {
     
+	private Student student;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 		//setupActionBar();
+		Intent intent = getIntent();
+		student = (Student) intent.getSerializableExtra("studentKey");
 		
 	}
 	
 
 	public void handleSample1(View v) {
-		Student student = new Student();
 		Intent intent = new Intent(this, Sample1.class);
 		intent.putExtra("studentKey", student);
 		startActivity(intent);
 	}
 
 	public void handleSample2(View v) {
-		Student student = new Student();
 		Intent intent = new Intent(this, CalendarActivity.class);
 		intent.putExtra("studentKey", student);
 		startActivity(intent);
 	}
 	
 	public void handleadd(View v) {
-		Student student = new Student();
 		Intent intent = new Intent(this, AddCourseActivity.class);
 		intent.putExtra("studentKey", student);
 		startActivity(intent);

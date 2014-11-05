@@ -5,6 +5,8 @@ import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.calendarcardsample.backend.Student;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.MenuItem;
@@ -17,6 +19,8 @@ import android.content.Intent;
 import android.os.Build;
 
 public class AddEventActivity extends Activity{
+	
+	private Student student;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,7 @@ public class AddEventActivity extends Activity{
 		//setupActionBar();
 		
 		Intent intent = getIntent();
+		student = (Student) intent.getSerializableExtra("studentKey");
 		Bundle bundle = intent.getExtras();
 		
 	}
@@ -55,7 +60,16 @@ public class AddEventActivity extends Activity{
 
 		}
 			// Save things into database
-
+	}
+	
+	/**
+	 * Attempt to go back to menu page when back button is clicked.
+	 * @param view
+	 */
+	public void backToMenu(View view) {
+		Intent intent = new Intent(this, MenuActivity.class);
+		intent.putExtra("studentKey", student);
+		startActivity(intent);
 	}
 	
 	/**

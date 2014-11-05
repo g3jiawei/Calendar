@@ -9,9 +9,9 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"
-    	android:layout_width="fill_parent"
-    	android:layout_height="0dp"
-    	android:layout_weight="2" >
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.98" >
     	
 	    <TextView
 	        android:id="@+id/label_title"
@@ -92,23 +92,28 @@
 		    android:inputType="time"
 		    android:maxLength="12"
 		    android:padding="8dp" />
+
+
+
+		<Button
+		    android:id="@+id/button1"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:layout_alignParentLeft="true"
+		    android:layout_alignParentRight="true"
+		    android:layout_marginBottom="22dp"
+		    android:text="@string/button_back_home"
+		    android:onClick="backToMenu"	/>
+
+		<Button
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_above="@+id/button1"
+		    android:layout_alignParentLeft="true"
+		    android:onClick="saveNewEvent"
+		    android:text="@string/button_save" />
 	
 	</RelativeLayout>
-	
-	<LinearLayout
-	    android:id="@+id/linearLayout1"
-	   	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content" 
-    	android:gravity="center"
-    	android:layout_weight="1" >
-    	
-	    <Button
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center"
-	        android:text="@string/button_save"
-	        android:onClick="saveNewEvent" />
-	
-	</LinearLayout>
 
 </LinearLayout>

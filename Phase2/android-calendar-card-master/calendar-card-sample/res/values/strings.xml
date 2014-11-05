@@ -18,11 +18,18 @@
     
     <string name="hint_time">00:00</string>
     <string name="button_save">Save</string>
+ 
+    <string name="button_back_home">Back to menu</string>
+    
     <string name="title_activity_menu">iCalendar</string>
     <string name="course">Add a course</string>
     <string name="lecture">Add a lecture</string>
     <string name="assignment">Save</string>
     <string name="addCourse">+ New Course</string>
+    
+    <string name="label_coursecode">Code</string>
+    <string name="label_coursetitle">Title</string>
+    <string name="hint_coursetitle">eg. Intro to Software Engineer</string>
 
     
 

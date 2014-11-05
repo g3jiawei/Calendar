@@ -16,11 +16,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.calendarcardsample.backend.Student;
 import com.wt.calendarcard.CalendarCardPager;
 import com.wt.calendarcard.CardGridItem;
 import com.wt.calendarcard.OnCellItemClick;
 
 public class CalendarActivity extends Activity {
+	private Student student;
 	
 	private CalendarCardPager mCalendarCardPager;
 	//private TextView mTextView;
@@ -28,6 +30,10 @@ public class CalendarActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_calendar);
+		
+		Intent intent = getIntent();
+		student = (Student) intent.getSerializableExtra("studentKey");
+		
 		//setupActionBar();
 		mCalendarCardPager = (CalendarCardPager)findViewById(R.id.calendarCard1);
 		mCalendarCardPager.setOnCellItemClick(new OnCellItemClick() {
@@ -103,7 +109,7 @@ public class CalendarActivity extends Activity {
                // The 'which' argument contains the index position
                // of the selected item
             	   if (which == 0) {
-            		   launchIntentAddAssignmentActivity();
+            		   launchIntentAddEventActivity();
             	   }
             	   else if (which == 1) {
             		   launchIntentAddLectureActivity();
@@ -134,16 +140,18 @@ public class CalendarActivity extends Activity {
 		Intent intent = new Intent(this, AddCourseActivity.class);
 		Bundle bundle = new Bundle();
 		//bundle.putSerializable("nurse", nurse);
+		intent.putExtra("studentKey", student);
 		intent.putExtras(bundle);
 		startActivity(intent);
 	}
 	
-	private void launchIntentAddAssignmentActivity() {
+	private void launchIntentAddEventActivity() {
 		// Only sends nurse to the adding patient screen, as only nurses can
 		// access it.
-		Intent intent = new Intent(this, AddCourseActivity.class);
+		Intent intent = new Intent(this, AddEventActivity.class);
 		Bundle bundle = new Bundle();
 		//bundle.putSerializable("nurse", nurse);
+		intent.putExtra("studentKey", student);
 		intent.putExtras(bundle);
 		startActivity(intent);
 	}
@@ -154,6 +162,7 @@ public class CalendarActivity extends Activity {
 		Intent intent = new Intent(this, AddLectureActivity.class);
 		Bundle bundle = new Bundle();
 		//bundle.putSerializable("nurse", nurse);
+		intent.putExtra("studentKey", student);
 		intent.putExtras(bundle);
 		startActivity(intent);
 	}

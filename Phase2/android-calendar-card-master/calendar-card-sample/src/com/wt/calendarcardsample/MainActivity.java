@@ -1,5 +1,7 @@
 package com.wt.calendarcardsample;
 
+import com.calendarcardsample.backend.Student;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +9,7 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity{
 	
-	
+	private Student student;
 	
 	/** The amount of time this activity will display the splash screen. */
 	protected int SPLASH_TIME = 1000;
@@ -18,6 +20,8 @@ public class MainActivity extends Activity{
 		// Sets main layout as a splash screen.
 		setContentView(R.layout.splash);
 		displaySplashScreen();
+		
+		student = new Student();
 	}
 	
 
@@ -36,7 +40,9 @@ public class MainActivity extends Activity{
                         logoTimer = logoTimer + 100;
                     };
                     // Calls the activity from manifest.xml
-                    startActivity(new Intent("com.wt.CLEARSCREEN"));
+                    Intent intent = new Intent("com.wt.CLEARSCREEN");
+            		intent.putExtra("studentKey", student);
+            		startActivity(intent);
                 } catch (InterruptedException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
