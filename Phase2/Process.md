@@ -64,7 +64,4 @@ Most of our communication were done via Facebook. However, we did use GitHub's i
 	* In the future implementation, we want to have _sync_ and _login_ feature and it's not safe to use build-in calendar
 * Use __buffer__ to save the data temporarily
 	* As a fail safe in case our app cannot properly connect with our database 
-* Demonstration simplification
-	* Reason?
-* progress on link between server and interface needs to be evaluated.
-	* Reason?
+
