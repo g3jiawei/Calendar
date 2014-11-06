@@ -38,19 +38,30 @@ public class Course implements Serializable {
 //		this.courseID = newID;
 //	}    
 	
-	//add some getters and setters here
+	/**
+	 * Return the course code.
+	 * */
 	public String getCode(){
 		return this.code;
 	}
 	
+	/**
+	 * Set the course code.
+	 * */
 	public void setCode(String newCode) {
 		this.code = newCode;
 	}
 	
+	/**
+	 * Return the course title.
+	 * */
 	public String getTitle() {
 		return this.title;
 	}
 	
+	/**
+	 * Set the course title.
+	 * */
 	public void setTitle(String newTitle) {
 		this.title = newTitle;
 	}

@@ -21,24 +21,42 @@ public class Student implements Serializable {
 	private String username;
 	private HashSet<Course> personalCourses = null;
 	
+	
+	/**
+	 * The constructor that assigns the username to null and creates
+	 * a new HashSet.
+	 * */
 	public Student() {
 		this.username = null;
 		this.personalCourses = new HashSet<Course>();
 	}
 	
+	/**
+	 * Return the username.
+	 * */
 	public String getUsername() {
 		return this.username;
 	}
 	
+	/**
+	 * set the username.
+	 * */
 	public int setUsername(String name) {
 		this.username = name;
 		return 0;
 	}
 	
+	/**
+	 * Return the HashSet.
+	 * */
 	public HashSet<Course> getPersonalEvents() {
 		return this.personalCourses;
 	}
 	
+	
+	/**
+	 * Return true if course exists.
+	 * */
 	public boolean haveCourse(String code) {
 		
 		for (Course cur : this.getPersonalEvents()) {
@@ -49,6 +67,10 @@ public class Student implements Serializable {
 		return false;
 	}
 	
+	
+	/**
+	 * Return the course.
+	 * */
 	public Course getCourse(String code) {
 		
 		for (Course cur : this.getPersonalEvents()) {
@@ -60,7 +82,7 @@ public class Student implements Serializable {
 	}
 
 	/**
-	 * Add the new course into the course set
+	 * Add the new course into the course set.
 	 */
 	public void addCourse(String code, String title)  {
 		Course newCourse = new Course(code, title);
@@ -69,7 +91,7 @@ public class Student implements Serializable {
 	}
 	
 	/**
-	 * Add the new course into the course set
+	 * Add the new course into the course set.
 	 */
 	public void deleteCourse(String code) {
 		this.personalCourses.remove(this.getCourse(code));
@@ -79,6 +101,8 @@ public class Student implements Serializable {
 		//add code here
 		
 	}
+	
+	
 	
 	public void loadData(File file) {
 		
