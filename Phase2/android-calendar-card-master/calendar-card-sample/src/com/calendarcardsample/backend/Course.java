@@ -20,6 +20,10 @@ public class Course implements Serializable {
 	private String code;
 	private String title;
 	
+	
+	/**
+	 * The constructor that takes in the course code and title.
+	 */
 	public Course(String code, String title){
 		//this.courseID = courseID;
 		this.code = code;
@@ -32,7 +36,7 @@ public class Course implements Serializable {
 //	
 //	public void setCourseID(int newID) {
 //		this.courseID = newID;
-//	}
+//	}    
 	
 	//add some getters and setters here
 	public String getCode(){
