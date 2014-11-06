@@ -55,10 +55,11 @@ public class AddAssignmentActivity extends Activity {
 			// Calendar calendar = Calendar.getInstance();
 			// SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 			// String currentDate = df.format(calendar.getTime());
-			Toast.makeText(getApplicationContext(), "Add a new test",
+			Toast.makeText(getApplicationContext(), "Add a new assignment",
 					Toast.LENGTH_SHORT).show();
 			Assignment.addAssignment(code, date, time);
 			Student.saveAssignments(getApplicationContext());
+			Student.loadAssignments(getApplicationContext());
 		}
 		editCode.setText(null);
 		editDate.setText(null);

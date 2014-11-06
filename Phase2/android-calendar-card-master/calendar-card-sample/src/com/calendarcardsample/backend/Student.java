@@ -96,7 +96,7 @@ public class Student implements Serializable {
 	 */
 
 	@SuppressWarnings("unchecked")
-	public void loadTests(Context fileContext) {
+	public static void loadTests(Context fileContext) {
 		try {
 			FileInputStream fis = fileContext.openFileInput(file1);
 			ObjectInputStream in = new ObjectInputStream(fis);
@@ -133,7 +133,7 @@ public class Student implements Serializable {
 	 * and Patients as values.
 	 */
 	@SuppressWarnings("unchecked")
-	public void loadAssignments(Context fileContext) {
+	public static void loadAssignments(Context fileContext) {
 		try {
 			FileInputStream fis = fileContext.openFileInput(file2);
 			ObjectInputStream in = new ObjectInputStream(fis);

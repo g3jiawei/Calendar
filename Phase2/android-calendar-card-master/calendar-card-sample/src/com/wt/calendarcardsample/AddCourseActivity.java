@@ -48,6 +48,8 @@ public class AddCourseActivity extends Activity {
 			Course.addCourse(courseCode, courseTitle);
 			Student.saveAssignments(getApplicationContext());
 			Student.saveTests(getApplicationContext());
+			Student.loadAssignments(getApplicationContext());
+			Student.loadTests(getApplicationContext());
 			// Intent intent = new Intent(this, CourseListActivity.class);
 			// Bundle bundle = new Bundle();
 			// bundle.putSerializable("map", );

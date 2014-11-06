@@ -60,6 +60,7 @@ public class AddTestActivity extends Activity {
 					Toast.LENGTH_SHORT).show();
 			Test.addTest(code, date, from, to);
 			Student.saveTests(getApplicationContext());
+			Student.loadTests(getApplicationContext());
 		}
 		editCode.setText(null);
 		editDate.setText(null);

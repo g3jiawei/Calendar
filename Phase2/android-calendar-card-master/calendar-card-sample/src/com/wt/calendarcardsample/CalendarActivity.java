@@ -89,7 +89,7 @@ public class CalendarActivity extends Activity {
 								new SimpleDateFormat("yyyy-MM-dd", Locale
 										.getDefault()).format(item.getDate()
 										.getTime())))
-
+                .setMessage("Notification!!!")
 
 				.setCancelable(true)
 				// Sets a button on the left for submitting data.
@@ -142,7 +142,7 @@ public class CalendarActivity extends Activity {
 
 				.setMessage(
 						new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-								.format(item.getDate().getTime()))
+								.format(item.getDate().getTime()) + " is a peaceful day~")
 
 				.setCancelable(true)
 				// Sets a button on the left for submitting data.

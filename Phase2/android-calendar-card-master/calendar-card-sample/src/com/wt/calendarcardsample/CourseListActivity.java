@@ -58,6 +58,7 @@ public class CourseListActivity extends Activity {
 							@Override
 							public void run() {
 
+								// handleCourse(view);
 								list.remove(item);
 								adapter.notifyDataSetChanged();
 								view.setAlpha(1);
@@ -92,6 +93,12 @@ public class CourseListActivity extends Activity {
 		}
 
 	}
+
+	// public void handleCourse(View v) {
+	// Intent intent = new Intent(this, ShowCourseInformationActivity.class);
+	// // intent.putExtra("studentKey", student);
+	// startActivity(intent);
+	// }
 
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void setupActionBar() {
