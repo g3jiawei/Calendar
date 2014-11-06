@@ -1,7 +1,11 @@
 package com.wt.calendarcardsample;
 
 import java.text.SimpleDateFormat;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -14,7 +18,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.calendarcardsample.backend.Assignment;
 import com.calendarcardsample.backend.Student;
+import com.calendarcardsample.backend.Test;
 import com.wt.calendarcard.CalendarCardPager;
 import com.wt.calendarcard.CardGridItem;
 import com.wt.calendarcard.OnCellItemClick;
@@ -25,24 +31,37 @@ public class CalendarActivity extends Activity {
 	private CalendarCardPager mCalendarCardPager;
 
 	// private TextView mTextView;
-	@SuppressLint("NewApi")
+	@SuppressLint({ "NewApi", "SimpleDateFormat" })
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_calendar);
 
-		Intent intent = getIntent();
-		student = (Student) intent.getSerializableExtra("studentKey");
+		// Intent intent = getIntent();
+		// student = (Student) intent.getSerializableExtra("studentKey");
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
-		
-		
+
+		// Calendar calendar = Calendar.getInstance();
+		// SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		// final String currentDate = df.format(calendar.getTime());
+
 		mCalendarCardPager = (CalendarCardPager) findViewById(R.id.calendarCard1);
 		mCalendarCardPager.setOnCellItemClick(new OnCellItemClick() {
+			Set<String> dates = getAllDates();
+
 			@Override
 			public void onCellClick(View v, CardGridItem item) {
-				createDialog(v, item);
+				if (dates != null) {
+					if (dates.contains(new SimpleDateFormat("dd/MM/yyyy",
+							Locale.getDefault()).format(item.getDate()
+							.getTime()))) {
+						createDialog(v, item);
+					}else{
+						createDialog2(v, item);
+					}
+				}
 			}
 		});
 
@@ -70,6 +89,61 @@ public class CalendarActivity extends Activity {
 								new SimpleDateFormat("yyyy-MM-dd", Locale
 										.getDefault()).format(item.getDate()
 										.getTime())))
+
+
+				.setCancelable(true)
+				// Sets a button on the left for submitting data.
+				.setNegativeButton("Add",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								// Needs to get context in order to read
+								// values from the text boxes.
+								createChooseEventDialog(dialog);
+								// Checks if a patient exists with the inputted
+								// health
+								// card number.
+							}
+						})
+				// Sets a button on the right for exiting the dialog.
+				.setPositiveButton("Cancel",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								// Closes dialog when user chooses to cancel.
+								dialog.cancel();
+							}
+						});
+
+		// Create and show the alert dialog.
+		AlertDialog alertDialog = alertDialogBuilder.create();
+		alertDialog.show();
+	}
+	
+	/**
+	 * Creates a dialog box for searching patients by health card number.
+	 * */
+	private void createDialog2(View view, CardGridItem item) {
+		// Uses a view from xml files in order to allow edittext boxes.
+		// LayoutInflater li = LayoutInflater.from(this);
+		// View promptsView =
+		// li.inflate(R.layout.activity_newevent_dialog,null);
+		// Builds the dialog box.
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		// alertDialogBuilder.setView(promptsView);
+
+		alertDialogBuilder
+				// Makes user unable to leave dialog by clicking
+				// outside its borders.
+				.setTitle(
+						getResources().getString(
+								R.string.sel_date,
+								new SimpleDateFormat("yyyy-MM-dd", Locale
+										.getDefault()).format(item.getDate()
+										.getTime())))
+
+				.setMessage(
+						new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+								.format(item.getDate().getTime()))
+
 				.setCancelable(true)
 				// Sets a button on the left for submitting data.
 				.setNegativeButton("Add",
@@ -140,15 +214,30 @@ public class CalendarActivity extends Activity {
 		alertDialog.show();
 	}
 
-	private void launchIntentAddCourseActivity() {
-		// Only sends nurse to the adding patient screen, as only nurses can
-		// access it.
-		Intent intent = new Intent(this, AddCourseActivity.class);
-		Bundle bundle = new Bundle();
-		// bundle.putSerializable("nurse", nurse);
-		intent.putExtra("studentKey", student);
-		intent.putExtras(bundle);
-		startActivity(intent);
+	public Set<String> getAllDates() {
+		Collection<List<Test>> tests = Student.courseTests.values();
+		Collection<List<Assignment>> assignments = Student.courseAssignments
+				.values();
+		Set<String> dates = new HashSet<String>();
+		if (tests != null) {
+			for (List<Test> list_test : tests) {
+				if (list_test != null) {
+					for (Test test : list_test) {
+						dates.add(test.getDate());
+					}
+				}
+			}
+		}
+		if (assignments != null) {
+			for (List<Assignment> list_assignment : assignments) {
+				if (list_assignment != null) {
+					for (Assignment assignment : list_assignment) {
+						dates.add(assignment.getDate());
+					}
+				}
+			}
+		}
+		return dates;
 	}
 
 	private void launchIntentAddEventActivity() {
@@ -185,13 +274,13 @@ public class CalendarActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem menuItem) {
-	    switch (menuItem.getItemId()) {
-	    case android.R.id.home:
-	      // ProjectsActivity is my 'home' activity
-	      super. onBackPressed();
-	      return true;
-	    }
-	  return (super.onOptionsItemSelected(menuItem));
+		switch (menuItem.getItemId()) {
+		case android.R.id.home:
+			// ProjectsActivity is my 'home' activity
+			super.onBackPressed();
+			return true;
+		}
+		return (super.onOptionsItemSelected(menuItem));
 	}
 
 }

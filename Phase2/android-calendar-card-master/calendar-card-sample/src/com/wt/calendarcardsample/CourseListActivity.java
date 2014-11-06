@@ -2,7 +2,6 @@ package com.wt.calendarcardsample;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -10,7 +9,6 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,28 +16,24 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.calendarcardsample.backend.Course;
 import com.calendarcardsample.backend.Student;
 
 public class CourseListActivity extends Activity {
 
-	private Student student;
-
 	@SuppressLint("NewApi")
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_courselist);
 
-		Intent intent = this.getIntent();
-		student = (Student) intent.getSerializableExtra("studentKey");
+		// Intent intent = this.getIntent();
+		// student = (Student) intent.getSerializableExtra("studentKey");
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
-		
+
 		final ListView listview = (ListView) findViewById(R.id.listview);
-		
 
 		Set<Course> courses = Student.courseAssignments.keySet();
 
@@ -63,6 +57,7 @@ public class CourseListActivity extends Activity {
 						.withEndAction(new Runnable() {
 							@Override
 							public void run() {
+
 								list.remove(item);
 								adapter.notifyDataSetChanged();
 								view.setAlpha(1);
@@ -97,7 +92,7 @@ public class CourseListActivity extends Activity {
 		}
 
 	}
-	
+
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void setupActionBar() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -107,12 +102,12 @@ public class CourseListActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem menuItem) {
-	    switch (menuItem.getItemId()) {
-	    case android.R.id.home:
-	      // ProjectsActivity is my 'home' activity
-	      super. onBackPressed();
-	      return true;
-	    }
-	  return (super.onOptionsItemSelected(menuItem));
+		switch (menuItem.getItemId()) {
+		case android.R.id.home:
+			// ProjectsActivity is my 'home' activity
+			super.onBackPressed();
+			return true;
+		}
+		return (super.onOptionsItemSelected(menuItem));
 	}
 }

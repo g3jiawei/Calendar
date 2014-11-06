@@ -1,0 +1,283 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:3494), pid=43465, tid=4136241984
+#  Error: ShouldNotReachHere()
+#
+# JRE version: 6.0_32-b05
+# Java VM: Java HotSpot(TM) Server VM (20.7-b02 mixed mode linux-x86 )
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xf6705400):  JavaThread "Unknown thread" [_thread_in_vm, id=43471, stack(0xf6850000,0xf68a1000)]
+
+Stack: [0xf6850000,0xf68a1000],  sp=0xf689f7a0,  free space=317k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x7257e0]  VMError::report_and_die()+0x2b0
+V  [libjvm.so+0x2f791f]  report_should_not_reach_here(char const*, int)+0x3f
+V  [libjvm.so+0x28de4a]  ClassFileParser::parseClassFile(symbolHandle, Handle, Handle, KlassHandle, GrowableArray<Handle>*, symbolHandle&, bool, Thread*)+0x2d9a
+V  [libjvm.so+0x293e91]  ClassLoader::load_classfile(symbolHandle, Thread*)+0x221
+V  [libjvm.so+0x6b4e62]  SystemDictionary::load_instance_class(symbolHandle, Handle, Thread*)+0xf2
+V  [libjvm.so+0x6b2efe]  SystemDictionary::resolve_instance_class_or_null(symbolHandle, Handle, Handle, Thread*)+0x55e
+V  [libjvm.so+0x6b1cc6]  SystemDictionary::resolve_or_null(symbolHandle, Handle, Handle, Thread*)+0x66
+V  [libjvm.so+0x6b1930]  SystemDictionary::resolve_or_fail(symbolHandle, Handle, Handle, bool, Thread*)+0x30
+V  [libjvm.so+0x6b674a]  SystemDictionary::initialize_wk_klass(SystemDictionary::WKID, int, Thread*)+0x6a
+V  [libjvm.so+0x6b67dc]  SystemDictionary::initialize_wk_klasses_until(SystemDictionary::WKID, SystemDictionary::WKID&, Thread*)+0x4c
+V  [libjvm.so+0x6b68a0]  SystemDictionary::initialize_preloaded_classes(Thread*)+0x70
+V  [libjvm.so+0x6b6671]  SystemDictionary::initialize(Thread*)+0xe1
+V  [libjvm.so+0x6fd3da]  Universe::genesis(Thread*)+0x4da
+V  [libjvm.so+0x6fea9f]  universe2_init()+0x1f
+V  [libjvm.so+0x3b9e58]  init_globals()+0x98
+V  [libjvm.so+0x6e64b2]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x242
+V  [libjvm.so+0x414a66]  JNI_CreateJavaVM+0x56
+C  [java+0x305c]
+C  [java+0x1942]  JavaMain+0x72
+C  [libpthread.so.0+0x6d4c]  short+0xcc
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0xf6705400 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=43471, stack(0xf6850000,0xf68a1000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+08048000-08052000 r-xp 00000000 08:01 2396200                            /local/packages/jdk1.6.0_32/bin/java
+08052000-08053000 rwxp 00009000 08:01 2396200                            /local/packages/jdk1.6.0_32/bin/java
+09362000-09383000 rwxp 00000000 00:00 0                                  [heap]
+d2000000-d2021000 rwxp 00000000 00:00 0 
+d2021000-d2100000 ---p 00000000 00:00 0 
+d2136000-d2200000 r-xs 011ad000 08:01 2395515                            /local/packages/adt-bundle-linux-x86_64-20130729/sdk/platforms/android-18/android.jar
+d2200000-d2221000 rwxp 00000000 00:00 0 
+d2221000-d2300000 ---p 00000000 00:00 0 
+d235a000-d235b000 ---p 00000000 00:00 0 
+d235b000-d23db000 rwxp 00000000 00:00 0                                  [stack:43473]
+d23db000-d23dc000 ---p 00000000 00:00 0 
+d23dc000-d2464000 rwxp 00000000 00:00 0                                  [stack:43472]
+d2464000-d247c000 rwxp 00000000 00:00 0 
+d247c000-d2486000 rwxp 00000000 00:00 0 
+d2486000-d2517000 rwxp 00000000 00:00 0 
+d2517000-d251f000 rwxp 00000000 00:00 0 
+d251f000-d2537000 rwxp 00000000 00:00 0 
+d2537000-d2541000 rwxp 00000000 00:00 0 
+d2541000-d25d1000 rwxp 00000000 00:00 0 
+d25d1000-d25d7000 rwxp 00000000 00:00 0 
+d25d7000-d261f000 rwxp 00000000 00:00 0 
+d261f000-d3620000 rwxp 00000000 00:00 0 
+d3620000-d6620000 rwxp 00000000 00:00 0 
+d6620000-d7980000 rwxp 00000000 00:00 0 
+d7980000-e9b80000 rwxp 00000000 00:00 0 
+e9b80000-ea520000 rwxp 00000000 00:00 0 
+ea520000-f3620000 rwxp 00000000 00:00 0 
+f3627000-f3630000 rwxp 00000000 00:00 0 
+f3630000-f36e7000 rwxp 00000000 00:00 0 
+f36e7000-f3927000 rwxp 00000000 00:00 0 
+f3927000-f66e7000 rwxp 00000000 00:00 0 
+f66e7000-f66f6000 r-xp 00000000 08:01 1865198                            /local/packages/jdk1.6.0_32/jre/lib/i386/libzip.so
+f66f6000-f66f8000 rwxp 0000e000 08:01 1865198                            /local/packages/jdk1.6.0_32/jre/lib/i386/libzip.so
+f66f8000-f6700000 rwxs 00000000 08:07 261797                             /tmp/hsperfdata_g3jiawei/43465
+f6700000-f6784000 rwxp 00000000 00:00 0 
+f6784000-f6800000 ---p 00000000 00:00 0 
+f6800000-f680b000 r-xp 00000000 08:01 1062522                            /lib/i386-linux-gnu/libnss_files-2.15.so
+f680b000-f680c000 r-xp 0000a000 08:01 1062522                            /lib/i386-linux-gnu/libnss_files-2.15.so
+f680c000-f680d000 rwxp 0000b000 08:01 1062522                            /lib/i386-linux-gnu/libnss_files-2.15.so
+f680d000-f6817000 r-xp 00000000 08:01 1062534                            /lib/i386-linux-gnu/libnss_nis-2.15.so
+f6817000-f6818000 r-xp 00009000 08:01 1062534                            /lib/i386-linux-gnu/libnss_nis-2.15.so
+f6818000-f6819000 rwxp 0000a000 08:01 1062534                            /lib/i386-linux-gnu/libnss_nis-2.15.so
+f6819000-f6820000 r-xp 00000000 08:01 1062528                            /lib/i386-linux-gnu/libnss_compat-2.15.so
+f6820000-f6821000 r-xp 00006000 08:01 1062528                            /lib/i386-linux-gnu/libnss_compat-2.15.so
+f6821000-f6822000 rwxp 00007000 08:01 1062528                            /lib/i386-linux-gnu/libnss_compat-2.15.so
+f6822000-f6845000 r-xp 00000000 08:01 1865191                            /local/packages/jdk1.6.0_32/jre/lib/i386/libjava.so
+f6845000-f6847000 rwxp 00023000 08:01 1865191                            /local/packages/jdk1.6.0_32/jre/lib/i386/libjava.so
+f6847000-f684e000 r-xp 00000000 08:01 1062533                            /lib/i386-linux-gnu/librt-2.15.so
+f684e000-f684f000 r-xp 00006000 08:01 1062533                            /lib/i386-linux-gnu/librt-2.15.so
+f684f000-f6850000 rwxp 00007000 08:01 1062533                            /lib/i386-linux-gnu/librt-2.15.so
+f6850000-f6853000 ---p 00000000 00:00 0 
+f6853000-f68a1000 rwxp 00000000 00:00 0                                  [stack:43471]
+f68a1000-f68cb000 r-xp 00000000 08:01 1062526                            /lib/i386-linux-gnu/libm-2.15.so
+f68cb000-f68cc000 r-xp 00029000 08:01 1062526                            /lib/i386-linux-gnu/libm-2.15.so
+f68cc000-f68cd000 rwxp 0002a000 08:01 1062526                            /lib/i386-linux-gnu/libm-2.15.so
+f68cd000-f7080000 r-xp 00000000 08:01 2126765                            /local/packages/jdk1.6.0_32/jre/lib/i386/server/libjvm.so
+f7080000-f70d4000 rwxp 007b3000 08:01 2126765                            /local/packages/jdk1.6.0_32/jre/lib/i386/server/libjvm.so
+f70d4000-f74f3000 rwxp 00000000 00:00 0 
+f74f3000-f7697000 r-xp 00000000 08:01 1049171                            /lib/i386-linux-gnu/libc-2.15.so
+f7697000-f7699000 r-xp 001a4000 08:01 1049171                            /lib/i386-linux-gnu/libc-2.15.so
+f7699000-f769a000 rwxp 001a6000 08:01 1049171                            /lib/i386-linux-gnu/libc-2.15.so
+f769a000-f769d000 rwxp 00000000 00:00 0 
+f769d000-f76a0000 r-xp 00000000 08:01 1062507                            /lib/i386-linux-gnu/libdl-2.15.so
+f76a0000-f76a1000 r-xp 00002000 08:01 1062507                            /lib/i386-linux-gnu/libdl-2.15.so
+f76a1000-f76a2000 rwxp 00003000 08:01 1062507                            /lib/i386-linux-gnu/libdl-2.15.so
+f76a2000-f76a9000 r-xp 00000000 08:01 2266652                            /local/packages/jdk1.6.0_32/jre/lib/i386/jli/libjli.so
+f76a9000-f76ab000 rwxp 00006000 08:01 2266652                            /local/packages/jdk1.6.0_32/jre/lib/i386/jli/libjli.so
+f76ab000-f76ac000 rwxp 00000000 00:00 0 
+f76ac000-f76c3000 r-xp 00000000 08:01 1062524                            /lib/i386-linux-gnu/libpthread-2.15.so
+f76c3000-f76c4000 r-xp 00016000 08:01 1062524                            /lib/i386-linux-gnu/libpthread-2.15.so
+f76c4000-f76c5000 rwxp 00017000 08:01 1062524                            /lib/i386-linux-gnu/libpthread-2.15.so
+f76c5000-f76c8000 rwxp 00000000 00:00 0 
+f76c8000-f76c9000 r-xp 00000000 00:00 0 
+f76c9000-f76df000 r-xp 00000000 08:01 1049137                            /lib/i386-linux-gnu/libnsl-2.15.so
+f76df000-f76e0000 r-xp 00015000 08:01 1049137                            /lib/i386-linux-gnu/libnsl-2.15.so
+f76e0000-f76e1000 rwxp 00016000 08:01 1049137                            /lib/i386-linux-gnu/libnsl-2.15.so
+f76e1000-f76e3000 rwxp 00000000 00:00 0 
+f76e3000-f76ee000 r-xp 00000000 08:01 1865206                            /local/packages/jdk1.6.0_32/jre/lib/i386/libverify.so
+f76ee000-f76ef000 rwxp 0000b000 08:01 1865206                            /local/packages/jdk1.6.0_32/jre/lib/i386/libverify.so
+f76ef000-f76f1000 rwxp 00000000 00:00 0 
+f76f1000-f76f2000 r-xp 00000000 00:00 0                                  [vdso]
+f76f2000-f7712000 r-xp 00000000 08:01 1062532                            /lib/i386-linux-gnu/ld-2.15.so
+f7712000-f7713000 r-xp 0001f000 08:01 1062532                            /lib/i386-linux-gnu/ld-2.15.so
+f7713000-f7714000 rwxp 00020000 08:01 1062532                            /lib/i386-linux-gnu/ld-2.15.so
+ffeae000-ffecf000 rwxp 00000000 00:00 0                                  [stack]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=ANSI_X3.4-1968 -Xbootclasspath:/local/packages/adt-bundle-linux-x86_64-20130729/sdk/platforms/android-18/android.jar 
+java_command: com.calendarcardsample.backend.Course
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/h/u13/g3/00/g3jiawei/bin/linux-gnu:/h/u13/g3/00/g3jiawei/bin:/local/bin/X11:/local/bin:/bin:/usr/bin:.
+LD_LIBRARY_PATH=/local/packages/jdk1.6.0_32/jre/lib/i386/server:/local/packages/jdk1.6.0_32/jre/lib/i386:/local/packages/jdk1.6.0_32/jre/../lib/i386
+SHELL=/var/shell/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x726440], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x726440], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x5e0ff0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x5e0ff0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x5e0ff0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x5e0ff0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x5e4250], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGINT: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGQUIT: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+
+
+---------------  S Y S T E M  ---------------
+
+OS:wheezy/sid
+
+uname:Linux 3.13.0-35-generic #62~precise1-Ubuntu SMP Mon Aug 18 14:52:04 UTC 2014 x86_64
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE 0k, NPROC 225, NOFILE 4096, AS infinity
+load average:0.37 0.42 0.37
+
+/proc/meminfo:
+MemTotal:        1898692 kB
+MemFree:          100532 kB
+Buffers:           18820 kB
+Cached:           439892 kB
+SwapCached:         2860 kB
+Active:           931512 kB
+Inactive:         563768 kB
+Active(anon):     695436 kB
+Inactive(anon):   377164 kB
+Active(file):     236076 kB
+Inactive(file):   186604 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       1023996 kB
+SwapFree:         987388 kB
+Dirty:                60 kB
+Writeback:             0 kB
+AnonPages:       1035256 kB
+Mapped:           129068 kB
+Shmem:             35884 kB
+Slab:             193948 kB
+SReclaimable:     170148 kB
+SUnreclaim:        23800 kB
+KernelStack:        2992 kB
+PageTables:        20636 kB
+NFS_Unstable:        100 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1973340 kB
+Committed_AS:    2021328 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      297888 kB
+VmallocChunk:   34359436888 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     32768 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      176704 kB
+DirectMap2M:     1767424 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Pentium(R) Dual-Core  CPU      E6300  @ 2.80GHz
+stepping	: 10
+microcode	: 0xa07
+cpu MHz		: 2800.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm xsave lahf_lm dtherm tpr_shadow vnmi flexpriority
+bogomips	: 5586.07
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Pentium(R) Dual-Core  CPU      E6300  @ 2.80GHz
+stepping	: 10
+microcode	: 0xa07
+cpu MHz		: 2800.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm xsave lahf_lm dtherm tpr_shadow vnmi flexpriority
+bogomips	: 5586.07
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 1898692k(100532k free), swap 1023996k(987388k free)
+
+vm_info: Java HotSpot(TM) Server VM (20.7-b02) for linux-x86 JRE (1.6.0_32-b05), built on Apr  5 2012 12:54:54 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
+time: Wed Nov  5 16:04:01 2014
+elapsed time: 0 seconds
+

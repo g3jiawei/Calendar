@@ -6,20 +6,17 @@ import java.util.Locale;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.calendarcardsample.backend.Student;
 import com.wt.calendarcard.CalendarCard;
 import com.wt.calendarcard.CardGridItem;
 import com.wt.calendarcard.OnCellItemClick;
 
 public class MonthActivity extends Activity {
-	private Student student;
 	
 	private CalendarCard mCalendarCard;
 	private TextView mTextView;
@@ -30,8 +27,8 @@ public class MonthActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_month);
 		
-		Intent intent = getIntent();
-		student = (Student) intent.getSerializableExtra("studentKey");
+		// Intent intent = getIntent();
+		// student = (Student) intent.getSerializableExtra("studentKey");
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true); 

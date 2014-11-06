@@ -51,7 +51,7 @@ public class Assignment implements Serializable{
 		this.time = newTime;
 	}
 
-	public void addTest(String code, String date, String time) {
+	public static void addAssignment(String code, String date, String time) {
 		Assignment assignment = new Assignment(code, date, time);
 		Set<Course> courses = Student.courseAssignments.keySet();
 		for (Course course : courses) {
@@ -62,7 +62,7 @@ public class Assignment implements Serializable{
 		}
 	}
 
-	public void removeCourse(Assignment assignment) {
+	public void removeAssignment(Assignment assignment) {
 		Set<Course> courses = Student.courseAssignments.keySet();
 		for (Course course : courses) {
 			if (course.getCode().equals(code)) {

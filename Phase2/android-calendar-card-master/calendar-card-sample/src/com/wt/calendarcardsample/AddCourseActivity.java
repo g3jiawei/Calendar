@@ -5,30 +5,27 @@ import java.util.Set;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.calendarcardsample.backend.Course;
 import com.calendarcardsample.backend.Student;
 
-
 public class AddCourseActivity extends Activity {
-	private Student student;
-	
 
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_newcourse);
-		
-//		Intent intent = this.getIntent();
-//		student = (Student) intent.getSerializableExtra("studentKey");
-//		course = (Course) intent.getSerializableExtra("courseKey");
+
+		// Intent intent = this.getIntent();
+		// student = (Student) intent.getSerializableExtra("studentKey");
+		// course = (Course) intent.getSerializableExtra("courseKey");
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
@@ -43,23 +40,23 @@ public class AddCourseActivity extends Activity {
 		EditText editCourseCode = (EditText) findViewById(R.id.et_coursecode);
 		EditText editCourseTitle = (EditText) findViewById(R.id.et_coursetitle);
 
-		String courseCode = editCourseCode.getText().toString().toLowerCase();
-		String courseTitle = editCourseTitle.getText().toString().toLowerCase();
+		String courseCode = editCourseCode.getText().toString().toLowerCase().trim();
+		String courseTitle = editCourseTitle.getText().toString().toLowerCase().trim();
 		if (validateInput(courseCode, courseTitle)) {
 			Toast.makeText(getApplicationContext(), "Add a new course",
 					Toast.LENGTH_SHORT).show();
 			Course.addCourse(courseCode, courseTitle);
 			Student.saveAssignments(getApplicationContext());
 			Student.saveTests(getApplicationContext());
-//			Intent intent = new Intent(this, CourseListActivity.class);
-//			Bundle bundle = new Bundle();
-//			bundle.putSerializable("map", );
-//			intent.putExtras(bundle);
-//			startActivity(intent);
+			// Intent intent = new Intent(this, CourseListActivity.class);
+			// Bundle bundle = new Bundle();
+			// bundle.putSerializable("map", );
+			// intent.putExtras(bundle);
+			// startActivity(intent);
 		}
 		editCourseCode.setText(null);
 		editCourseTitle.setText(null);
-        
+
 	}
 
 	// /**
@@ -71,18 +68,17 @@ public class AddCourseActivity extends Activity {
 	// super.onBackPressed();
 	// }
 
-	
-//	private void launchIntentPatientActivity(String healthCardNumber) {
-//		// Goes to the information page for the newly created patient.
-//		Intent intent = new Intent(this, PatientActivity.class);
-//		Bundle bundle = new Bundle();
-//		bundle.putSerializable("nurse", nurse);
-//		intent.putExtras(bundle);
-//		intent.putExtra("patient", healthCardNumber);
-//		
-//		startActivity(intent);
-//		finish();
-//	}
+	// private void launchIntentPatientActivity(String healthCardNumber) {
+	// // Goes to the information page for the newly created patient.
+	// Intent intent = new Intent(this, PatientActivity.class);
+	// Bundle bundle = new Bundle();
+	// bundle.putSerializable("nurse", nurse);
+	// intent.putExtras(bundle);
+	// intent.putExtra("patient", healthCardNumber);
+	//
+	// startActivity(intent);
+	// finish();
+	// }
 	/**
 	 * Check the validity of the input.
 	 */
@@ -96,14 +92,6 @@ public class AddCourseActivity extends Activity {
 		} else if (!code.equals("")) {
 			Set<Course> courses = Student.courseAssignments.keySet();
 			for (Course course : courses) {
-				if (course.getCode().equals(code)) {
-					Toast.makeText(getApplicationContext(), "Course Exists",
-							Toast.LENGTH_SHORT).show();
-					return false;
-				}
-			}
-			Set<Course> courses0 = Student.courseTests.keySet();
-			for (Course course : courses0) {
 				if (course.getCode().equals(code)) {
 					Toast.makeText(getApplicationContext(), "Course Exists",
 							Toast.LENGTH_SHORT).show();

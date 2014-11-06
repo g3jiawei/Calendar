@@ -1,6 +1,8 @@
 package com.calendarcardsample.backend;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Course implements Serializable {
 
@@ -51,8 +53,10 @@ public class Course implements Serializable {
 	}
 
 	public static void saveCourse(Course course) {
-		Student.courseTests.put(course, null);
-		Student.courseAssignments.put(course, null);
+		List<Test> array1 = new ArrayList<Test>();;
+		List<Assignment> array2 = new ArrayList<Assignment>();
+		Student.courseTests.put(course, array1);
+		Student.courseAssignments.put(course, array2);
 	}
     
 }

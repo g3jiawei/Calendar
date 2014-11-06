@@ -9,7 +9,7 @@
     
     <item android:state_checked="true" android:state_enabled="true">
         <shape>
-            <solid android:color="#77DBDBDB"/>
+            <solid android:color="#BDBDBD"/>
         </shape>
     </item>
     

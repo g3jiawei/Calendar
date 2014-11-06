@@ -61,11 +61,11 @@ public class Test implements Serializable {
 		this.to = newTo;
 	}
 
-	public void addTest(String code, String date, String from, String to) {
+	public static void addTest(String code, String date, String from, String to) {
 		Test test = new Test(code, date, from, to);
 		Set<Course> courses = Student.courseTests.keySet();
 		for (Course course : courses) {
-			if (course.getCode() == code) {
+			if (course.getCode().equals(code)) {
 				Student.courseTests.get(course).add(test);
 				break;
 			}
