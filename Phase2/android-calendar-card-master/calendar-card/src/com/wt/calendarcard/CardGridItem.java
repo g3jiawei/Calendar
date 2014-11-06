@@ -8,8 +8,8 @@ public class CardGridItem {
 	private Object data;
 	private boolean enabled = true;
 	private Calendar date;
-	
-	public CardGridItem(Integer dom) { 
+
+	public CardGridItem(Integer dom) {
 		setDayOfMonth(dom);
 	}
 
@@ -48,5 +48,5 @@ public class CardGridItem {
 		this.date = date;
 		return this;
 	}
-	
+
 }
