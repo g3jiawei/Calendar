@@ -1,0 +1,5 @@
+Why are you changing your design (if there is any changes)
+Briefly highlight the problems you have faced and how as a team you managed to solve them.
+Highlight Design Patterns
+- Highlight all Design Patterns you have used in your project.
+- You can also highlight some design patterns in the frameworks you are using.
