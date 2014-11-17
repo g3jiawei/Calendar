@@ -7,6 +7,9 @@ Highlight Design Patterns
 Implementation is focus, but we direct our focus up to the underlying user needs. Our refinement of application design was based on the user needs.
 
 One obvious first encounter of problems is the diversity of skills we have. The communication was intense and constant to find a consenus of exactly
-how we will achieve this prototype/MVP
+how we will achieve this prototype/MVP. The exact distribution of the work is layed out in the documents under Proj-Morning-Team10-repot.
+
+To emphasize our communcation efficiency, we utilized not only github's system messages, but also other social networks. We chose Facebook because it was
+readily available for everyone. On top of that, everyone had each other's phonenumbers for prompt situations.
 
 The design pattern we used is _MVC_.
