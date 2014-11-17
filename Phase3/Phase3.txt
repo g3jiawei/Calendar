@@ -7,4 +7,4 @@ Implementation is focus, but we direct our focus up to the underlying user needs
 
 
 
-The design pattern we used is _______.
+The design pattern we used is _MVC_.
