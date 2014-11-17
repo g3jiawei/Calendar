@@ -6,6 +6,7 @@ Highlight Design Patterns
 
 Implementation is focus, but we direct our focus up to the underlying user needs. Our refinement of application design was based on the user needs.
 
-One obvious first encounter of problems is the diversity of skills we have.
+One obvious first encounter of problems is the diversity of skills we have. The communication was intense and constant to find a consenus of exactly
+how we will achieve this prototype/MVP
 
 The design pattern we used is _MVC_.
