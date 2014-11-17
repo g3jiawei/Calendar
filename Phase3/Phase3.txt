@@ -8,6 +8,7 @@ Implementation is focus, but we direct our focus up to the underlying user needs
 
 One obvious first encounter of problems is the diversity of skills we have. The communication was intense and constant to find a consenus of exactly
 how we will achieve this prototype/MVP. The exact distribution of the work is layed out in the documents under Proj-Morning-Team10-repot.
+After partitioning vigorously, the task distribution problem was solved and we quickly offset into development.
 
 To emphasize our communcation efficiency, we utilized not only github's system messages, but also other social networks. We chose Facebook because it was
 readily available for everyone. On top of that, everyone had each other's phonenumbers for prompt situations.
@@ -16,4 +17,6 @@ and the Interface; requesting information and receiving the reponse. In school, 
 however, in reality it comes to understanding syntax and API. Furthermore, testing was inhibited because of the lack of briding between two components.
 Fortunately, we were able to store information in text files and ran localhost for the purpose of the class demonstration.
 
-The design pattern we used is _MVC_.
+The design pattern we used is _MVC_. MVC stands for ______. (briefly describe what MVC is)....
+(then express what MVC is in OUR POINT OF VIEW) ....
+()
