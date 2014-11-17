@@ -5,17 +5,19 @@ Highlight Design Patterns
 - You can also highlight some design patterns in the frameworks you are using.
 
 Implementation is focus, but we direct our focus up to the underlying user needs. Our refinement of application design was based on the user needs.
+Based on our user stories, we decide to implement on a mobile platform, even when we were more comfortable with the website platform.
 
 One obvious first encounter of problems is the diversity of skills we have. The communication was intense and constant to find a consenus of exactly
 how we will achieve this prototype/MVP. The exact distribution of the work is layed out in the documents under Proj-Morning-Team10-repot.
-After partitioning vigorously, the task distribution problem was solved and we quickly offset into development.
+After partitioning vigorously as a team, the task distribution problem was solved and we quickly offset into development.
 
 To emphasize our communcation efficiency, we utilized not only github's system messages, but also other social networks. We chose Facebook because it was
 readily available for everyone. On top of that, everyone had each other's phonenumbers for prompt situations.
 In terms of development problems, one obstacle is the connection the Backend and Frontend. Specifically, the connection between the database
 and the Interface; requesting information and receiving the reponse. In school, we have acquired theoretical understanding of these components,
 however, in reality it comes to understanding syntax and API. Furthermore, testing was inhibited because of the lack of briding between two components.
-Fortunately, we were able to store information in text files and ran localhost for the purpose of the class demonstration.
+Fortunately, we were able to store information in text files and ran localhost for the purpose of the class demonstration. 
+As a team, we quickly pivotted into this solution, and are still currently working on the connection in order to perfect the product.
 
 The design pattern we used is _MVC_. MVC stands for ______. (briefly describe what MVC is)....
 (then express what MVC is in OUR POINT OF VIEW) ....
