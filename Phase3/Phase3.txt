@@ -11,5 +11,7 @@ how we will achieve this prototype/MVP. The exact distribution of the work is la
 
 To emphasize our communcation efficiency, we utilized not only github's system messages, but also other social networks. We chose Facebook because it was
 readily available for everyone. On top of that, everyone had each other's phonenumbers for prompt situations.
+In terms of development problems, one obstacle is the connection the Backend and Frontend. Specifically, the connection between the database
+and the Interface; requesting information and receiving the reponse. 
 
 The design pattern we used is _MVC_.
