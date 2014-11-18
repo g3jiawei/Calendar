@@ -1,0 +1,4 @@
+We also met some problems with git and github using. The situation was that we had several people working on 
+the classes and interface, which were in the same project file. In this case, when each person tried to commit(push) 
+some changes, there would be some crashes, which means we had to pull first, which would possiblly change our local
+files. 
