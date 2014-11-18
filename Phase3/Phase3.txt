@@ -55,5 +55,5 @@ instance of the object of the class.
 Conclusion: 
 Throughout the whole process, we acquired an important mindset imperceptibly: to not only solve problems as they arrive, but also 
 predict. Furthermore, to build the product agilely, which allowed us to learn at each transition. Once the hurdle was cleared, only 
-more wlll follow, and more lessons will be learned. The process may not be perfect, but it is only being perfect as time passes.
+more will follow, and more lessons will be learned. The process may not be perfect, but it is only being perfect as time passes.
 
