@@ -8,21 +8,21 @@ Implementation is focus, but we direct our focus up to the underlying user needs
 Based on our user stories, we decide to implement on a mobile platform, even when we were more comfortable with the website platform.
 Our consistent approach we applied to solve problems is to first ask your subgroup partner, then ask the whole team if not solved.
 
-One obvious first encounter of problems is the diversity of skills we have. The communication was intense and constant to find a consenus of exactly
-how we will achieve this prototype/MVP. The exact distribution of the work is layed out in the documents under Proj-Morning-Team10-repot.
+One obvious first encounter of problems is the diversity of skills we have. The communication was intense and constant to find a consensus of exactly
+how we will achieve this prototype/MVP. The exact distribution of the work is laid out in the documents under Proj-Morning-Team10-repo.
 After partitioning vigorously as a team, the task distribution problem was solved and we quickly offset into development.
 
-To emphasize our communcation efficiency, we utilized not only github's system messages, but also other social networks. We chose Facebook because it was
+To emphasize our communication efficiency, we utilized not only Github's system messages, but also other social networks. We chose Facebook because it was
 readily available for everyone. On top of that, everyone had each other's phone numbers for prompt situations.
 
-In terms of development problems, one obstacle is the connection the Backend and Frontend. Specifically, the connection between the database
-and the Interface; requesting information and receiving the reponse. In school, we have acquired theoretical understanding of these components,
+In terms of development problems, one obstacle is the connection the Backend and Front end. Specifically, the connection between the database
+and the Interface; requesting information and receiving the response. In school, we have acquired theoretical understanding of these components,
 however, in reality it comes to understanding syntax and API. Furthermore, testing was inhibited because of the lack of briding between two components.
 Fortunately, we were able to store information in text files and ran localhost for the purpose of the class demonstration. 
-As a team, we quickly pivotted into this solution, and are still currently working on the connection in order to perfect the product.
+As a team, we quickly pivoted into this solution, and are still currently working on the connection in order to perfect the product.
 
 Regarding the frameworks we used, (list the problems encountered)...
-The github merge did not work as well as we planned. Pushing remotely onto the repository updated the version of code. However, when 
+The Github merge did not work as well as we planned. Pushing remotely onto the repository updated the version of code. However, when 
 another team member pulled it, bugs were encountered. 
 To solve this issue, (what did we do?) The time of submission was checked to work with the latest solution.
 
@@ -39,5 +39,4 @@ The controller also keeps View and Model separate.
 (relate problems with the MVC PATTERN WE ENCOUNTERed)...
 
 Throughout the whole process, we acquired an important mindset imperceptibly: to not only solve problems as they arrive, but also 
-predict. Furthermore, to build the product agilely, which allowed us to learn at each transition. Once the hurdle was cleared, only more
-wlll follow, and more lessons will be learned. The process may not be perfect, but it is only being perfect as time passes.
+predict. Furthermore, to build the product agilely, which allowed us to learn at each transition. Once the hurdle was cleared, only more wlll follow, and more lessons will be learned. The process may not be perfect, but it is only being perfect as time passes.
