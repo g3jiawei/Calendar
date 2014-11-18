@@ -26,17 +26,23 @@ The Github merge did not work as well as we planned. Pushing remotely onto the r
 another team member pulled it, bugs were encountered. 
 To solve this issue, (what did we do?) The time of submission was checked to work with the latest solution.
 
-The design pattern we used is _MVC_. MVC stands for model-view-controller. 
+We used three design patterns which are:  Model-view-controller, Data Access Object and Singleton Design pattern.
 
-The Model-View-Controller (MVC) design pattern assigns objects in an application one of three roles: model, view, or controller. 
-The pattern defines the way objects communicate with each other. The Model object in MVC encapsulate the data specific to an application 
-and define the logic and computation that manipulate and process that data. The View object in MVC is an object in an application that 
+The Model-View-Controller (MVC) design pattern assigns objects in our application one of three roles: model, view, or controller. 
+The Model object in MVC encapsulates the data specific to our application 
+and defined the logic and computation that manipulated and processed that data. The View object in MVC is an object in an application that 
 users can see. The controller object in MVC controls the data flow into model object and updates the view whenever data changes. 
 The controller also keeps View and Model separate.
 
 (then express what MVC is in OUR POINT OF VIEW) ....
 (list two SPECIFIC encounters with MVC PATTERN)...
 (relate problems with the MVC PATTERN WE ENCOUNTERed)...
+
+We used the Data Access Object Design Pattern (DAO) to separate low level data accessing API or operations from high level operations. The DAO interface defined the standard operations to be performed on a model object(s) and the DAO class implemented the interface. This class was responsible for getting data from the text file containing all the stored information.
+
+
+The Singleton design pattern had a single class which was responsible for creating its own object while making sure that only single object get created. This class provided a way to access its only object which could be accessed directly without a need to create an instance of the object of the class.
+
 
 Throughout the whole process, we acquired an important mindset imperceptibly: to not only solve problems as they arrive, but also 
 predict. Furthermore, to build the product agilely, which allowed us to learn at each transition. Once the hurdle was cleared, only more wlll follow, and more lessons will be learned. The process may not be perfect, but it is only being perfect as time passes.
