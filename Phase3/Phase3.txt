@@ -38,11 +38,17 @@ The controller also keeps View and Model separate.
 (list two SPECIFIC encounters with MVC PATTERN)...
 (relate problems with the MVC PATTERN WE ENCOUNTERed)...
 
-We used the Data Access Object Design Pattern (DAO) to separate low level data accessing API or operations from high level operations. The DAO interface defined the standard operations to be performed on a model object(s) and the DAO class implemented the interface. This class was responsible for getting data from the text file containing all the stored information.
+We used the Data Access Object Design Pattern (DAO) to separate low level data accessing API or operations from high level operations.
+The DAO interface defined the standard operations to be performed on a model object(s) and the DAO class implemented the interface. 
+This class was responsible for getting data from the text file containing all the stored information.
 
 
-The Singleton design pattern had a single class which was responsible for creating its own object while making sure that only single object get created. This class provided a way to access its only object which could be accessed directly without a need to create an instance of the object of the class.
+The Singleton design pattern had a single class which was responsible for creating its own object while making sure that only single 
+object get created. This class provided a way to access its only object which could be accessed directly without a need to create an 
+instance of the object of the class.
 
 
 Throughout the whole process, we acquired an important mindset imperceptibly: to not only solve problems as they arrive, but also 
-predict. Furthermore, to build the product agilely, which allowed us to learn at each transition. Once the hurdle was cleared, only more wlll follow, and more lessons will be learned. The process may not be perfect, but it is only being perfect as time passes.
+predict. Furthermore, to build the product agilely, which allowed us to learn at each transition. Once the hurdle was cleared, only 
+more wlll follow, and more lessons will be learned. The process may not be perfect, but it is only being perfect as time passes.
+
