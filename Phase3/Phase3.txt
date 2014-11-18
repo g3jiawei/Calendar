@@ -28,7 +28,11 @@ To solve this issue, (what did we do?) The time of submission was checked to wor
 
 The design pattern we used is _MVC_. MVC stands for model-view-controller. 
 
-Model–view–controller (MVC) is a software architectural pattern for implementing user interfaces. In MVC, Model represents an object or JAVA POJO carrying data. It can also have logic to update controller if its data changes. View represents the visualization of the data that model contains. Controller acts on both Model and view. Controller controls the data flow into model object and updates the view whenever data changes. It keeps View and Model separate.
+The Model-View-Controller (MVC) design pattern assigns objects in an application one of three roles: model, view, or controller. 
+The pattern defines the way objects communicate with each other. The Model object in MVC encapsulate the data specific to an application 
+and define the logic and computation that manipulate and process that data. The View object in MVC is an object in an application that 
+users can see. The controller object in MVC controls the data flow into model object and updates the view whenever data changes. 
+The controller also keeps View and Model separate.
 
 (then express what MVC is in OUR POINT OF VIEW) ....
 (list two SPECIFIC encounters with MVC PATTERN)...
