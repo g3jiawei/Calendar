@@ -12,7 +12,7 @@ how we will achieve this prototype/MVP. The exact distribution of the work is la
 After partitioning vigorously as a team, the task distribution problem was solved and we quickly offset into development.
 
 To emphasize our communcation efficiency, we utilized not only github's system messages, but also other social networks. We chose Facebook because it was
-readily available for everyone. On top of that, everyone had each other's phonenumbers for prompt situations.
+readily available for everyone. On top of that, everyone had each other's phone numbers for prompt situations.
 In terms of development problems, one obstacle is the connection the Backend and Frontend. Specifically, the connection between the database
 and the Interface; requesting information and receiving the reponse. In school, we have acquired theoretical understanding of these components,
 however, in reality it comes to understanding syntax and API. Furthermore, testing was inhibited because of the lack of briding between two components.
@@ -23,3 +23,8 @@ The design pattern we used is _MVC_. MVC stands for ______. (briefly describe wh
 (then express what MVC is in OUR POINT OF VIEW) ....
 (list two SPECIFIC encounters with MVC PATTERN)...
 (relate problems with the MVC PATTERN WE ENCOUNTERed)...
+
+
+Throughout the whole process, we learned an important mindset, to not only solve problems as they arrive, but also predict. 
+Furthermore, to build the product agilely, which allowed us to learn at each transition. Once the hurdle was cleared, only more
+wlll follow, and more lessons will be learned. The process may not be perfect, but it is only being perfect as time passes.
