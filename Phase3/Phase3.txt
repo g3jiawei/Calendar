@@ -1,13 +1,11 @@
-Why are you changing your design (if there is any changes)
-Briefly highlight the problems you have faced and how as a team you managed to solve them.
-Highlight Design Patterns
-- Highlight all Design Patterns you have used in your project.
-- You can also highlight some design patterns in the frameworks you are using.
+**Phase 3**
 
+Question 1:
 Implementation is focus, but we directed our focus up to the underlying user needs. Our refinement of application design was based on the user needs.
 Based on our user stories, we decided to implement our application on a mobile platform, even when we were more comfortable with building it on a website platform.
 Our consistent approach to solve problems was to first ask our subgroup partner, then ask the whole team if not solved.
 
+Question 2:
 The first problem we encountered as a team was the diversity of skills we all have. The communication was intense and constant to find a consensus of exactly
 how we will achieve this prototype/MVP. The exact distribution of the work is laid out in the documents under Proj-Morning-Team10-repo.
 After partitioning vigorously as a team, the task distribution problem was solved and we quickly offset into development.
@@ -26,6 +24,8 @@ The Github merge did not work as well as we planned. Pushing remotely onto the r
 another team member pulled it, bugs were encountered. 
 To solve this issue, (what did we do?) The time of submission was checked to work with the latest solution.
 
+
+Question 3:
 We used three design patterns which are:  Model-view-controller, Data Access Object and Singleton Design pattern.
 
 The Model-View-Controller (MVC) design pattern assigns objects in our application one of three roles: model, view, or controller. 
@@ -47,7 +47,7 @@ The Singleton design pattern had a single class which was responsible for creati
 object get created. This class provided a way to access its only object which could be accessed directly without a need to create an 
 instance of the object of the class.
 
-
+Conclusion: 
 Throughout the whole process, we acquired an important mindset imperceptibly: to not only solve problems as they arrive, but also 
 predict. Furthermore, to build the product agilely, which allowed us to learn at each transition. Once the hurdle was cleared, only 
 more wlll follow, and more lessons will be learned. The process may not be perfect, but it is only being perfect as time passes.
