@@ -6,6 +6,7 @@ Highlight Design Patterns
 
 Implementation is focus, but we direct our focus up to the underlying user needs. Our refinement of application design was based on the user needs.
 Based on our user stories, we decide to implement on a mobile platform, even when we were more comfortable with the website platform.
+Our consistent approach we applied to solve problems is to first ask your subgroup partner, then ask the whole team if not solved.
 
 One obvious first encounter of problems is the diversity of skills we have. The communication was intense and constant to find a consenus of exactly
 how we will achieve this prototype/MVP. The exact distribution of the work is layed out in the documents under Proj-Morning-Team10-repot.
@@ -23,7 +24,6 @@ The design pattern we used is _MVC_. MVC stands for ______. (briefly describe wh
 (then express what MVC is in OUR POINT OF VIEW) ....
 (list two SPECIFIC encounters with MVC PATTERN)...
 (relate problems with the MVC PATTERN WE ENCOUNTERed)...
-
 
 Throughout the whole process, we learned an important mindset, to not only solve problems as they arrive, but also predict. 
 Furthermore, to build the product agilely, which allowed us to learn at each transition. Once the hurdle was cleared, only more
