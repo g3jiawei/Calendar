@@ -1,4 +1,4 @@
-**Phase 3**
+##Phase 3
 
 Question 1:
 Implementation is focus, but we directed our focus up to the underlying user needs. Our refinement of application design was based on the user needs.
