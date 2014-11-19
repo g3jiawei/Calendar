@@ -3,7 +3,7 @@ Phase 3
 Question 1:
 Implementation is focus, but we directed our focus up to the underlying user needs. Our refinement of application design was based on the user needs.
 Based on our user stories, we decided to implement our application on a mobile platform, even when we were more comfortable with building it on a website platform.
-Our consistent approach to solve problems was to first ask our subgroup partner, then ask the whole team if not solved.
+Our consistent approach to solve problems was to first ask our subgroup partner, and then ask the whole team if not solved.
 
 The only thing we change is the database design. The original design is to have titles for tests, 
 lectures, and assignments. However, we forget to mention the location of these entries. Locations 
