@@ -97,6 +97,10 @@ public class AddTestActivity extends Activity {
 			Toast.makeText(getApplicationContext(),
 					"Invalid date or time input", Toast.LENGTH_SHORT).show();
 			return false;
+		} else if (!checkTime(from, to)) {
+			Toast.makeText(getApplicationContext(), "Invalid test time",
+					Toast.LENGTH_SHORT).show();
+			return false;
 		} else if (!code.equals("")) {
 			Set<Course> courses = Student.courseAssignments.keySet();
 			for (Course course : courses) {
@@ -131,12 +135,27 @@ public class AddTestActivity extends Activity {
 
 		String[] dates = date.split("/");
 		Integer day = Integer.parseInt(dates[0]);
-	Integer month = Integer.parseInt(dates[1]);
-	Integer year = Integer.parseInt(dates[2]);
+		Integer month = Integer.parseInt(dates[1]);
+		Integer year = Integer.parseInt(dates[2]);
 		// Only returns true if both formats match, and the dates are
 		// confirmed to be valid by matchDaysInMonth.
 		return (mdate.matches() && mtime.matches() && matchDaysInMonth(day,
 				month, year));
+	}
+
+	private boolean checkTime(String from, String to) {
+		String[] froms = from.split(":");
+		Integer hours1 = Integer.parseInt(froms[0]);
+		Integer minutes1 = Integer.parseInt(froms[1]);
+		String[] tos = to.split(":");
+		Integer hours2 = Integer.parseInt(tos[0]);
+		Integer minutes2 = Integer.parseInt(tos[1]);
+
+		if (hours1 == hours2) {
+			return (minutes1 < minutes2);
+		} else {
+			return (hours1 < hours2);
+		}
 	}
 
 	/**
