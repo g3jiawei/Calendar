@@ -54,7 +54,7 @@ public class CourseInfoActivity extends Activity {
 				course2 = cur;
 			}
 		}
-		list.add("Welcome to " + course1.getCode() + ":" + course1.getTitle()
+		list.add("Welcome to " + course1.getCode() + ": " + course1.getTitle()
 				+ "!!");
 
 		// assignment
@@ -64,13 +64,13 @@ public class CourseInfoActivity extends Activity {
 		if (course1 != null) {
 			assignments = (ArrayList<Assignment>) Student.courseAssignments
 					.get(course1);
-			if (assignments != null) {
+			if (!assignments.isEmpty()) {
 				for (Assignment assign : assignments) {
 					list.add("On " + assign.getDate() + "    Due at "
 							+ assign.getTime());
 				}
 			} else {
-				list.add("No recent Assignment!");
+				list.add("No recent Assignment!!");
 			}
 		}
 
@@ -80,15 +80,14 @@ public class CourseInfoActivity extends Activity {
 
 		if (course2 != null) {
 			tests = (ArrayList<Test>) Student.courseTests.get(course2);
-			if (tests != null) {
+			if (!tests.isEmpty()) {
 				for (Test test : tests) {
 
 					list.add("On " + test.getDate() + "    From "
 							+ test.getFrom() + " to " + test.getTo());
 				}
 			} else {
-				list.add("wtf");
-				list.add("No recent Test!");
+				list.add("No recent Test!!");
 			}
 		}
 
