@@ -31,21 +31,21 @@ To solve this issue, (what did we do?) The time of submission was checked to wor
 
 
 Question 3:
-We used three design patterns which are:  Model-view-controller, Data Access Object and Singleton Design pattern.
+We used three design patterns:  Model-view-controller, Data Access Object and Singleton Design pattern.
 
 The Model-View-Controller (MVC) design pattern assigns objects in our application one of three roles: model, view, or controller. 
 The Model object in MVC encapsulates the data specific to our application 
-and defined the logic and computation that manipulated and processed that data. The View object in MVC is an object in an application that 
-users can see. The controller object in MVC controls the data flow into model object and updates the view whenever data changes. 
-The controller also keeps View and Model separate.
+and defined the logic and computation that manipulated and processed that data. In our design, we implemetn the model 
+by using the classes saved in "backend" package. The View object in MVC is an object in an application that 
+users can see, so we used xml files in "layout" for this. The controller object in MVC controls the data flow
+into model object and updates the view whenever data changes. The controller also keeps View and Model separate. And 
+this corresponds to the "Activity" classes in "iCalender".
 
-(then express what MVC is in OUR POINT OF VIEW) ....
-(list two SPECIFIC encounters with MVC PATTERN)...
-(relate problems with the MVC PATTERN WE ENCOUNTERed)...
 
 We used the Data Access Object Design Pattern (DAO) to separate low level data accessing API or operations from high level operations.
 The DAO interface defined the standard operations to be performed on a model object(s) and the DAO class implemented the interface. 
-This class was responsible for getting data from the text file containing all the stored information.
+This class was responsible for getting data from the text file containing all the stored information. In the future, we will use
+remote database to access the data that we stored in the text files.
 
 
 The Singleton design pattern had a single class which was responsible for creating its own object while making sure that only single 
