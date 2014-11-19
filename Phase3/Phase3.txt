@@ -7,7 +7,7 @@ Our consistent approach to solve problems was to first ask our subgroup partner,
 
 The only thing we change is the database design. The original design is to have titles for tests, 
 lectures, and assignments. However, we forget to mention the location of these entries. Locations 
-of tests, lectures and drop box (if the course requires) of assignment. We modified the database 
+of tests, lectures and drop box (if the "course" requires) of assignment. We modified the database 
 design in order to meet our product requirements. 
 
 Question 2:
