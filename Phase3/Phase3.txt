@@ -25,10 +25,12 @@ Fortunately, we were able to store the information in text files and ran localho
 As a team, we quickly pivoted into this solution, and are still currently working on the connection in order to perfect the product.
 
 Regarding the frameworks we used, (list the problems encountered)...
-The Github merge did not work as well as we planned. Pushing remotely onto the repository updated the version of code. However, when 
-another team member pulled it, bugs were encountered. 
-To solve this issue, (what did we do?) The time of submission was checked to work with the latest solution.
-
+The Github merge did not work as well as we planned.  The situation was that we had several people working on 
+the classes and interface, which were in the same project file. In this case, when each person tried to commit(push) 
+some changes, there would be some crashes, which means we had to pull first, which would possiblly change our local
+files. This is dangerous. So at that time, instead of pushing to an existed branch, we made new branches when there
+was a crash. At the end, we had too many branches. Finally, we decided we would never have more than one person working
+on the same classes. And when we want to push, we would push to the very specific file instead of the whole package.
 
 Question 3:
 We used three design patterns:  Model-view-controller, Data Access Object and Singleton Design pattern.
