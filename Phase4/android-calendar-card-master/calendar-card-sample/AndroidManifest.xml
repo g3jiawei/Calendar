@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wt.calendarcardsample"
+    android:versionCode="2"
+    android:versionName="1.2" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.wt.calendarcardsample.MainActivity"
+            android:label="@string/title_activity_menu" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.wt.calendarcardsample.MenuActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.wt.calendarcardsample.MonthActivity" />
+        <activity android:name="com.wt.calendarcardsample.CalendarActivity" />
+        <activity
+            android:name="com.wt.calendarcardsample.AddCourseActivity"
+            android:label="@string/title_activity_menu" >
+        </activity>
+        <activity android:name="com.wt.calendarcardsample.AddTestActivity" >
+        </activity>
+        <activity android:name="com.wt.calendarcardsample.AddAssignmentActivity" >
+        </activity>
+        <activity android:name="com.wt.calendarcardsample.CourseListActivity" >
+        </activity>
+        <activity android:name="com.wt.calendarcardsample.CourseInfoActivity"></activity>
+    </application>
+
+</manifest>

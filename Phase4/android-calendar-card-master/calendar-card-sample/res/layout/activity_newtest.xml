@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/tv_course_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/et_course_test"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/label_course_test" />
+
+    <EditText
+        android:id="@+id/et_course_test"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/tv_course_test"
+        android:layout_toRightOf="@+id/tv_course_test"
+        android:background="@drawable/text_border"
+        android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
+        android:hint="@string/hint_course"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="35"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tv_date_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/et_date_test"
+        android:layout_alignBottom="@+id/et_date_test"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/tv_fromtime"
+        android:text="@string/label_date_test" />
+
+    <EditText
+        android:id="@+id/et_date_test"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/et_course_test"
+        android:layout_below="@+id/et_course_test"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/text_border"
+        android:digits="0123456789/"
+        android:ems="10"
+        android:hint="@string/hint_date"
+        android:imeOptions="actionNext"
+        android:inputType="date"
+        android:maxLength="10"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tv_fromtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/et_fromtime"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/et_fromtime"
+        android:text="@string/label_fromtime" />
+
+    <EditText
+        android:id="@+id/et_fromtime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/et_date_test"
+        android:layout_below="@+id/et_date_test"
+        android:layout_marginTop="17dp"
+        android:layout_toRightOf="@+id/tv_course_test"
+        android:background="@drawable/text_border"
+        android:digits="0123456789:"
+        android:ems="10"
+        android:hint="@string/hint_time"
+        android:inputType="time"
+        android:maxLength="12"
+        android:padding="8dp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tv_totime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/tv_fromtime"
+        android:layout_below="@+id/et_fromtime"
+        android:layout_marginTop="16dp"
+        android:text="@string/label_totime" />
+
+    <EditText
+        android:id="@+id/et_totime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/et_date_test"
+        android:layout_alignTop="@+id/tv_totime"
+        android:layout_toRightOf="@+id/tv_course_test"
+        android:background="@drawable/text_border"
+        android:digits="0123456789:"
+        android:ems="10"
+        android:hint="@string/hint_time"
+        android:inputType="time"
+        android:maxLength="12"
+        android:padding="8dp"
+        android:textColor="#000000" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="52dp"
+        android:onClick="saveNewTest"
+        android:text="@string/button_save" />
+
+
+
+</RelativeLayout>
