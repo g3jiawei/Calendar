@@ -53,6 +53,7 @@ public class AddCourseActivity extends Activity {
 		}
 		editCourseCode.setText(null);
 		editCourseTitle.setText(null);
+		
 
 	}
 

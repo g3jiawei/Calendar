@@ -28,6 +28,7 @@ public class CalendarCardPager extends ViewPager {
 	private void init(Context context) {
 		 mCardPagerAdapter = new CardPagerAdapter(context);
 		 setAdapter(mCardPagerAdapter);
+		 
 	}
 	
 	public CardPagerAdapter getCardPagerAdapter() {

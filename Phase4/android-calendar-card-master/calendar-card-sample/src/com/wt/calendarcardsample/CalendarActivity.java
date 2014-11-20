@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.calendarcardsample.backend.Assignment;
+import com.calendarcardsample.backend.Course;
 import com.calendarcardsample.backend.Student;
 import com.calendarcardsample.backend.Test;
 import com.wt.calendarcard.CalendarCardPager;
@@ -27,8 +28,10 @@ import com.wt.calendarcard.OnCellItemClick;
 
 public class CalendarActivity extends Activity {
 	private Student student;
-
+	private Set<String> dates1;
+	private Set<String> dates2;
 	private CalendarCardPager mCalendarCardPager;
+	private String info = "";
 
 	// private TextView mTextView;
 	@SuppressLint({ "NewApi", "SimpleDateFormat" })
@@ -48,16 +51,68 @@ public class CalendarActivity extends Activity {
 		// final String currentDate = df.format(calendar.getTime());
 
 		mCalendarCardPager = (CalendarCardPager) findViewById(R.id.calendarCard1);
+		dates1 = getAllDates1();
+		dates2 = getAllDates2();
+
 		mCalendarCardPager.setOnCellItemClick(new OnCellItemClick() {
-			Set<String> dates = getAllDates();
 
 			@Override
 			public void onCellClick(View v, CardGridItem item) {
-				if (dates != null) {
-					if (dates.contains(new SimpleDateFormat("dd/MM/yyyy",
+
+				if (dates1 != null && dates2 != null) {
+					if (dates1.contains(new SimpleDateFormat("dd/MM/yyyy",
 							Locale.getDefault()).format(item.getDate()
-							.getTime()))) {
-						createDialog(v, item);
+							.getTime()))
+							|| dates2.contains(new SimpleDateFormat(
+									"dd/MM/yyyy", Locale.getDefault())
+									.format(item.getDate().getTime()))) {
+						Set<Course> courses1 = Student.courseAssignments
+								.keySet();
+						info += "Assignment:\n";
+						if (dates1.isEmpty()) {
+							info += "No recent Assignment\n";
+						}
+						for (Course cur : courses1) {
+							if (!Student.courseAssignments.get(cur).isEmpty()) {
+								info += cur.getCode() + ": " + cur.getTitle()
+										+ "\n";
+							}
+							for (Assignment assign : Student.courseAssignments
+									.get(cur)) {
+								if (assign.getDate().equals(
+										new SimpleDateFormat("dd/MM/yyyy",
+												Locale.getDefault())
+												.format(item.getDate()
+														.getTime()))) {
+									info += ("Due at " + assign.getTime())
+											+ "\n";
+								}
+							}
+						}
+						Set<Course> courses2 = Student.courseTests.keySet();
+						info += "Test:\n";
+						if (dates2.isEmpty()) {
+							info += "No recent Test\n";
+						}
+						for (Course cur : courses2) {
+							if (!Student.courseTests.get(cur).isEmpty()) {
+								info += cur.getCode() + ": " + cur.getTitle()
+										+ "\n";
+							}
+							for (Test test : Student.courseTests.get(cur)) {
+								if (test.getDate().equals(
+										new SimpleDateFormat("dd/MM/yyyy",
+												Locale.getDefault())
+												.format(item.getDate()
+														.getTime()))) {
+									info += ("From " + test.getFrom() + " to " + test
+											.getTo()) + "\n";
+								}
+							}
+						}
+
+						createDialog(v, item, info);
+						info = "";
 					} else {
 						createDialog2(v, item);
 					}
@@ -70,16 +125,19 @@ public class CalendarActivity extends Activity {
 		// hiskeylist.setAdapter(adapter);
 	}
 
-	@SuppressLint("NewApi")
-	protected void onResume(Bundle savedInstanceState) {
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
 		super.onResume();
+		dates1 = getAllDates1();
+		dates2 = getAllDates2();
 		// adapter.notifyDataSetChanged();
 	}
 
 	/**
 	 * Creates a dialog box for searching patients by health card number.
 	 * */
-	private void createDialog(View view, CardGridItem item) {
+	private void createDialog(View view, CardGridItem item, String info) {
 		// Uses a view from xml files in order to allow edittext boxes.
 		// LayoutInflater li = LayoutInflater.from(this);
 		// View promptsView =
@@ -97,8 +155,7 @@ public class CalendarActivity extends Activity {
 								new SimpleDateFormat("yyyy-MM-dd", Locale
 										.getDefault()).format(item.getDate()
 										.getTime())))
-				.setMessage("Notification!!!")
-
+				.setMessage(info)
 				.setCancelable(true)
 				// Sets a button on the left for submitting data.
 				.setNegativeButton("Add",
@@ -223,10 +280,9 @@ public class CalendarActivity extends Activity {
 		alertDialog.show();
 	}
 
-	public Set<String> getAllDates() {
+	public Set<String> getAllDates1() {
 		Collection<List<Test>> tests = Student.courseTests.values();
-		Collection<List<Assignment>> assignments = Student.courseAssignments
-				.values();
+
 		Set<String> dates = new HashSet<String>();
 		if (tests != null) {
 			for (List<Test> list_test : tests) {
@@ -237,6 +293,13 @@ public class CalendarActivity extends Activity {
 				}
 			}
 		}
+		return dates;
+	}
+
+	public Set<String> getAllDates2() {
+		Collection<List<Assignment>> assignments = Student.courseAssignments
+				.values();
+		Set<String> dates = new HashSet<String>();
 		if (assignments != null) {
 			for (List<Assignment> list_assignment : assignments) {
 				if (list_assignment != null) {
