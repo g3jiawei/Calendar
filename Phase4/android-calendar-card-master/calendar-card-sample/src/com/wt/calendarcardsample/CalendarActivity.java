@@ -69,14 +69,17 @@ public class CalendarActivity extends Activity {
 						Set<Course> courses1 = Student.courseAssignments
 								.keySet();
 						info += "Assignment:\n";
-						if (dates1.isEmpty()) {
+						if (!dates1.contains(new SimpleDateFormat("dd/MM/yyyy",
+								Locale.getDefault()).format(item.getDate()
+								.getTime()))) {
 							info += "No recent Assignment\n";
 						}
 						for (Course cur : courses1) {
-							if (!Student.courseAssignments.get(cur).isEmpty()) {
-								info += cur.getCode() + ": " + cur.getTitle()
-										+ "\n";
-							}
+							// if
+							// (!Student.courseAssignments.get(cur).isEmpty()) {
+							// info += cur.getCode() + ": " + cur.getTitle()
+							// + "\n";
+							// }
 							for (Assignment assign : Student.courseAssignments
 									.get(cur)) {
 								if (assign.getDate().equals(
@@ -84,29 +87,32 @@ public class CalendarActivity extends Activity {
 												Locale.getDefault())
 												.format(item.getDate()
 														.getTime()))) {
-									info += ("Due at " + assign.getTime())
-											+ "\n";
+									info += (assign.getCode() + " Due at " + assign
+											.getTime()) + "\n";
 								}
 							}
 						}
 						Set<Course> courses2 = Student.courseTests.keySet();
 						info += "Test:\n";
-						if (dates2.isEmpty()) {
+						if (!dates2.contains(new SimpleDateFormat("dd/MM/yyyy",
+								Locale.getDefault()).format(item.getDate()
+								.getTime()))) {
 							info += "No recent Test\n";
 						}
 						for (Course cur : courses2) {
-							if (!Student.courseTests.get(cur).isEmpty()) {
-								info += cur.getCode() + ": " + cur.getTitle()
-										+ "\n";
-							}
+							// if (!Student.courseTests.get(cur).isEmpty()) {
+							// info += cur.getCode() + ": " + cur.getTitle()
+							// + "\n";
+							// }
 							for (Test test : Student.courseTests.get(cur)) {
 								if (test.getDate().equals(
 										new SimpleDateFormat("dd/MM/yyyy",
 												Locale.getDefault())
 												.format(item.getDate()
 														.getTime()))) {
-									info += ("From " + test.getFrom() + " to " + test
-											.getTo()) + "\n";
+									info += (test.getCode() + " From "
+											+ test.getFrom() + " to " + test
+												.getTo()) + "\n";
 								}
 							}
 						}
