@@ -33,6 +33,33 @@
         android:textColor="#000000" />
 
     <TextView
+        android:id="@+id/tv_name_assignment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/et_name_assignment"
+        android:layout_alignBottom="@+id/et_name_assignment"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/label_name_assignment" />
+
+    <EditText
+        android:id="@+id/et_name_assignment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/et_date_assignment"
+        android:layout_below="@+id/et_course_assignment"
+        android:layout_marginTop="23dp"
+        android:layout_toRightOf="@+id/tv_date_assignment"
+        android:background="@drawable/text_border"
+        android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
+        android:ems="10"
+        android:hint="@string/hint_name_assignment"
+        android:inputType="text"
+        android:maxLength="12"
+        android:padding="8dp"
+        android:textColor="#000000" />
+
+    <TextView
         android:id="@+id/tv_date_assignment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,12 +75,13 @@
         android:id="@+id/et_date_assignment"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/et_course_assignment"
+        android:layout_alignParentRight="true"
         android:layout_alignStart="@+id/et_course_assignment"
-        android:layout_below="@id/et_course_assignment"
-        android:layout_marginTop="8dp"
+        android:layout_below="@+id/et_name_assignment"
+        android:layout_marginTop="21dp"
         android:background="@drawable/text_border"
         android:digits="0123456789/"
+        android:ems="10"
         android:hint="@string/hint_date"
         android:imeOptions="actionNext"
         android:inputType="date"
@@ -67,21 +95,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/et_time"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/et_date_assignment"
+        android:layout_alignRight="@+id/tv_name_assignment"
         android:text="@string/label_time" />
 
     <EditText
         android:id="@+id/et_time"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/et_date_assignment"
+        android:layout_alignParentRight="true"
         android:layout_alignStart="@+id/et_date_assignment"
-        android:layout_below="@id/et_date_assignment"
-        android:layout_marginTop="8dp"
+        android:layout_below="@+id/et_date_assignment"
+        android:layout_marginTop="24dp"
         android:background="@drawable/text_border"
         android:digits="0123456789:"
+        android:ems="10"
         android:hint="@string/hint_time"
         android:inputType="time"
         android:maxLength="12"
@@ -89,6 +117,7 @@
         android:textColor="#000000" />
 
     <Button
+        android:id="@+id/button1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

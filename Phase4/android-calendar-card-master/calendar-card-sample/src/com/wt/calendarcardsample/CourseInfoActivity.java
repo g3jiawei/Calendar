@@ -5,11 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-import com.calendarcardsample.backend.Assignment;
-import com.calendarcardsample.backend.Course;
-import com.calendarcardsample.backend.Student;
-import com.calendarcardsample.backend.Test;
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -20,6 +15,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.calendarcardsample.backend.Assignment;
+import com.calendarcardsample.backend.Course;
+import com.calendarcardsample.backend.Student;
+import com.calendarcardsample.backend.Test;
 
 public class CourseInfoActivity extends Activity {
 
@@ -54,8 +54,7 @@ public class CourseInfoActivity extends Activity {
 				course2 = cur;
 			}
 		}
-		list.add("Welcome to " + course1.getCode() + ": " + course1.getTitle()
-				+ "!!");
+		list.add("Welcome to " + course1.getCode() + ": " + course1.getTitle());
 
 		// assignment
 		list.add("Assignments:");
@@ -66,11 +65,11 @@ public class CourseInfoActivity extends Activity {
 					.get(course1);
 			if (!assignments.isEmpty()) {
 				for (Assignment assign : assignments) {
-					list.add("On " + assign.getDate() + "    Due at "
-							+ assign.getTime());
+					list.add(assign.getName() + ":  Due at " + assign.getDate()
+							+ " " + assign.getTime());
 				}
 			} else {
-				list.add("No recent Assignment!!");
+				list.add("No recent Assignment");
 			}
 		}
 
@@ -83,11 +82,12 @@ public class CourseInfoActivity extends Activity {
 			if (!tests.isEmpty()) {
 				for (Test test : tests) {
 
-					list.add("On " + test.getDate() + "    From "
-							+ test.getFrom() + " to " + test.getTo());
+					list.add(test.getName() + ":  " + test.getDate()
+							+ "\nFrom " + test.getFrom() + " to "
+							+ test.getTo() + " at " + test.getLocation());
 				}
 			} else {
-				list.add("No recent Test!!");
+				list.add("No recent Test");
 			}
 		}
 

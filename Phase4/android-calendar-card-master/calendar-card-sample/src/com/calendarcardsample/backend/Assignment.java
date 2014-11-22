@@ -12,6 +12,7 @@ public class Assignment implements Serializable{
 	 */
 	// private int assignmentID;
 	private String code;
+	private String name;
 	private String date;
 	private String time;
 
@@ -19,9 +20,10 @@ public class Assignment implements Serializable{
 	 * Constructs a User by initializing patients to saved data, if it exists.
 	 */
 
-	public Assignment(String code, String date, String time) {
+	public Assignment(String code, String name, String date, String time) {
 		// this.courseID = courseID;
 		this.code = code;
+		this.name = name;
 		this.date = date;
 		this.time = time;
 	}
@@ -33,6 +35,14 @@ public class Assignment implements Serializable{
 
 	public void setCode(String newCode) {
 		this.code = newCode;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String newName) {
+		this.name = newName;
 	}
 
 	public String getDate() {
@@ -51,8 +61,8 @@ public class Assignment implements Serializable{
 		this.time = newTime;
 	}
 
-	public static void addAssignment(String code, String date, String time) {
-		Assignment assignment = new Assignment(code, date, time);
+	public static void addAssignment(String code, String name, String date, String time) {
+		Assignment assignment = new Assignment(code, name, date, time);
 		Set<Course> courses = Student.courseAssignments.keySet();
 		for (Course course : courses) {
 			if (course.getCode().equals(code)) {

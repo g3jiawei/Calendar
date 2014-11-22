@@ -42,14 +42,16 @@ public class AddAssignmentActivity extends Activity {
 	 */
 	public void saveNewAssignment(View view) {
 		EditText editCode = (EditText) findViewById(R.id.et_course_assignment);
+		EditText editName = (EditText) findViewById(R.id.et_name_assignment);
 		EditText editDate = (EditText) findViewById(R.id.et_date_assignment);
 		EditText editTime = (EditText) findViewById(R.id.et_time);
 
-		String code = editCode.getText().toString().toLowerCase().trim();
+		String code = editCode.getText().toString().toUpperCase().trim().replaceAll("\\s+", "");
+		String name = editName.getText().toString();
 		String date = editDate.getText().toString().toLowerCase().trim();
 		String time = editTime.getText().toString().toLowerCase().trim();
 
-		if (validateInput(code, date, time)) {
+		if (validateInput(code, name, date, time)) {
 			// Gets current date from built-in calendar as the default date
 			// for arrival time.
 			// Calendar calendar = Calendar.getInstance();
@@ -57,13 +59,14 @@ public class AddAssignmentActivity extends Activity {
 			// String currentDate = df.format(calendar.getTime());
 			Toast.makeText(getApplicationContext(), "Add a new assignment",
 					Toast.LENGTH_SHORT).show();
-			Assignment.addAssignment(code, date, time);
+			Assignment.addAssignment(code, name, date, time);
 			Student.saveAssignments(getApplicationContext());
 			Student.loadAssignments(getApplicationContext());
-		    finish();
-			
+			finish();
+
 		}
 		editCode.setText(null);
+		editName.setText(null);
 		editDate.setText(null);
 		editTime.setText(null);
 	}
@@ -81,10 +84,12 @@ public class AddAssignmentActivity extends Activity {
 	 *            The patients arrival time.
 	 * @return true iff input is valid.
 	 */
-	private boolean validateInput(String code, String date, String time) {
+	private boolean validateInput(String code, String name, String date,
+			String time) {
 		// Checks if input is missing and creates the corresponding
 		// error message if it is.
-		if (code.equals("") || date.equals("") || time.equals("")) {
+		if (code.equals("") || date.equals("") || time.equals("")
+				|| name.equals("")) {
 			Toast.makeText(getApplicationContext(), "Missing input",
 					Toast.LENGTH_SHORT).show();
 			return false;
@@ -168,7 +173,7 @@ public class AddAssignmentActivity extends Activity {
 		}
 		return true;
 	}
-	 
+
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void setupActionBar() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {

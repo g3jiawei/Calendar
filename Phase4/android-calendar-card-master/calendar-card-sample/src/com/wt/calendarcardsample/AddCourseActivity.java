@@ -40,8 +40,8 @@ public class AddCourseActivity extends Activity {
 		EditText editCourseCode = (EditText) findViewById(R.id.et_coursecode);
 		EditText editCourseTitle = (EditText) findViewById(R.id.et_coursetitle);
 
-		String courseCode = editCourseCode.getText().toString().toLowerCase().trim();
-		String courseTitle = editCourseTitle.getText().toString().toLowerCase().trim();
+		String courseCode = editCourseCode.getText().toString().toUpperCase().trim().replaceAll("\\s+", "");
+		String courseTitle = editCourseTitle.getText().toString();
 		if (validateInput(courseCode, courseTitle)) {
 			Toast.makeText(getApplicationContext(), "Add a new course",
 					Toast.LENGTH_SHORT).show();
@@ -50,6 +50,7 @@ public class AddCourseActivity extends Activity {
 			Student.saveTests(getApplicationContext());
 			Student.loadAssignments(getApplicationContext());
 			Student.loadTests(getApplicationContext());
+			super.onBackPressed();
 		}
 		editCourseCode.setText(null);
 		editCourseTitle.setText(null);

@@ -10,7 +10,12 @@
     
     <string name="label_course_test">Course:</string>
     <string name="label_course_assignment">Course:</string>
-    <string name="hint_course">ex. csc301</string>
+    <string name="hint_course">eg. CSC301</string>
+    
+    <string name="label_name_test">Name</string>
+    <string name="hint_name_test">eg. Midterm</string>
+    <string name="label_name_assignment">Name:</string>
+    <string name="hint_name_assignment">eg. Assignment1</string>
     
     <string name="label_date_test">Date:</string>
     <string name="label_date_assignment">Date:</string>
@@ -21,6 +26,9 @@
     <string name="label_time">Time:</string>
     <string name="label_fromtime">From:</string>
     <string name="label_totime">To:</string>
+    
+    <string name="label_location">Location:</string>
+    <string name="hint_location">eg. EX200</string>
     
     <string name="button_save">Save</string>
  

@@ -41,16 +41,20 @@ public class AddTestActivity extends Activity {
 	 */
 	public void saveNewTest(View view) {
 		EditText editCode = (EditText) findViewById(R.id.et_course_test);
+		EditText editName = (EditText) findViewById(R.id.et_name_test);
 		EditText editDate = (EditText) findViewById(R.id.et_date_test);
 		EditText editFrom = (EditText) findViewById(R.id.et_fromtime);
 		EditText editTo = (EditText) findViewById(R.id.et_totime);
+		EditText editLocation = (EditText) findViewById(R.id.et_location);
 
-		String code = editCode.getText().toString().toLowerCase().trim();
+		String code = editCode.getText().toString().toUpperCase().trim().replaceAll("\\s+", "");
+		String name = editName.getText().toString();
 		String date = editDate.getText().toString().toLowerCase().trim();
 		String from = editFrom.getText().toString().toLowerCase().trim();
 		String to = editTo.getText().toString().toLowerCase().trim();
+		String location = editLocation.getText().toString();
 
-		if (validateInput(code, date, from, to)) {
+		if (validateInput(code, name, date, from, to, location)) {
 			// // Gets current date from built-in calendar as the default date
 			// // for arrival time.
 			// Calendar calendar = Calendar.getInstance();
@@ -58,15 +62,17 @@ public class AddTestActivity extends Activity {
 			// String currentDate = df.format(calendar.getTime());
 			Toast.makeText(getApplicationContext(), "Add a new test",
 					Toast.LENGTH_SHORT).show();
-			Test.addTest(code, date, from, to);
+			Test.addTest(code, name, date, from, to, location);
 			Student.saveTests(getApplicationContext());
 			Student.loadTests(getApplicationContext());
 			finish();
 		}
 		editCode.setText(null);
+		editName.setText(null);
 		editDate.setText(null);
 		editFrom.setText(null);
 		editTo.setText(null);
+		editLocation.setText(null);
 	}
 
 	/**
@@ -82,12 +88,12 @@ public class AddTestActivity extends Activity {
 	 *            The patients arrival time.
 	 * @return true iff input is valid.
 	 */
-	private boolean validateInput(String code, String date, String from,
-			String to) {
+	private boolean validateInput(String code, String name, String date, String from,
+			String to, String location) {
 		// Checks if input is missing and creates the corresponding
 		// error message if it is.
 		if (code.equals("") || date.equals("") || from.equals("")
-				|| to.equals("")) {
+				|| to.equals("") || name.equals("") || location.equals("")) {
 			Toast.makeText(getApplicationContext(), "Missing input",
 					Toast.LENGTH_SHORT).show();
 			return false;
