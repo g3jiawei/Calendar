@@ -27,11 +27,11 @@ import com.wt.calendarcard.CardGridItem;
 import com.wt.calendarcard.OnCellItemClick;
 
 public class CalendarActivity extends Activity {
-	private Student student;
 	private Set<String> dates1;
 	private Set<String> dates2;
 	private CalendarCardPager mCalendarCardPager;
 	private String info = "";
+	private String clickDate;
 
 	// private TextView mTextView;
 	@SuppressLint({ "NewApi", "SimpleDateFormat" })
@@ -58,7 +58,8 @@ public class CalendarActivity extends Activity {
 
 			@Override
 			public void onCellClick(View v, CardGridItem item) {
-
+				clickDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+				.format(item.getDate().getTime());
 				if (dates1 != null && dates2 != null) {
 					if (dates1.contains(new SimpleDateFormat("dd/MM/yyyy",
 							Locale.getDefault()).format(item.getDate()
@@ -324,10 +325,7 @@ public class CalendarActivity extends Activity {
 		// Only sends nurse to the adding patient screen, as only nurses can
 		// access it.
 		Intent intent = new Intent(this, AddAssignmentActivity.class);
-		Bundle bundle = new Bundle();
-		// bundle.putSerializable("nurse", nurse);
-		intent.putExtra("studentKey", student);
-		intent.putExtras(bundle);
+		intent.putExtra("clickDate", clickDate);
 		startActivity(intent);
 	}
 
@@ -335,10 +333,7 @@ public class CalendarActivity extends Activity {
 		// Only sends nurse to the adding patient screen, as only nurses can
 		// access it.
 		Intent intent = new Intent(this, AddTestActivity.class);
-		Bundle bundle = new Bundle();
-		// bundle.putSerializable("nurse", nurse);
-		intent.putExtra("studentKey", student);
-		intent.putExtras(bundle);
+		intent.putExtra("clickDate", clickDate);
 		startActivity(intent);
 	}
 

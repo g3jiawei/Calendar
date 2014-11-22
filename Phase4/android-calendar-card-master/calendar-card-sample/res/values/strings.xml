@@ -12,7 +12,7 @@
     <string name="label_course_assignment">Course:</string>
     <string name="hint_course">eg. CSC301</string>
     
-    <string name="label_name_test">Name</string>
+    <string name="label_name_test">Name:</string>
     <string name="hint_name_test">eg. Midterm</string>
     <string name="label_name_assignment">Name:</string>
     <string name="hint_name_assignment">eg. Assignment1</string>

@@ -1,12 +1,11 @@
 package com.wt.calendarcardsample;
 
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -20,15 +19,16 @@ import com.calendarcardsample.backend.Test;
 
 public class AddTestActivity extends Activity {
 
+	private String date;
+
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_newtest);
 
-		// Intent intent = getIntent();
-		// student = (Student) intent.getSerializableExtra("studentKey");
-		// course = (Course) intent.getSerializableExtra("courseKey");
+		Intent intent = this.getIntent();
+		date = (String) intent.getSerializableExtra("clickDate");
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
@@ -42,14 +42,13 @@ public class AddTestActivity extends Activity {
 	public void saveNewTest(View view) {
 		EditText editCode = (EditText) findViewById(R.id.et_course_test);
 		EditText editName = (EditText) findViewById(R.id.et_name_test);
-		EditText editDate = (EditText) findViewById(R.id.et_date_test);
 		EditText editFrom = (EditText) findViewById(R.id.et_fromtime);
 		EditText editTo = (EditText) findViewById(R.id.et_totime);
 		EditText editLocation = (EditText) findViewById(R.id.et_location);
 
-		String code = editCode.getText().toString().toUpperCase().trim().replaceAll("\\s+", "");
+		String code = editCode.getText().toString().toUpperCase().trim()
+				.replaceAll("\\s+", "");
 		String name = editName.getText().toString();
-		String date = editDate.getText().toString().toLowerCase().trim();
 		String from = editFrom.getText().toString().toLowerCase().trim();
 		String to = editTo.getText().toString().toLowerCase().trim();
 		String location = editLocation.getText().toString();
@@ -69,7 +68,6 @@ public class AddTestActivity extends Activity {
 		}
 		editCode.setText(null);
 		editName.setText(null);
-		editDate.setText(null);
 		editFrom.setText(null);
 		editTo.setText(null);
 		editLocation.setText(null);
@@ -88,21 +86,17 @@ public class AddTestActivity extends Activity {
 	 *            The patients arrival time.
 	 * @return true iff input is valid.
 	 */
-	private boolean validateInput(String code, String name, String date, String from,
-			String to, String location) {
+	private boolean validateInput(String code, String name, String date,
+			String from, String to, String location) {
 		// Checks if input is missing and creates the corresponding
 		// error message if it is.
-		if (code.equals("") || date.equals("") || from.equals("")
-				|| to.equals("") || name.equals("") || location.equals("")) {
+		if (code.equals("") || from.equals("") || to.equals("")
+				|| name.equals("") || location.equals("")) {
 			Toast.makeText(getApplicationContext(), "Missing input",
 					Toast.LENGTH_SHORT).show();
 			return false;
 			// Checks if the date and time inputs are valid and creates the
 			// corresponding error message if it is.
-		} else if (!matchDateTime(date, from) || !matchDateTime(date, to)) {
-			Toast.makeText(getApplicationContext(),
-					"Invalid date or time input", Toast.LENGTH_SHORT).show();
-			return false;
 		} else if (!checkTime(from, to)) {
 			Toast.makeText(getApplicationContext(), "Invalid test time",
 					Toast.LENGTH_SHORT).show();
@@ -121,33 +115,33 @@ public class AddTestActivity extends Activity {
 		return true;
 	}
 
-	/**
-	 * Check the validity of the date and time inputs.
-	 * 
-	 * @param dateOfBirth
-	 *            The patients date of birth.
-	 * @param arrivalTime
-	 *            The patients arrival time.
-	 * @return true iff input is valid.
-	 */
-	private boolean matchDateTime(String date, String time) {
-		// Uses a regular expression to make sure the input follows a
-		// specific format.
-		Pattern pdate = Pattern.compile("(0[1-9]|[12]\\d|3[01])"
-				+ "/(0[1-9]|1[012])" + "/(19\\d\\d|20[01]\\d)");
-		Pattern ptime = Pattern.compile("([01]\\d|2[0-3]):([0-5]\\d)");
-		Matcher mdate = pdate.matcher(date);
-		Matcher mtime = ptime.matcher(time);
-
-		String[] dates = date.split("/");
-		Integer day = Integer.parseInt(dates[0]);
-		Integer month = Integer.parseInt(dates[1]);
-		Integer year = Integer.parseInt(dates[2]);
-		// Only returns true if both formats match, and the dates are
-		// confirmed to be valid by matchDaysInMonth.
-		return (mdate.matches() && mtime.matches() && matchDaysInMonth(day,
-				month, year));
-	}
+	// /**
+	// * Check the validity of the date and time inputs.
+	// *
+	// * @param dateOfBirth
+	// * The patients date of birth.
+	// * @param arrivalTime
+	// * The patients arrival time.
+	// * @return true iff input is valid.
+	// */
+	// private boolean matchDateTime(String date, String time) {
+	// // Uses a regular expression to make sure the input follows a
+	// // specific format.
+	// Pattern pdate = Pattern.compile("(0[1-9]|[12]\\d|3[01])"
+	// + "/(0[1-9]|1[012])" + "/(19\\d\\d|20[01]\\d)");
+	// Pattern ptime = Pattern.compile("([01]\\d|2[0-3]):([0-5]\\d)");
+	// Matcher mdate = pdate.matcher(date);
+	// Matcher mtime = ptime.matcher(time);
+	//
+	// String[] dates = date.split("/");
+	// Integer day = Integer.parseInt(dates[0]);
+	// Integer month = Integer.parseInt(dates[1]);
+	// Integer year = Integer.parseInt(dates[2]);
+	// // Only returns true if both formats match, and the dates are
+	// // confirmed to be valid by matchDaysInMonth.
+	// return (mdate.matches() && mtime.matches() && matchDaysInMonth(day,
+	// month, year));
+	// }
 
 	private boolean checkTime(String from, String to) {
 		String[] froms = from.split(":");
@@ -164,37 +158,38 @@ public class AddTestActivity extends Activity {
 		}
 	}
 
-	/**
-	 * Checks if the patients date of birth input matches calendar dates.
-	 * 
-	 * @param day
-	 *            The day the patient was born on.
-	 * @param month
-	 *            The month the patient was born on.
-	 * @param year
-	 *            The year the patient was born on.
-	 * @return true iff input is valid.
-	 */
-	private boolean matchDaysInMonth(Integer day, Integer month, Integer year) {
-		// Compares inputed date with the calendar dates.
-		if (month == 4 || month == 6 || month == 9 || month == 11) {
-			if (day == 31) {
-				return false;
-			}
-		} else if (month == 2) {
-			// Checks for leap years.
-			if (year % 4 == 0) {
-				if (day > 29) {
-					return false;
-				}
-			} else {
-				if (day > 28) {
-					return false;
-				}
-			}
-		}
-		return true;
-	}
+	// /**
+	// * Checks if the patients date of birth input matches calendar dates.
+	// *
+	// * @param day
+	// * The day the patient was born on.
+	// * @param month
+	// * The month the patient was born on.
+	// * @param year
+	// * The year the patient was born on.
+	// * @return true iff input is valid.
+	// */
+	// private boolean matchDaysInMonth(Integer day, Integer month, Integer
+	// year) {
+	// // Compares inputed date with the calendar dates.
+	// if (month == 4 || month == 6 || month == 9 || month == 11) {
+	// if (day == 31) {
+	// return false;
+	// }
+	// } else if (month == 2) {
+	// // Checks for leap years.
+	// if (year % 4 == 0) {
+	// if (day > 29) {
+	// return false;
+	// }
+	// } else {
+	// if (day > 28) {
+	// return false;
+	// }
+	// }
+	// }
+	// return true;
+	// }
 
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void setupActionBar() {
