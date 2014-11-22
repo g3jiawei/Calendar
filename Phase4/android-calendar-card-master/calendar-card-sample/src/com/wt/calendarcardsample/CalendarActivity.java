@@ -69,7 +69,7 @@ public class CalendarActivity extends Activity {
 						Set<Course> courses1 = Student.courseAssignments
 								.keySet();
 						info += "Assignment:\n";
-						if (!dates1.contains(new SimpleDateFormat("dd/MM/yyyy",
+						if (!dates2.contains(new SimpleDateFormat("dd/MM/yyyy",
 								Locale.getDefault()).format(item.getDate()
 								.getTime()))) {
 							info += "No recent Assignment\n";
@@ -94,7 +94,7 @@ public class CalendarActivity extends Activity {
 						}
 						Set<Course> courses2 = Student.courseTests.keySet();
 						info += "Test:\n";
-						if (!dates2.contains(new SimpleDateFormat("dd/MM/yyyy",
+						if (!dates1.contains(new SimpleDateFormat("dd/MM/yyyy",
 								Locale.getDefault()).format(item.getDate()
 								.getTime()))) {
 							info += "No recent Test\n";
@@ -122,6 +122,9 @@ public class CalendarActivity extends Activity {
 					} else {
 						createDialog2(v, item);
 					}
+
+				} else {
+					createDialog2(v, item);
 				}
 			}
 		});
@@ -170,7 +173,7 @@ public class CalendarActivity extends Activity {
 								// Needs to get context in order to read
 								// values from the text boxes.
 								createChooseEventDialog(dialog);
-								// Checks if a patient exists with the inputted
+								// Checks if a patient exists with the input
 								// health
 								// card number.
 							}
@@ -211,11 +214,7 @@ public class CalendarActivity extends Activity {
 										.getDefault()).format(item.getDate()
 										.getTime())))
 
-				.setMessage(
-						new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-								.format(item.getDate().getTime())
-								+ " No event today.")
-
+				.setMessage(" No event today.")
 				.setCancelable(true)
 				// Sets a button on the left for submitting data.
 				.setNegativeButton("Add",
