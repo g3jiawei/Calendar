@@ -40,7 +40,8 @@ public class AddCourseActivity extends Activity {
 		EditText editCourseCode = (EditText) findViewById(R.id.et_coursecode);
 		EditText editCourseTitle = (EditText) findViewById(R.id.et_coursetitle);
 
-		String courseCode = editCourseCode.getText().toString().toUpperCase().trim().replaceAll("\\s+", "");
+		String courseCode = editCourseCode.getText().toString().toUpperCase()
+				.trim().replaceAll("\\s+", "");
 		String courseTitle = editCourseTitle.getText().toString();
 		if (validateInput(courseCode, courseTitle)) {
 			Toast.makeText(getApplicationContext(), "Add a new course",
@@ -54,30 +55,9 @@ public class AddCourseActivity extends Activity {
 		}
 		editCourseCode.setText(null);
 		editCourseTitle.setText(null);
-		
 
 	}
 
-	// /**
-	// * Attempt to go back to menu page when back button is clicked.
-	// *
-	// * @param view
-	// */
-	// public void backToMenu(View view) {
-	// super.onBackPressed();
-	// }
-
-	// private void launchIntentPatientActivity(String healthCardNumber) {
-	// // Goes to the information page for the newly created patient.
-	// Intent intent = new Intent(this, PatientActivity.class);
-	// Bundle bundle = new Bundle();
-	// bundle.putSerializable("nurse", nurse);
-	// intent.putExtras(bundle);
-	// intent.putExtra("patient", healthCardNumber);
-	//
-	// startActivity(intent);
-	// finish();
-	// }
 	/**
 	 * Check the validity of the input.
 	 */

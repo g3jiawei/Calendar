@@ -1,5 +1,6 @@
 package com.wt.calendarcardsample;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import android.annotation.SuppressLint;
@@ -10,7 +11,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.calendarcardsample.backend.Course;
@@ -20,6 +24,9 @@ import com.calendarcardsample.backend.Test;
 public class AddTestActivity extends Activity {
 
 	private String date;
+	private String code;
+	private Spinner spinner;
+	private ArrayAdapter<String> adapter;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -33,6 +40,31 @@ public class AddTestActivity extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
 
+		Set<Course> courses = Student.courseAssignments.keySet();
+		final ArrayList<String> list = new ArrayList<String>();
+
+		for (Course cur : courses) {
+			list.add(cur.getCode());
+		}
+
+		spinner = (Spinner) findViewById(R.id.Spinner01);
+		adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, list);
+		adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
+		spinner.setAdapter(adapter);
+		spinner.setVisibility(View.VISIBLE);
+
+		spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int pos, long id) {
+				Object item = parent.getItemAtPosition(pos);
+				code = (String) item;
+			}
+
+			public void onNothingSelected(AdapterView<?> parent) {
+			}
+		});
+
 	}
 
 	/**
@@ -40,14 +72,11 @@ public class AddTestActivity extends Activity {
 	 * view The layouts view.
 	 */
 	public void saveNewTest(View view) {
-		EditText editCode = (EditText) findViewById(R.id.et_course_test);
 		EditText editName = (EditText) findViewById(R.id.et_name_test);
 		EditText editFrom = (EditText) findViewById(R.id.et_fromtime);
 		EditText editTo = (EditText) findViewById(R.id.et_totime);
 		EditText editLocation = (EditText) findViewById(R.id.et_location);
 
-		String code = editCode.getText().toString().toUpperCase().trim()
-				.replaceAll("\\s+", "");
 		String name = editName.getText().toString();
 		String from = editFrom.getText().toString().toLowerCase().trim();
 		String to = editTo.getText().toString().toLowerCase().trim();
@@ -59,14 +88,13 @@ public class AddTestActivity extends Activity {
 			// Calendar calendar = Calendar.getInstance();
 			// SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 			// String currentDate = df.format(calendar.getTime());
-			Toast.makeText(getApplicationContext(), "Add a new test",
+			Toast.makeText(getApplicationContext(), "Added a new test",
 					Toast.LENGTH_SHORT).show();
 			Test.addTest(code, name, date, from, to, location);
 			Student.saveTests(getApplicationContext());
 			Student.loadTests(getApplicationContext());
 			finish();
 		}
-		editCode.setText(null);
 		editName.setText(null);
 		editFrom.setText(null);
 		editTo.setText(null);

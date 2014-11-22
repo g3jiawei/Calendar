@@ -17,9 +17,6 @@
     <string name="label_name_assignment">Name:</string>
     <string name="hint_name_assignment">eg. Assignment1</string>
     
-    <string name="label_date_test">Date:</string>
-    <string name="label_date_assignment">Date:</string>
-    <string name="hint_date">DD/MM/YYYY</string>
     
     <string name="hint_time">00:00</string>
     
@@ -44,6 +41,10 @@
     <string name="label_coursecode">Code</string>
     <string name="label_coursetitle">Title</string>
     <string name="hint_coursetitle">eg. Intro to Software Engineer</string>
+    
+    <string name="spinner">Test:</string>
+
+    
 
     
 

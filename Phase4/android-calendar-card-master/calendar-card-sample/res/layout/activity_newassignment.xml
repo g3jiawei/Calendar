@@ -5,46 +5,6 @@
     android:layout_height="fill_parent" >
 
     <TextView
-        android:id="@+id/tv_course_assignment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/et_course_assignment"
-        android:layout_alignLeft="@+id/tv_time"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignStart="@+id/tv_time"
-        android:text="@string/label_course_assignment" />
-
-    <EditText
-        android:id="@+id/et_course_assignment"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/tv_course_assignment"
-        android:layout_toRightOf="@+id/tv_course_assignment"
-        android:background="@drawable/text_border"
-        android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
-        android:hint="@string/hint_course"
-        android:imeOptions="actionNext"
-        android:inputType="text"
-        android:maxLength="35"
-        android:padding="8dp"
-        android:singleLine="true"
-        android:textColor="#000000" />
-
-    <TextView
-        android:id="@+id/tv_name_assignment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/et_name_assignment"
-        android:layout_alignBottom="@+id/et_name_assignment"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="@string/label_name_assignment" />
-
-
-
-    <TextView
         android:id="@+id/tv_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,31 +23,21 @@
         android:onClick="saveNewAssignment"
         android:text="@string/button_save" />
 
-    <EditText
-        android:id="@+id/et_time"
-        android:layout_width="fill_parent"
+    <Spinner
+        android:id="@+id/Spinner01"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/et_course_assignment"
-        android:layout_marginTop="66dp"
+        android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/tv_course_assignment"
-        android:background="@drawable/text_border"
-        android:digits="0123456789:"
-        android:ems="10"
-        android:hint="@string/hint_time"
-        android:inputType="time"
-        android:maxLength="12"
-        android:padding="8dp"
-        android:textColor="#000000" />
+        android:background="@android:drawable/btn_dropdown" />
 
     <EditText
         android:id="@+id/et_name_assignment"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/et_course_assignment"
-        android:layout_marginTop="14dp"
-        android:layout_toRightOf="@+id/tv_course_assignment"
+        android:layout_alignLeft="@+id/Spinner01"
+        android:layout_below="@+id/Spinner01"
+        android:layout_marginTop="20dp"
         android:background="@drawable/text_border"
         android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
         android:ems="10"
@@ -96,5 +46,45 @@
         android:maxLength="35"
         android:padding="8dp"
         android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tv_course_assignment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/tv_time"
+        android:layout_marginTop="15dp"
+        android:text="@string/label_course_assignment" />
+
+    <TextView
+        android:id="@+id/tv_name_assignment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/et_name_assignment"
+        android:layout_alignBottom="@+id/et_name_assignment"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/label_name_assignment" />
+
+    <EditText
+        android:id="@+id/et_time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_name_assignment"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/tv_course_assignment"
+        android:background="@drawable/text_border"
+        android:digits="0123456789:"
+        android:ems="10"
+        android:hint="@string/hint_time"
+        android:inputType="time"
+        android:maxLength="12"
+        android:padding="8dp"
+        android:textColor="#000000" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

@@ -13,6 +13,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -94,6 +96,28 @@ public class CourseInfoActivity extends Activity {
 		final StableArrayAdapter adapter = new StableArrayAdapter(this,
 				android.R.layout.simple_list_item_1, list);
 		listview.setAdapter(adapter);
+		
+		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+			@Override
+			public void onItemClick(AdapterView<?> parent, final View view,
+					int position, long id) {
+				final String item = (String) parent.getItemAtPosition(position);
+				view.animate().setDuration(200).alpha(0)
+						.withEndAction(new Runnable() {
+							@Override
+							public void run() {
+
+								// handleCourse(view);
+								//list.remove(item);
+								adapter.notifyDataSetChanged();
+								view.setAlpha(1);
+							}
+						});
+			}
+
+		});
 	}
 
 	private class StableArrayAdapter extends ArrayAdapter<String> {

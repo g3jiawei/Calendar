@@ -1,5 +1,6 @@
 package com.wt.calendarcardsample;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import android.annotation.SuppressLint;
@@ -10,7 +11,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.calendarcardsample.backend.Assignment;
@@ -18,7 +22,11 @@ import com.calendarcardsample.backend.Course;
 import com.calendarcardsample.backend.Student;
 
 public class AddAssignmentActivity extends Activity {
+
 	private String date;
+	private String code;
+	private Spinner spinner;
+	private ArrayAdapter<String> adapter;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -32,6 +40,31 @@ public class AddAssignmentActivity extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
 
+		Set<Course> courses = Student.courseAssignments.keySet();
+		final ArrayList<String> list = new ArrayList<String>();
+
+		for (Course cur : courses) {
+			list.add(cur.getCode());
+		}
+
+		spinner = (Spinner) findViewById(R.id.Spinner01);
+		adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, list);
+		adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
+		spinner.setAdapter(adapter);
+		spinner.setVisibility(View.VISIBLE);
+
+		spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int pos, long id) {
+				Object item = parent.getItemAtPosition(pos);
+				code = (String) item;
+			}
+
+			public void onNothingSelected(AdapterView<?> parent) {
+			}
+		});
+
 	}
 
 	/**
@@ -39,12 +72,9 @@ public class AddAssignmentActivity extends Activity {
 	 * view The layouts view.
 	 */
 	public void saveNewAssignment(View view) {
-		EditText editCode = (EditText) findViewById(R.id.et_course_assignment);
 		EditText editName = (EditText) findViewById(R.id.et_name_assignment);
 		EditText editTime = (EditText) findViewById(R.id.et_time);
 
-		String code = editCode.getText().toString().toUpperCase().trim()
-				.replaceAll("\\s+", "");
 		String name = editName.getText().toString();
 		String time = editTime.getText().toString().toLowerCase().trim();
 
@@ -54,7 +84,7 @@ public class AddAssignmentActivity extends Activity {
 			// Calendar calendar = Calendar.getInstance();
 			// SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 			// String currentDate = df.format(calendar.getTime());
-			Toast.makeText(getApplicationContext(), "Add a new assignment",
+			Toast.makeText(getApplicationContext(), "Added a new assignment",
 					Toast.LENGTH_SHORT).show();
 			Assignment.addAssignment(code, name, date, time);
 			Student.saveAssignments(getApplicationContext());
@@ -62,24 +92,10 @@ public class AddAssignmentActivity extends Activity {
 			finish();
 
 		}
-		editCode.setText(null);
 		editName.setText(null);
 		editTime.setText(null);
 	}
 
-	/**
-	 * Check the validity of the input.
-	 * 
-	 * @param name
-	 *            The patients name.
-	 * @param dateOfBirth
-	 *            The patients date of birth.
-	 * @param healthCardNumber
-	 *            The patients health card number.
-	 * @param arrivalTime
-	 *            The patients arrival time.
-	 * @return true iff input is valid.
-	 */
 	private boolean validateInput(String code, String name, String date,
 			String time) {
 		// Checks if input is missing and creates the corresponding
@@ -101,67 +117,6 @@ public class AddAssignmentActivity extends Activity {
 		}
 		return true;
 	}
-
-	// /**
-	// * Check the validity of the date and time inputs.
-	// *
-	// * @param dateOfBirth
-	// * The patients date of birth.
-	// * @param arrivalTime
-	// * The patients arrival time.
-	// * @return true iff input is valid.
-	// */
-	// private boolean matchDateTime(String date, String time) {
-	// // Uses a regular expression to make sure the input follows a
-	// // specific format.
-	// Pattern pdate = Pattern.compile("(0[1-9]|[12]\\d|3[01])"
-	// + "/(0[1-9]|1[012])" + "/(19\\d\\d|20[01]\\d)");
-	// Pattern ptime = Pattern.compile("([01]\\d|2[0-3]):([0-5]\\d)");
-	// Matcher mdate = pdate.matcher(date);
-	// Matcher mtime = ptime.matcher(time);
-	//
-	// String[] dates = date.split("/");
-	// Integer day = Integer.parseInt(dates[0]);
-	// Integer month = Integer.parseInt(dates[1]);
-	// Integer year = Integer.parseInt(dates[2]);
-	// // Only returns true if both formats match, and the dates are
-	// // confirmed to be valid by matchDaysInMonth.
-	// return (mdate.matches() && mtime.matches() && matchDaysInMonth(day,
-	// month, year));
-	// }
-
-	// /**
-	// * Checks if the patients date of birth input matches calendar dates.
-	// *
-	// * @param day
-	// * The day the patient was born on.
-	// * @param month
-	// * The month the patient was born on.
-	// * @param year
-	// * The year the patient was born on.
-	// * @return true iff input is valid.
-	// */
-	// private boolean matchDaysInMonth(Integer day, Integer month, Integer
-	// year) {
-	// // Compares inputed date with the calendar dates.
-	// if (month == 4 || month == 6 || month == 9 || month == 11) {
-	// if (day == 31) {
-	// return false;
-	// }
-	// } else if (month == 2) {
-	// // Checks for leap years.
-	// if (year % 4 == 0) {
-	// if (day > 29) {
-	// return false;
-	// }
-	// } else {
-	// if (day > 28) {
-	// return false;
-	// }
-	// }
-	// }
-	// return true;
-	// }
 
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void setupActionBar() {
