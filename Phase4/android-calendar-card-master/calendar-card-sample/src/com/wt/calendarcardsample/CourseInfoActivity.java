@@ -65,8 +65,8 @@ public class CourseInfoActivity extends Activity {
 					.get(course1);
 			if (!assignments.isEmpty()) {
 				for (Assignment assign : assignments) {
-					list.add(assign.getName() + ":  Due at " + assign.getDate()
-							+ " " + assign.getTime());
+					list.add(assign.getName() + ":  Due at  " + assign.getDate()
+							+ "  " + assign.getTime());
 				}
 			} else {
 				list.add("No recent Assignment");
