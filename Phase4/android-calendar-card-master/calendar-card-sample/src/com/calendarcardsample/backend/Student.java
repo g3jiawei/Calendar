@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import android.content.Context;
 
@@ -27,8 +28,10 @@ public class Student implements Serializable {
 	List<Test> tests = new ArrayList<Test>();
 	List<Assignment> assignments = new ArrayList<Assignment>();
 	List<String> courses;
-	public static Map<Course, List<Test>> courseTests;
+	public static Map<Course, List<Test>> courseTests1;
+	public static Map<Course, List<Assignment>> courseAssignments1;
 	public static Map<Course, List<Assignment>> courseAssignments;
+	public static Map<Course, List<Test>> courseTests;
 
 	/**
 	 * Constructs a User by initializing patients to saved data, if it exists.
@@ -36,8 +39,11 @@ public class Student implements Serializable {
 
 	public Student(Context fileContext) {
 
-		courseTests = new HashMap<Course, List<Test>>();
-		courseAssignments = new HashMap<Course, List<Assignment>>();
+		courseTests1 = new HashMap<Course, List<Test>>();
+		courseAssignments1 = new HashMap<Course, List<Assignment>>();
+		courseAssignments = new TreeMap<Course, List<Assignment>>(
+				courseAssignments1);
+		courseTests = new TreeMap<Course, List<Test>>(courseTests1);
 
 		File file1 = fileContext.getFileStreamPath("file1");
 		File file2 = fileContext.getFileStreamPath("file2");
