@@ -1,4 +1,4 @@
-CSC301 Project Server API (Phase 2)
+CSC301 Project Server API (Phase 4)
 =========================
 URL: http://dev-firmament-772.appspot.com/index.php/api/
 
