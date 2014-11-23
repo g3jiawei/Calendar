@@ -4,6 +4,8 @@ URL: http://dev-firmament-772.appspot.com/index.php/api/
 
 Basically, for the all 4 classes we focus on currently(course, lecture, assignment and lecture_time), we get to create, fetch(get), modify and delete them, plus another method to get the next assignment for a lecture. Use different http methods (GET, PUT, POST, DELETE) to perform different tasks. Be carefull to the URI and the parameters.
 
+When sending POST request, use form content type(application/x-www-form-urlencoded).
+
 In all responses I included success, error_code and error. But you might not need to use the error_code. I'm just thinking it might be useful in the future.
 
 Responses are in JSON format.

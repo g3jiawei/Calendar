@@ -1,6 +1,6 @@
 <?php
 require(APPPATH . 'libraries/REST_Controller.php');
-
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 class Calendar extends REST_Controller {
   function courses_get() {
     $result_array = $this->course_model->getAll();
