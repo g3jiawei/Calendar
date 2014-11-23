@@ -6,11 +6,14 @@ import java.util.Set;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -116,6 +119,16 @@ public class AddAssignmentActivity extends Activity {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		im.hideSoftInputFromWindow(getCurrentFocus()
+				.getApplicationWindowToken(),
+				InputMethodManager.HIDE_NOT_ALWAYS);
+		return super.onTouchEvent(event);
+
 	}
 
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)

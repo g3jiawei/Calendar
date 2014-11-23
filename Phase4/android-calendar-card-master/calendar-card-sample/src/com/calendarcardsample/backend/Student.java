@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
 import android.content.Context;
 
@@ -41,9 +40,9 @@ public class Student implements Serializable {
 
 		courseTests = new HashMap<Course, List<Test>>();
 		courseAssignments = new HashMap<Course, List<Assignment>>();
-		// courseAssignments = new TreeMap<Course, List<Assignment>>(
-		// courseAssignments1);
-		// courseTests = new TreeMap<Course, List<Test>>(courseTests1);
+//		courseAssignments = new TreeMap<Course, List<Assignment>>(
+//				courseAssignments1);
+//		courseTests = new TreeMap<Course, List<Test>>(courseTests1);
 
 		File file1 = fileContext.getFileStreamPath("file1");
 		File file2 = fileContext.getFileStreamPath("file2");
@@ -107,7 +106,7 @@ public class Student implements Serializable {
 			FileInputStream fis = fileContext.openFileInput(file1);
 			ObjectInputStream in = new ObjectInputStream(fis);
 			try {
-				courseTests = (Map<Course, List<Test>>) in.readObject();
+				courseTests = (HashMap<Course, List<Test>>) in.readObject();
 				in.close();
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
