@@ -31,6 +31,7 @@ Sturcture for the objects:
     * date (date) ... the date of the test
     * start (time) ... the starting time of the test
     * end (time) ... the ending time of the test
+    * location (string) ... the location of the test
 * lecture_time
     * id (int) ...id
     * lecture_id (int) ... the lecture that the time belongs to
