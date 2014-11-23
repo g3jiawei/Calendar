@@ -24,6 +24,13 @@ Sturcture for the objects:
     * lecture_id (int) ... the lecture that the assignment belongs to
     * name (string) ... name, such as "Assignment 1"
     * deadline (datetime) ... the deadline which contains both date and time
+* test
+    * id (int) ... id
+    * lecture_id (int) ... the lecture that the assignment belongs to
+    * name (string) ... name, such as "Assignment 1"
+    * date (date) ... the date of the test
+    * start (time) ... the starting time of the test
+    * end (time) ... the ending time of the test
 * lecture_time
     * id (int) ...id
     * lecture_id (int) ... the lecture that the time belongs to
@@ -40,7 +47,7 @@ Format of deadline in assignment is "Y-m-d H:i:s", for example, "2014-11-03 00:0
 
 dow in lecture_time is just an int.
 
-Format for start and end in lecture_time is "H:i", for example, "14:00".
+Format for start and end in lecture_time and test is "H:i:s", for example, "14:00:00". However, "H:i" will also be accepted as input parameters.
 
 
 The api starts below.
@@ -188,6 +195,60 @@ Calendar
         * success (boolean) ... success or not
         * error_code (int) ... error code
         * error (string) ... error_message
+
+
+###test
+* **calendar/tests[GET]**
+    * Get all tests for a lecture
+    * Parameters
+        * lecture_id (int) ... lecture id
+    * Response
+        * success (boolean) ... success or not
+        * error_code (int) ... error code
+        * error (string) ... error_message
+        * tests (array of objects) ... the tests
+* **calendar/test/{id}[GET]**
+    * Get test by its id
+    * no parameters
+    * Response
+        * success (boolean) ... success or not
+        * error_code (int) ... error code
+        * error (string) ... error_message
+        * test (object) ... the test
+* **calendar/test[PUT]**
+    * Create a new test
+    * Parameters
+        * lecure_id (int) ... the lecture it belongs to
+        * name (string) ... its name
+        * date (date) ... its date
+        * start (time) ... its starting time
+        * end (time) ... its ending time
+        * location (string) ... its location
+    * Response
+        * success (boolean) ... success or not
+        * error_code (int) ... error code
+        * error (string) ... error_message
+* **calendar/test/{id}[POST]**
+    * Modify an test
+    * Parameters
+        * lecure_id (int) ... the lecture it belongs to
+        * name (string) ... its name
+        * date (date) ... its date
+        * start (time) ... its starting time
+        * end (time) ... its ending time
+        * location (string) ... its location
+    * Response
+        * success (boolean) ... success or not
+        * error_code (int) ... error code
+        * error (string) ... error_message
+* **calendar/test/{id}[DELETE]**
+    * Delete an test
+    * no parameters
+    * Response
+        * success (boolean) ... success or not
+        * error_code (int) ... error code
+        * error (string) ... error_message
+
 
 ###lecture_time
 * **calendar/lecture_times[GET]**

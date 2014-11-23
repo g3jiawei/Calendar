@@ -181,7 +181,7 @@ class Calendar extends REST_Controller {
     $this->load->library('form_validation');
     $this->form_validation->set_rules('lecture_id', 'Lecture id', 'required|numeric');
     $this->form_validation->set_rules('name', 'Assignment Name', 'required');
-    $this->form_validation->set_rules('deadline', 'Assignment deadline', 'required');
+    //$this->form_validation->set_rules('deadline', 'Assignment deadline', 'required');
     if($this->form_validation->run()){
       $assignment = $this->assignment_model->createNew($_POST['lecture_id'], $_POST['name'], $_POST['deadline']);
       $this->assignment_model->insert($assignment);
@@ -200,11 +200,11 @@ class Calendar extends REST_Controller {
     $this->load->library('form_validation');
     $this->form_validation->set_rules('lecture_id', 'Lecture id', 'required|numeric');
     $this->form_validation->set_rules('name', 'Day of the Week', 'required');
-    $this->form_validation->set_rules('deadline', 'deadlineing time', 'required');
+    //$this->form_validation->set_rules('deadline', 'deadlineing time', 'required');
     if($this->form_validation->run()){
       $assignment = $this->assignment_model->createNew($_POST['lecture_id'], $_POST['name'], $_POST['deadline']);
       $assignment->id = $id;
-      $this->course_model->update($assignment);
+      $this->assignment_model->update($assignment);
       $arr['success'] = true;
       $arr['error'] = 'success';
       $arr['error_code'] = 0;
@@ -223,6 +223,83 @@ class Calendar extends REST_Controller {
     $arr['error_code'] = 0;
     $this->response($arr);
   }
+  
+  function tests_get(){
+  	if(isset($_GET['lecture_id'])){
+      $arr['tests'] = $this->test_model->getAll($_GET['lecture_id']);
+      $arr['success'] = true;
+      $arr['error'] = 'success';
+      $arr['error_code'] = 0;
+    }else{
+      $arr['success'] = false;
+      $arr['error'] = 'lecture_id is required';
+      $arr['error_code'] = 1;
+    }
+    $this->response($arr);
+  }
+  
+  function test_get($id){
+    $result = $this->test_model->get($id);
+    if(!is_null($result)){
+      $arr['success'] = true;
+      $arr['error_code'] = 0;
+      $arr['error'] = 'success';
+      $arr['test'] = $result;
+    }else{
+      $arr['success'] = false;
+      $arr['error_code'] = 1;
+      $arr['error'] = 'No such test';
+    }
+    $this->response($arr);
+  }
+  
+  function test_put(){
+    $_POST = $this->put();
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('lecture_id', 'Lecture id', 'required|numeric');
+    $this->form_validation->set_rules('name', 'test Name', 'required');
+    if($this->form_validation->run()){
+      $test = $this->test_model->createNew($_POST['lecture_id'], $_POST['name'], $_POST['date'], $_POST['start'], $_POST['end'], $_POST['location']);
+      $this->test_model->insert($test);
+      $arr['success'] = true;
+      $arr['error'] = 'success';
+      $arr['error_code'] = 0;
+    }else{
+      $arr['success'] = false;
+      $arr['error'] = "Parameters are not valid.";
+      $arr['error_code'] = 1;
+    }
+    $this->response($arr);
+  }
+  
+  function test_post($id){
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('lecture_id', 'Lecture id', 'required|numeric');
+    $this->form_validation->set_rules('name', 'Day of the Week', 'required');
+    if($this->form_validation->run()){
+      $test = $this->test_model->createNew($_POST['lecture_id'], $_POST['name'], $_POST['date'], $_POST['start'], $_POST['end'], $_POST['location']);
+      $test->id = $id;
+      $this->test_model->update($test);
+      $arr['success'] = true;
+      $arr['error'] = 'success';
+      $arr['error_code'] = 0;
+    }else{
+      $arr['success'] = false;
+      $arr['error'] = "Parameters are not valid.";
+      $arr['error_code'] = 1;
+    }
+    $this->response($arr);
+  }
+  
+  function test_delete($id){
+    $this->test_model->delete($id);
+    $arr['success'] = true;
+    $arr['error'] = 'success';
+    $arr['error_code'] = 0;
+    $this->response($arr);
+  }
+  
+  
   
   function lecture_times_get(){
   	if(isset($_GET['lecture_id'])){
