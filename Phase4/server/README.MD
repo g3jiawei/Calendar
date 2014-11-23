@@ -2,4 +2,4 @@ For the server implementation we use PHP, with codeigniter framework and [chrisk
 
 Mysql for the database.
 
-See the [API](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/server/Phase2/server/api.md).
+See the [API](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/server/Phase4/server/api.md).
