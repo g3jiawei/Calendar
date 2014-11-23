@@ -1,6 +1,6 @@
 CSC301 Project Server API (Phase 2)
 =========================
-URL: {BASE_URL}/index.php/api/
+URL: http://dev-firmament-772.appspot.com/index.php/api/
 
 Basically, for the all 4 classes we focus on currently(course, lecture, assignment and lecture_time), we get to create, fetch(get), modify and delete them, plus another method to get the next assignment for a lecture. Use different http methods (GET, PUT, POST, DELETE) to perform different tasks. Be carefull to the URI and the parameters.
 
