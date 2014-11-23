@@ -38,6 +38,10 @@ Sturcture for the objects:
     * start (time) ... the time the lecture start. such as "14:00"
     * end (time) ... the time the lecture ends.
 
+Database EERDiagram
+![Database EERDiagram]
+(https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/Phase4/server/database/EER%20Diagram.png)
+
 When creating an object you need to provide those fields (except the id which will generate automatically). For the cases that ids of other classes are required, you need to know those ids first.
 
 About time format:
