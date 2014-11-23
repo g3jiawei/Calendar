@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,18 +19,27 @@ import android.widget.Toast;
 import com.calendarcardsample.backend.Course;
 import com.calendarcardsample.backend.Student;
 
-public class AddCourseActivity extends Activity {
+public class UpdateCourseActivity extends Activity {
+
+	private String courseCode;
+	private Course course;
 
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_newcourse);
+		setContentView(R.layout.activity_updatecourse);
 
-		// Intent intent = this.getIntent();
-		// student = (Student) intent.getSerializableExtra("studentKey");
-		// course = (Course) intent.getSerializableExtra("courseKey");
+		Intent intent = this.getIntent();
+		courseCode = (String) intent.getSerializableExtra("courseKey");
 
+		Set<Course> courses = Student.courseAssignments.keySet();
+		for (Course cur : courses) {
+			if (cur.getCode().equals(courseCode)) {
+				course = cur;
+				break;
+			}
+		}
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
 
@@ -47,6 +57,11 @@ public class AddCourseActivity extends Activity {
 				.trim().replaceAll("\\s+", "");
 		String courseTitle = editCourseTitle.getText().toString();
 		if (validateInput(courseCode, courseTitle)) {
+			Course.removeCourse(course);
+			Student.saveAssignments(getApplicationContext());
+			Student.saveTests(getApplicationContext());
+			Student.loadAssignments(getApplicationContext());
+			Student.loadTests(getApplicationContext());
 			Toast.makeText(getApplicationContext(), "Add a new course",
 					Toast.LENGTH_SHORT).show();
 			Course.addCourse(courseCode, courseTitle);
@@ -73,17 +88,19 @@ public class AddCourseActivity extends Activity {
 			return false;
 		} else if (!code.equals("")) {
 			Set<Course> courses = Student.courseAssignments.keySet();
-			for (Course course : courses) {
-				if (course.getCode().equals(code)) {
-					Toast.makeText(getApplicationContext(), "Course Exists",
-							Toast.LENGTH_SHORT).show();
-					return false;
+			for (Course course1 : courses) {
+				if (!code.equals(course.getCode())) {
+					if (course1.getCode().equals(code)) {
+						Toast.makeText(getApplicationContext(),
+								"Course Exists", Toast.LENGTH_SHORT).show();
+						return false;
+					}
 				}
 			}
 		}
 		return true;
 	}
-    
+
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -93,7 +110,7 @@ public class AddCourseActivity extends Activity {
 		return super.onTouchEvent(event);
 
 	}
-	
+
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void setupActionBar() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {

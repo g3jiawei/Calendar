@@ -58,8 +58,8 @@ public class CalendarActivity extends Activity {
 
 			@Override
 			public void onCellClick(View v, CardGridItem item) {
-				clickDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-				.format(item.getDate().getTime());
+				clickDate = new SimpleDateFormat("dd/MM/yyyy", Locale
+						.getDefault()).format(item.getDate().getTime());
 				if (dates1 != null && dates2 != null) {
 					if (dates1.contains(new SimpleDateFormat("dd/MM/yyyy",
 							Locale.getDefault()).format(item.getDate()
@@ -73,14 +73,9 @@ public class CalendarActivity extends Activity {
 						if (!dates2.contains(new SimpleDateFormat("dd/MM/yyyy",
 								Locale.getDefault()).format(item.getDate()
 								.getTime()))) {
-							info += "No recent Assignment\n";
+							info += "No Assignment Today\n";
 						}
 						for (Course cur : courses1) {
-							// if
-							// (!Student.courseAssignments.get(cur).isEmpty()) {
-							// info += cur.getCode() + ": " + cur.getTitle()
-							// + "\n";
-							// }
 							for (Assignment assign : Student.courseAssignments
 									.get(cur)) {
 								if (assign.getDate().equals(
@@ -99,13 +94,9 @@ public class CalendarActivity extends Activity {
 						if (!dates1.contains(new SimpleDateFormat("dd/MM/yyyy",
 								Locale.getDefault()).format(item.getDate()
 								.getTime()))) {
-							info += "No recent Test\n";
+							info += "No Test Today\n";
 						}
 						for (Course cur : courses2) {
-							// if (!Student.courseTests.get(cur).isEmpty()) {
-							// info += cur.getCode() + ": " + cur.getTitle()
-							// + "\n";
-							// }
 							for (Test test : Student.courseTests.get(cur)) {
 								if (test.getDate().equals(
 										new SimpleDateFormat("dd/MM/yyyy",

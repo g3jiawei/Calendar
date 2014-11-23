@@ -1,19 +1,25 @@
 package com.wt.calendarcardsample;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.calendarcardsample.backend.Student;
 
 public class MenuActivity extends Activity {
 
 	private Student student;
+	private String connect;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -21,15 +27,43 @@ public class MenuActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 
-		// Intent intent = getIntent();
-		// student = (Student) intent.getSerializableExtra("studentKey");
+		Intent intent = getIntent();
+		connect = (String) intent.getSerializableExtra("connect");
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
+		
+		String url = "http://dev-firmament-772.appspot.com/index.php/api/calendar/courses";
+		// 向服务器端提交参数
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("var1", "123");
+		map.put("var2", "234");
+		try {
+			connect = Student.sendGetRequest(url, map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			connect = "error";
+			e.printStackTrace();
+		}
+
+		new CountDownTimer(5000, 1000) {// CountDownTimer(edittext1.getText()+edittext2.getText())
+											// also parse it to long
+			TextView mTextField = (TextView) findViewById(R.id.timer1);
+
+			public void onTick(long millisUntilFinished) {
+				mTextField.setText("Loading: " + millisUntilFinished
+						/ 1000);
+				// here you can have your logic to set text to edittext
+			}
+
+			public void onFinish() {
+				mTextField.setText("info is :"+connect);
+			}
+		}.start();
 	}
 
 	public void handleSample1(View v) {
-		Intent intent = new Intent(this, MonthActivity.class);
+		Intent intent = new Intent(this, CountDownActivity.class);
 		// intent.putExtra("studentKey", student);
 		startActivity(intent);
 	}
@@ -48,15 +82,6 @@ public class MenuActivity extends Activity {
 
 	// student = (Student) intent.getSerializableExtra("studentKey");
 	// course = (Course) intent.getSerializableExtra("courseKey");}
-
-	// public String getCurrentCourses(View view) {
-	// String str = "";
-	// for (Course cur : student.getPersonalEvents()) {
-	// str += cur.getCode() + "\n";
-	// }
-	//
-	// return str;
-	// }
 
 	/**
 	 * Attempt to go back to menu page when back button is clicked.

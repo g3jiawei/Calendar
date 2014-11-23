@@ -1,5 +1,8 @@
 package com.wt.calendarcardsample;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.calendarcardsample.backend.Student;
 
 import android.app.Activity;
@@ -9,7 +12,7 @@ import android.view.Window;
 
 public class MainActivity extends Activity {
 
-	private Student student;
+	private String connect;
 
 	/** The amount of time this activity will display the splash screen. */
 	protected int SPLASH_TIME = 1000;
@@ -20,9 +23,22 @@ public class MainActivity extends Activity {
 		// Sets main layout as a splash screen.
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_splash);
+		
+		new Student(getApplicationContext());
+		String url = "http://dev-firmament-772.appspot.com/index.php/api/calendar/courses";
+		// 向服务器端提交参数
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("var1", "123");
+		map.put("var2", "234");
+		try {
+			connect = Student.sendGetRequest(url, map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		displaySplashScreen();
 
-		student = new Student(getApplicationContext());
 	}
 
 	/**
@@ -40,8 +56,9 @@ public class MainActivity extends Activity {
 						logoTimer = logoTimer + 100;
 					}
 					// Calls the activity from manifest.xml
-					Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
-					intent.putExtra("studentKey", student);
+					Intent intent = new Intent(getApplicationContext(),
+							MenuActivity.class);
+					intent.putExtra("connect", connect);
 					startActivity(intent);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block

@@ -4,8 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Course implements Serializable {
-
+public class Course implements Serializable, Comparable<Course> {
 
 	private static final long serialVersionUID = 6030099844342423834L;
 	/**
@@ -47,16 +46,24 @@ public class Course implements Serializable {
 		saveCourse(course);
 	}
 
-	public void removeCourse(Course course) {
+	public static void removeCourse(Course course) {
 		Student.courseAssignments.remove(course);
 		Student.courseTests.remove(course);
 	}
 
 	public static void saveCourse(Course course) {
-		List<Test> array1 = new ArrayList<Test>();;
+		List<Test> array1 = new ArrayList<Test>();
+		;
 		List<Assignment> array2 = new ArrayList<Assignment>();
 		Student.courseTests.put(course, array1);
 		Student.courseAssignments.put(course, array2);
 	}
-    
+
+	@Override
+	public int compareTo(Course course) {
+		// TODO Auto-generated method stub
+		int last = this.code.compareTo(course.code);
+		return last;
+	}
+
 }

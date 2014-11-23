@@ -1,7 +1,9 @@
 package com.wt.calendarcardsample;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+import java.util.TreeMap;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -30,6 +32,7 @@ public class AddTestActivity extends Activity {
 	private String code;
 	private Spinner spinner;
 	private ArrayAdapter<String> adapter;
+	private TreeMap<Course, List<Test>> courseTestsTree;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -43,7 +46,9 @@ public class AddTestActivity extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
 
-		Set<Course> courses = Student.courseAssignments.keySet();
+		courseTestsTree = new TreeMap<Course, List<Test>>(Student.courseTests);
+		Set<Course> courses = courseTestsTree.keySet();
+
 		final ArrayList<String> list = new ArrayList<String>();
 
 		for (Course cur : courses) {

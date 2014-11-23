@@ -48,12 +48,14 @@ public class CourseInfoActivity extends Activity {
 		for (Course cur : courses1) {
 			if (cur.getCode().equals(courseCode)) {
 				course1 = cur;
+				break;
 			}
 		}
 		Set<Course> courses2 = Student.courseTests.keySet();
 		for (Course cur : courses2) {
 			if (cur.getCode().equals(courseCode)) {
 				course2 = cur;
+				break;
 			}
 		}
 		list.add("Welcome to " + course1.getCode() + ": " + course1.getTitle());
@@ -67,8 +69,8 @@ public class CourseInfoActivity extends Activity {
 					.get(course1);
 			if (!assignments.isEmpty()) {
 				for (Assignment assign : assignments) {
-					list.add(assign.getName() + ":  Due at  " + assign.getDate()
-							+ "  " + assign.getTime());
+					list.add(assign.getName() + ":  Due at  "
+							+ assign.getDate() + "  " + assign.getTime());
 				}
 			} else {
 				list.add("No recent Assignment");
@@ -96,7 +98,7 @@ public class CourseInfoActivity extends Activity {
 		final StableArrayAdapter adapter = new StableArrayAdapter(this,
 				android.R.layout.simple_list_item_1, list);
 		listview.setAdapter(adapter);
-		
+
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -108,11 +110,16 @@ public class CourseInfoActivity extends Activity {
 						.withEndAction(new Runnable() {
 							@Override
 							public void run() {
-
-								// handleCourse(view);
-								//list.remove(item);
-								adapter.notifyDataSetChanged();
-								view.setAlpha(1);
+								if (item.equals("Assignment:")
+										|| item.equals("Test:")
+										|| item.equals("No recent Assignment")
+										|| item.equals("No recent Test")) {
+								} else {
+									// handleCourse(view);
+									// list.remove(item);
+									adapter.notifyDataSetChanged();
+									view.setAlpha(1);
+								}
 							}
 						});
 			}

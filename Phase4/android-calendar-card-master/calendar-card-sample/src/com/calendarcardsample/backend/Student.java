@@ -1,18 +1,24 @@
 package com.calendarcardsample.backend;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import android.content.Context;
+import android.util.Log;
 
 public class Student implements Serializable {
 
@@ -27,10 +33,10 @@ public class Student implements Serializable {
 	List<Test> tests = new ArrayList<Test>();
 	List<Assignment> assignments = new ArrayList<Assignment>();
 	List<String> courses;
-	public static Map<Course, List<Test>> courseTests;
-	public static Map<Course, List<Assignment>> courseAssignments;
-//	public static Map<Course, List<Assignment>> courseAssignments;
-//	public static Map<Course, List<Test>> courseTests;
+	public static HashMap<Course, List<Test>> courseTests;
+	public static HashMap<Course, List<Assignment>> courseAssignments;
+	private static final String ENCODE = "utf-8";  
+	public static final int TIMEOUT = 30000;// 30秒
 
 	/**
 	 * Constructs a User by initializing patients to saved data, if it exists.
@@ -40,12 +46,11 @@ public class Student implements Serializable {
 
 		courseTests = new HashMap<Course, List<Test>>();
 		courseAssignments = new HashMap<Course, List<Assignment>>();
-//		courseAssignments = new TreeMap<Course, List<Assignment>>(
-//				courseAssignments1);
-//		courseTests = new TreeMap<Course, List<Test>>(courseTests1);
 
 		File file1 = fileContext.getFileStreamPath("file1");
 		File file2 = fileContext.getFileStreamPath("file2");
+		
+		
 
 		if (file1.exists()) {
 			saveTests(fileContext);
@@ -57,30 +62,8 @@ public class Student implements Serializable {
 		loadAssignments(fileContext);
 	}
 
-	// public void addPatient(String name, String DoB, String arrivalTime,
-	// String healthNum){
-	// if (patients.containsKey(healthNum)){
-	// patientUrgencies.add(patients.get(healthNum));
-	// patients.get(healthNum).setSeenDoctor(false);
-	// }
-	// else{
-	// // Creates a patient
-	// Patient patient = new Patient(name, DoB, arrivalTime, healthNum);
-	// // Adds patient to list
-	// patients.put(patient.getHealthNumber(), patient);
-	// if (patient.getAge() < 2)
-	// patient.setUrgency(1);
-	// patientUrgencies.add(patient);
-	// }
-	// }
-	//
-	// public void addCourse(String code, String title){
-	// if courseTests.containsKey(course)
-	// }
-
 	/**
-	 * Saves the patients data that this User object has accumulated into a
-	 * file.
+	 * Saves the data that this User object has accumulated into a file.
 	 */
 	@SuppressWarnings("static-access")
 	public static void saveTests(Context fileContext) {
@@ -96,8 +79,7 @@ public class Student implements Serializable {
 	}
 
 	/**
-	 * Sets patients to any saved data of a map with health card numbers as keys
-	 * and Patients as values.
+	 * load the data saved in Map.
 	 */
 
 	@SuppressWarnings("unchecked")
@@ -117,8 +99,7 @@ public class Student implements Serializable {
 	}
 
 	/**
-	 * Saves the patients data that this User object has accumulated into a
-	 * file.
+	 * Saves the data that this User object has accumulated into a file.
 	 */
 	@SuppressWarnings("static-access")
 	public static void saveAssignments(Context fileContext) {
@@ -134,8 +115,8 @@ public class Student implements Serializable {
 	}
 
 	/**
-	 * Sets patients to any saved data of a map with health card numbers as keys
-	 * and Patients as values.
+	 * load the data saved in Map.
+	 * 
 	 */
 	@SuppressWarnings("unchecked")
 	public static void loadAssignments(Context fileContext) {
@@ -153,4 +134,51 @@ public class Student implements Serializable {
 			e.printStackTrace();
 		}
 	}
+	
+	/** 
+     * 通过get方式提交参数给服务器 
+     */  
+    public static String sendGetRequest(String urlPath, Map<String, String> params)  
+            throws Exception {  
+        //根据传进来的链接和参数构建完整的url  
+        StringBuilder sb = new StringBuilder(urlPath);  
+        if (params != null) {  
+            sb.append('?');  
+            for (Map.Entry<String, String> entry : params.entrySet()) {  
+                sb.append(entry.getKey()).append('=')  
+                        .append(URLEncoder.encode(entry.getValue(), ENCODE))  
+                        .append('&');  
+            }  
+        }  
+        // 删掉多余的&  
+        sb.deleteCharAt(sb.length() - 1);  
+        Log.d("URL:", sb.toString());  
+        //打开链接，发送请求  
+        URL url = new URL(sb.toString());  
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();  
+        conn.setRequestMethod("GET");  
+        conn.setRequestProperty("Content-Type", "text/xml");  
+        conn.setRequestProperty("Charset", ENCODE);  
+        conn.setConnectTimeout(TIMEOUT);  
+        Log.v("REQUEST", "服务器响应码：" + conn.getResponseCode());  
+        // 如果请求响应码是200，则表示成功  
+        if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {  
+            // 获得服务器返回的数据  
+            BufferedReader ins = new BufferedReader(new InputStreamReader(  
+                    conn.getInputStream(), ENCODE));  
+            String retData = null;  
+            String responseData = "loading:  ";  
+            while ((retData = ins.readLine()) != null) {  
+                responseData += retData;  
+            }  
+            ins.close();  
+            //System.out.println(responseData);
+            return responseData;  
+        }else{
+        	//System.out.println("NONONONONONONONONONONO!");
+        }
+        return "sendGetRequest error!";  
+    }
+ 
+ 
 }
