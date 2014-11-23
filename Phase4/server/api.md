@@ -61,6 +61,7 @@ Calendar
 ###course
 * **calendar/courses[GET]**
     * Get all courses
+    * URL: http://dev-firmament-772.appspot.com/index.php/api/calendar/courses
     * no parameters
     * Response
         * success (boolean) ... success or not
@@ -77,6 +78,7 @@ Calendar
 ```
 * **calendar/course/{id}[GET]**
     * Get course by id
+    * URL: http://dev-firmament-772.appspot.com/index.php/api/calendar/course/{id}
     * no parameters
     * Response
         * success (boolean) ... success or not
@@ -85,6 +87,7 @@ Calendar
         * course (Object) ... the course of that id
 * **calendar/course[PUT]**
     * Create a course
+    * URL: http://dev-firmament-772.appspot.com/index.php/api/calendar/course
     * Parameters
         * code (string) ... course code
         * title (string) ... course title
@@ -94,6 +97,7 @@ Calendar
         * error (string) ... error_message
 * **calendar/course/{id}[POST]**
     * Modify a course
+    * URL: http://dev-firmament-772.appspot.com/index.php/api/calendar/course/{id}
     * Parameters
         * code (string) ... course code
         * title (string) ... course title
@@ -102,7 +106,8 @@ Calendar
         * error_code (int) ... error code
         * error (string) ... error_message
 * **calendar/course/{id}[DELETE]**
-    * Selete a course
+    * Delete a course
+    * URL: http://dev-firmament-772.appspot.com/index.php/api/calendar/course/{id}
     * no parameters
     * Response
         * success (boolean) ... success or not
