@@ -65,18 +65,20 @@ class CI_DB_mysqli_driver extends CI_DB {
 	 * @access	private called by the base class
 	 * @return	resource
 	 */
-	function db_connect()
-	{
-		if ($this->port != '')
-		{
-			return @mysqli_connect($this->hostname, $this->username, $this->password, $this->database, $this->port);
-		}
-		else
-		{
-			return @mysqli_connect($this->hostname, $this->username, $this->password, $this->database);
-		}
-
-	}
+function db_connect()
+{
+    if(isset($this->socket)){
+        return mysqli_connect(null, $this->username, null, $this->database, null, $this->socket);
+    }
+    //elseif ($this->port != h)
+    //{
+    //    return mysqli_connect($this->hostname, $this->username, $this->password, $this->database, $this->port);
+    //}
+    else
+    {
+        return mysqli_connect($this->hostname, $this->username, $this->password, $this->database);
+    }
+}
 
 	// --------------------------------------------------------------------
 

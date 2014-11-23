@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	<title>Welcome</title>
 
 <style type="text/css">
 
@@ -45,19 +45,11 @@ code {
 </head>
 <body>
 
-<h1>Welcome to CodeIgniter!</h1>
-
-<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+<h1>Welcome to UofT CSC301 Fall 2014 Group 10 Project Web API Server.</h1>
 
 <ul>
-	<li><a href="<?php echo site_url('api/example/users');?>">Users</a> - defaulting to XML</li>
-	<li><a href="<?php echo site_url('api/example/users/format/csv');?>">Users</a> - get it in CSV</li>
-	<li><a href="<?php echo site_url('api/example/user/id/1');?>">User #1</a> - defaulting to XML</li>
-	<li><a href="<?php echo site_url('api/example/user/id/1/format/json');?>">User #1</a> - get it in JSON</li>
-	<li><a id="ajax" href="<?php echo site_url('api/example/users/format/json');?>">Users</a> - get it in JSON (AJAX request)</li>
+	<li><a href=https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/Phase4/server/api.md>API Document</a></li>
 </ul>
-
-<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
 
 <p><br />Page rendered in {elapsed_time} seconds</p>
 
