@@ -27,7 +27,7 @@ Sturcture for the objects:
 * test
     * id (int) ... id
     * lecture_id (int) ... the lecture that the assignment belongs to
-    * name (string) ... name, such as "Assignment 1"
+    * name (string) ... name, such as "Midterm"
     * date (date) ... the date of the test
     * start (time) ... the starting time of the test
     * end (time) ... the ending time of the test
