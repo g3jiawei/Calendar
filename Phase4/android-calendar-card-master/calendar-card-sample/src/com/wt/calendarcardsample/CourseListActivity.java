@@ -208,6 +208,7 @@ public class CourseListActivity extends Activity {
 								Student.saveTests(getApplicationContext());
 								Student.loadTests(getApplicationContext());
 								Student.loadAssignments(getApplicationContext());
+								finish();
 							}
 						});
 
