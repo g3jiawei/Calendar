@@ -25,6 +25,15 @@
         android:layout_below="@+id/button1"
         android:onClick="handleSample2"
         android:text="@string/card_pager" />
+    
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button2"
+        android:onClick="handleSample3"
+        android:text="@string/internet" />
 
     <Button
         android:id="@+id/button3"

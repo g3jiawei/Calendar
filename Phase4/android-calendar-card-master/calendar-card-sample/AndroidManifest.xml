@@ -45,8 +45,6 @@
         </activity>
         <activity android:name="com.wt.calendarcardsample.UpdateCourseActivity" >
         </activity>
-        <activity android:name="com.wt.calendarcardsample.UpdateAssignmentActivity"></activity>
-        <activity android:name="com.wt.calendarcardsample.UpdateTestActivity"></activity>
         <activity android:name="com.wt.calendarcardsample.InternetActivity"></activity>
     </application>
 

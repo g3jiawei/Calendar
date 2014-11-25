@@ -176,18 +176,6 @@ public class CourseInfoActivity extends Activity {
 
 	}
 
-	public void lanuchModifyAssignmentActivity() {
-		Intent intent = new Intent(this, UpdateAssignmentActivity.class);
-		intent.putExtra("courseKey", courseCode);
-		startActivity(intent);
-	}
-
-	public void lanuchModifyTestActivity() {
-		Intent intent = new Intent(this, UpdateAssignmentActivity.class);
-		intent.putExtra("courseKey", courseCode);
-		startActivity(intent);
-	}
-
 	private void createDialog(View view) {
 		// Uses a view from xml files in order to allow edittext boxes.
 		// LayoutInflater li = LayoutInflater.from(this);

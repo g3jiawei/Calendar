@@ -70,6 +70,12 @@ public class MenuActivity extends Activity {
 		// intent.putExtra("studentKey", student);
 		startActivity(intent);
 	}
+	
+	public void handleSample3(View v) {
+		Intent intent = new Intent(this, InternetActivity.class);
+		// intent.putExtra("studentKey", student);
+		startActivity(intent);
+	}
 
 	public void handleadd(View v) {
 		Intent intent = new Intent(this, AddCourseActivity.class);

@@ -6,6 +6,7 @@
     <string name="title">iCalendar</string>
     <string name="card">Count Down</string>
     <string name="card_pager">My Calendar</string>
+     <string name="internet">Load Data</string>
     <string name="sel_date">%s</string>
     
     <string name="label_course_test">Course:</string>
