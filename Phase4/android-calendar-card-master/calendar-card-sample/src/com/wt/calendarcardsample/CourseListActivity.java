@@ -94,16 +94,15 @@ public class CourseListActivity extends Activity {
 
 								// handleCourse(view);
 								courseCode = item;
-								Set<Course> courses = Student.courseAssignments
-										.keySet();
-								for (Course cur : courses) {
+								Set<Course> courses1 = Student.courseAssignments.keySet();
+								for (Course cur : courses1) {
 									if (cur.getCode().equals(courseCode)) {
 										course = cur;
 										break;
 									}
 								}
 								// list.remove(item);
-								createDialog(view, course);
+								createDialog(view, courseCode);
 								adapter.notifyDataSetChanged();
 								view.setAlpha(1);
 							}
@@ -175,7 +174,7 @@ public class CourseListActivity extends Activity {
 		startActivity(intent);
 	}
 
-	private void createDialog(View view, final Course course) {
+	private void createDialog(View view, final String courseCode) {
 		// Uses a view from xml files in order to allow edittext boxes.
 		// LayoutInflater li = LayoutInflater.from(this);
 		// View promptsView =
@@ -203,7 +202,7 @@ public class CourseListActivity extends Activity {
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
 								// Closes dialog when user chooses to cancel.
-								Course.removeCourse(course);
+								Course.removeCourse(courseCode);
 								Student.saveAssignments(getApplicationContext());
 								Student.saveTests(getApplicationContext());
 								Student.loadTests(getApplicationContext());

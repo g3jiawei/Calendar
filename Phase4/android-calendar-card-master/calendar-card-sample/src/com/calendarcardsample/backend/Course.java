@@ -3,6 +3,7 @@ package com.calendarcardsample.backend;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Course implements Serializable, Comparable<Course> {
 
@@ -46,14 +47,25 @@ public class Course implements Serializable, Comparable<Course> {
 		saveCourse(course);
 	}
 
-	public static void removeCourse(Course course) {
-		Student.courseAssignments.remove(course);
-		Student.courseTests.remove(course);
+	public static void removeCourse(String courseCode) {
+		Set<Course> courses1 = Student.courseAssignments.keySet();
+		for (Course cur : courses1) {
+			if (cur.getCode().equals(courseCode)) {
+				Student.courseAssignments.remove(cur);
+				break;
+			}
+		}
+		Set<Course> courses2 = Student.courseTests.keySet();
+		for (Course cur : courses2) {
+			if (cur.getCode().equals(courseCode)) {
+				Student.courseTests.remove(cur);
+				break;
+			}
+		}
 	}
 
 	public static void saveCourse(Course course) {
 		List<Test> array1 = new ArrayList<Test>();
-		;
 		List<Assignment> array2 = new ArrayList<Assignment>();
 		Student.courseTests.put(course, array1);
 		Student.courseAssignments.put(course, array2);

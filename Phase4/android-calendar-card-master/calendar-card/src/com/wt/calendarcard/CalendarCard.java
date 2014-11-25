@@ -25,6 +25,8 @@ public class CalendarCard extends RelativeLayout {
 	private Calendar dateDisplay;
 	private ArrayList<CheckableLayout> cells = new ArrayList<CheckableLayout>();
 	private LinearLayout cardGrid;
+	int axis=5;
+	boolean first = true;
 
 	public CalendarCard(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
@@ -87,17 +89,28 @@ public class CalendarCard extends RelativeLayout {
 						Locale.getDefault()));
 
 		LayoutInflater la = LayoutInflater.from(ctx);
+        
 
 		for (int y = 0; y < cardGrid.getChildCount(); y++) {
 			LinearLayout row = (LinearLayout) cardGrid.getChildAt(y);
 			for (int x = 0; x < row.getChildCount(); x++) {
 				CheckableLayout cell = (CheckableLayout) row.getChildAt(x);
-				Calendar c = Calendar.getInstance();
-				SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-			    df.format(c.getTime());
-			    
-//				if (false){
-//					cell.setChecked(true);}
+				// Calendar c = Calendar.getInstance();
+				// SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+				// df.format(c.getTime());
+				SimpleDateFormat dateFormat = new SimpleDateFormat("dd");
+				Calendar today = Calendar.getInstance();
+				int a = Integer.parseInt(dateFormat.format(today.getTime()));
+				// SimpleDateFormat dateFormat2 = new SimpleDateFormat("MM");
+				// Calendar today2 = Calendar.getInstance();
+				// int b =
+				// Integer.parseInt(dateFormat2.format(today2.getTime()));
+				if(cell.isChecked() && first == true){
+					first = false;
+				    axis = x;
+				}
+				if (x == ((axis+a)%7-1) & y== (axis+a)/7){
+				 cell.setChecked(true);}
 				cell.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -129,6 +142,10 @@ public class CalendarCard extends RelativeLayout {
 		};
 
 		updateCells();
+	}
+
+	public void setCell(CheckableLayout cell) {
+		cell.setChecked(true);
 	}
 
 	private int getDaySpacing(int dayOfWeek) {

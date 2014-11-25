@@ -5,4 +5,5 @@
         <ignore path="src/com/wt/calendarcardsample/AddCourseActivity.java" />
         <ignore path="src/com/wt/calendarcardsample/AddTestActivity.java" />
     </issue>
+    <issue id="SimpleDateFormat" severity="ignore" />
 </lint>

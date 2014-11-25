@@ -26,7 +26,7 @@ import com.calendarcardsample.backend.Assignment;
 import com.calendarcardsample.backend.Course;
 import com.calendarcardsample.backend.Student;
 
-public class AddAssignmentActivity extends Activity {
+public class UpdateAssignmentActivity extends Activity {
 
 	private String date;
 	private String code;
@@ -113,21 +113,6 @@ public class AddAssignmentActivity extends Activity {
 			Toast.makeText(getApplicationContext(), "Missing input",
 					Toast.LENGTH_SHORT).show();
 			return false;
-		} else if (!name.equals("")) {
-			Set<Course> courses = Student.courseAssignments.keySet();
-			for (Course course : courses) {
-				if (course.getCode().equals(code)) {
-					for (Assignment assignment : Student.courseAssignments
-							.get(course)) {
-						if (assignment.getName().equals(name)) {
-							Toast.makeText(getApplicationContext(),
-									"This assignment already exists.",
-									Toast.LENGTH_SHORT).show();
-							return false;
-						}
-					}
-				}
-			}
 		} else if (!code.equals("")) {
 			Set<Course> courses = Student.courseAssignments.keySet();
 			for (Course course : courses) {

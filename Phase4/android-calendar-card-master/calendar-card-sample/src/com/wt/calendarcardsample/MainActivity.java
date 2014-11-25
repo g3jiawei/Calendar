@@ -1,8 +1,5 @@
 package com.wt.calendarcardsample;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.calendarcardsample.backend.Student;
 
 import android.app.Activity;
@@ -25,17 +22,18 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_splash);
 		
 		new Student(getApplicationContext());
-		String url = "http://dev-firmament-772.appspot.com/index.php/api/calendar/courses";
-		// Ïò·þÎñÆ÷¶ËÌá½»²ÎÊý
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("var1", "123");
-		map.put("var2", "234");
-		try {
-			connect = Student.sendGetRequest(url, map);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		// String url =
+		// "http://dev-firmament-772.appspot.com/index.php/api/calendar/courses";
+		// // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// Map<String, String> map = new HashMap<String, String>();
+		// map.put("var1", "123");
+		// map.put("var2", "234");
+		// try {
+		// connect = Student.sendGetRequest(url, map);
+		// } catch (Exception e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
 		
 		displaySplashScreen();
 

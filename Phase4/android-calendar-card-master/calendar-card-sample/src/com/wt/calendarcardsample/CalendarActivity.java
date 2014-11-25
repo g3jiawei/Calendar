@@ -1,6 +1,7 @@
 package com.wt.calendarcardsample;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -17,6 +18,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.calendarcardsample.backend.Assignment;
 import com.calendarcardsample.backend.Course;
@@ -45,6 +47,10 @@ public class CalendarActivity extends Activity {
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
+		
+		//CalendarCard.setCell(cell);
+//		CardGridItem testItem = null;
+//		testItem.isEnabled();
 
 		// Calendar calendar = Calendar.getInstance();
 		// SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
@@ -53,7 +59,13 @@ public class CalendarActivity extends Activity {
 		mCalendarCardPager = (CalendarCardPager) findViewById(R.id.calendarCard1);
 		dates1 = getAllDates1();
 		dates2 = getAllDates2();
-
+        
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Calendar today = Calendar.getInstance();
+		String a = dateFormat.format(today.getTime());
+		TextView view = (TextView) findViewById(R.id.textView1);
+		view.setText("Today is "+ a);
+		
 		mCalendarCardPager.setOnCellItemClick(new OnCellItemClick() {
 
 			@Override
@@ -123,10 +135,6 @@ public class CalendarActivity extends Activity {
 				}
 			}
 		});
-
-		// adapter = new ArrayAdapter<String>(this,
-		// android.R.layout.simple_list_item_1, DataArryWhiskey);
-		// hiskeylist.setAdapter(adapter);
 	}
 
 	@Override

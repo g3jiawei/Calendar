@@ -21,8 +21,7 @@ import com.calendarcardsample.backend.Student;
 
 public class UpdateCourseActivity extends Activity {
 
-	private String courseCode;
-	private Course course;
+	private String OldCourseCode;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -31,15 +30,8 @@ public class UpdateCourseActivity extends Activity {
 		setContentView(R.layout.activity_updatecourse);
 
 		Intent intent = this.getIntent();
-		courseCode = (String) intent.getSerializableExtra("courseKey");
+		OldCourseCode = (String) intent.getSerializableExtra("courseKey");
 
-		Set<Course> courses = Student.courseAssignments.keySet();
-		for (Course cur : courses) {
-			if (cur.getCode().equals(courseCode)) {
-				course = cur;
-				break;
-			}
-		}
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
 
@@ -57,12 +49,12 @@ public class UpdateCourseActivity extends Activity {
 				.trim().replaceAll("\\s+", "");
 		String courseTitle = editCourseTitle.getText().toString();
 		if (validateInput(courseCode, courseTitle)) {
-			Course.removeCourse(course);
+			Course.removeCourse(OldCourseCode);
 			Student.saveAssignments(getApplicationContext());
 			Student.saveTests(getApplicationContext());
 			Student.loadAssignments(getApplicationContext());
 			Student.loadTests(getApplicationContext());
-			Toast.makeText(getApplicationContext(), "Add a new course",
+			Toast.makeText(getApplicationContext(), "Updated",
 					Toast.LENGTH_SHORT).show();
 			Course.addCourse(courseCode, courseTitle);
 			Student.saveAssignments(getApplicationContext());
@@ -88,8 +80,8 @@ public class UpdateCourseActivity extends Activity {
 			return false;
 		} else if (!code.equals("")) {
 			Set<Course> courses = Student.courseAssignments.keySet();
-			for (Course course1 : courses) {
-				if (!code.equals(course.getCode())) {
+			if (!code.equals(OldCourseCode)) {
+				for (Course course1 : courses) {
 					if (course1.getCode().equals(code)) {
 						Toast.makeText(getApplicationContext(),
 								"Course Exists", Toast.LENGTH_SHORT).show();

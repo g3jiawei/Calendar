@@ -4,7 +4,7 @@
     <string name="app_name">iCalendar</string>
     <string name="action_settings">Settings</string>
     <string name="title">iCalendar</string>
-    <string name="card">Time Down</string>
+    <string name="card">Count Down</string>
     <string name="card_pager">My Calendar</string>
     <string name="sel_date">%s</string>
     

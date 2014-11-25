@@ -1,97 +1,109 @@
 package com.wt.calendarcardsample;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
-public class InternetActivity extends Activity {
-	private Button mSendReqBtn = null;// 发送请求的按钮
-	private WebView mWebView = null;// 用于显示结果，用载入html字符串的方式显示响应结果，而不是使用WebView自己的方式加载URL
+public class InternetActivity extends Activity implements OnClickListener {
 
-	// 响应
-	private HttpResponse mHttpResponse = null;
-	// 实体
-	private HttpEntity mHttpEntity = null;
+	private EditText value;
+	private Button btn;
+	private ProgressBar pb;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_internet);
-
-		mSendReqBtn = (Button) findViewById(R.id.requestBtn);
-		mSendReqBtn.setOnClickListener(mSendClickListener);
-
-		mWebView = (WebView) findViewById(R.id.webview);
+		value = (EditText) findViewById(R.id.editText1);
+		btn = (Button) findViewById(R.id.button1);
+		pb = (ProgressBar) findViewById(R.id.progressBar1);
+		pb.setVisibility(View.GONE);
+		btn.setOnClickListener(this);
 	}
 
-	private OnClickListener mSendClickListener = new OnClickListener() {
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		getMenuInflater().inflate(menu);
+//		return true;
+//	}
+
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if (value.getText().toString().length() < 1) {
+			// out of range
+			Toast.makeText(this, "please enter something", Toast.LENGTH_LONG)
+					.show();
+		} else {
+			pb.setVisibility(View.VISIBLE);
+			new MyAsyncTask().execute(value.getText().toString());
+		}
+
+	}
+
+	private class MyAsyncTask extends AsyncTask<String, Integer, Double> {
 
 		@Override
-		public void onClick(View v) {
-			// 生成一个请求对象
-			HttpGet httpGet = new HttpGet("https://www.google.ca/");
-			// 生成一个Http客户端对象
-			HttpClient httpClient = new DefaultHttpClient();
-
-			// 下面使用Http客户端发送请求，并获取响应内容
-
-			InputStream inputStream = null;
-			try {
-				// 发送请求并获得响应对象
-				mHttpResponse = httpClient.execute(httpGet);
-				// 获得响应的消息实体
-				mHttpEntity = mHttpResponse.getEntity();
-
-				// 获取一个输入流
-				inputStream = mHttpEntity.getContent();
-
-				BufferedReader bufferedReader = new BufferedReader(
-						new InputStreamReader(inputStream));
-
-				String result = "";
-				String line = "";
-
-				while (null != (line = bufferedReader.readLine())) {
-					result += line;
-				}
-
-				// 将结果打印出来，可以在LogCat查看
-				System.out.println(result);
-
-				// 将内容载入WebView显示
-				mWebView.getSettings().setDefaultTextEncodingName("UTF-8");
-				// 直接使用mWebView.loadData(result, "text/html", "utf-8");会显示找不到网页
-
-				// 换成下面的方式可以正常显示（但是比较宽，拖动可见百度logo）
-				mWebView.loadDataWithBaseURL(null, result, "text/html","utf-8", null);
-
-				// 直接载入URL也可以显示页面（但是此例子主要是为了验证响应返回的字符串是否正确，所以不用下面这行代码）
-				 mWebView.loadUrl("https://www.google.ca/");
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					inputStream.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-
+		protected Double doInBackground(String... params) {
+			// TODO Auto-generated method stub
+			postData(params[0]);
+			return null;
 		}
-	};
 
+		protected void onPostExecute(Double result) {
+			pb.setVisibility(View.GONE);
+			Toast.makeText(getApplicationContext(), "command sent",
+					Toast.LENGTH_LONG).show();
+		}
+
+		protected void onProgressUpdate(Integer... progress) {
+			pb.setProgress(progress[0]);
+		}
+
+		public void postData(String valueIWantToSend) {
+			// Create a new HttpClient and Post Header
+			HttpClient httpclient = new DefaultHttpClient();
+			HttpPost httppost = new HttpPost(
+					"http://dev-firmament-772.appspot.com/index.php/api/calendar/courses/assignments?lecture_id=1");
+
+			try {
+				// Add your data
+				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+				nameValuePairs.add(new BasicNameValuePair("myHttpData",
+						valueIWantToSend));
+				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+				// Execute HTTP Post Request
+				HttpResponse response = httpclient.execute(httppost);
+//				Intent intent = new Intent(getApplicationContext(),
+//						MenuActivity.class);
+//				intent.putExtra("response", response);
+//				startActivity(intent);
+
+			} catch (ClientProtocolException e) {
+				// TODO Auto-generated catch block
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+			}
+		}
+
+	}
 }

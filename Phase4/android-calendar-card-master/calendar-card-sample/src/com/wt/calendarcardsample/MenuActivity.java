@@ -1,25 +1,20 @@
 package com.wt.calendarcardsample;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.calendarcardsample.backend.Student;
 
 public class MenuActivity extends Activity {
 
 	private Student student;
-	private String connect;
+	//private String connect;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -27,39 +22,41 @@ public class MenuActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 
-		Intent intent = getIntent();
-		connect = (String) intent.getSerializableExtra("connect");
+//		Intent intent = getIntent();
+//		connect = (String) intent.getSerializableExtra("connect");
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
 		
-		String url = "http://dev-firmament-772.appspot.com/index.php/api/calendar/courses";
-		// Ïò·þÎñÆ÷¶ËÌá½»²ÎÊý
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("var1", "123");
-		map.put("var2", "234");
-		try {
-			connect = Student.sendGetRequest(url, map);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			connect = "error";
-			e.printStackTrace();
-		}
+		// String url =
+		// "http://dev-firmament-772.appspot.com/index.php/api/calendar/courses";
+		// // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// Map<String, String> map = new HashMap<String, String>();
+		// map.put("var1", "123");
+		// map.put("var2", "234");
+		// try {
+		// connect = Student.sendGetRequest(url, map);
+		// } catch (Exception e) {
+		// // TODO Auto-generated catch block
+		// connect = "error";
+		// e.printStackTrace();
+		// }
 
-		new CountDownTimer(5000, 1000) {// CountDownTimer(edittext1.getText()+edittext2.getText())
-											// also parse it to long
-			TextView mTextField = (TextView) findViewById(R.id.timer1);
-
-			public void onTick(long millisUntilFinished) {
-				mTextField.setText("Loading: " + millisUntilFinished
-						/ 1000);
-				// here you can have your logic to set text to edittext
-			}
-
-			public void onFinish() {
-				mTextField.setText("info is :"+connect);
-			}
-		}.start();
+		// new CountDownTimer(5000, 1000) {//
+		// CountDownTimer(edittext1.getText()+edittext2.getText())
+		// // also parse it to long
+		// TextView mTextField = (TextView) findViewById(R.id.timer1);
+		//
+		// public void onTick(long millisUntilFinished) {
+		// mTextField.setText("Loading: " + millisUntilFinished
+		// / 1000);
+		// // here you can have your logic to set text to edittext
+		// }
+		//
+		// public void onFinish() {
+		// mTextField.setText("info is :"+connect);
+		// }
+		// }.start();
 	}
 
 	public void handleSample1(View v) {

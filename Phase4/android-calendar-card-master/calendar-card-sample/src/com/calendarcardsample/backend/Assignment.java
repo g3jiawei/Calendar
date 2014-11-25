@@ -3,9 +3,8 @@ package com.calendarcardsample.backend;
 import java.io.Serializable;
 import java.util.Set;
 
-public class Assignment implements Serializable{
-	
-	
+public class Assignment implements Serializable {
+
 	private static final long serialVersionUID = -4415663512701202820L;
 	/**
 	 * 
@@ -36,7 +35,7 @@ public class Assignment implements Serializable{
 	public void setCode(String newCode) {
 		this.code = newCode;
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}
@@ -61,7 +60,8 @@ public class Assignment implements Serializable{
 		this.time = newTime;
 	}
 
-	public static void addAssignment(String code, String name, String date, String time) {
+	public static void addAssignment(String code, String name, String date,
+			String time) {
 		Assignment assignment = new Assignment(code, name, date, time);
 		Set<Course> courses = Student.courseAssignments.keySet();
 		for (Course course : courses) {
@@ -72,12 +72,18 @@ public class Assignment implements Serializable{
 		}
 	}
 
-	public void removeAssignment(Assignment assignment) {
+	public static void removeAssignment(String courseCode, String name) {
 		Set<Course> courses = Student.courseAssignments.keySet();
 		for (Course course : courses) {
-			if (course.getCode().equals(code)) {
-				Student.courseAssignments.get(course).remove(assignment);
-				break;
+			if (course.getCode().equals(courseCode)) {
+				for (Assignment assignment : Student.courseAssignments
+						.get(course)) {
+					if (assignment.getName().equals(name)) {
+						Student.courseAssignments.get(course)
+								.remove(assignment);
+						break;
+					}
+				}
 			}
 		}
 	}
