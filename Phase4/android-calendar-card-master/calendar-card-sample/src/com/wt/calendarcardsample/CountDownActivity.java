@@ -231,7 +231,7 @@ public class CountDownActivity extends Activity {
 			for (List<Test> list_test : tests) {
 				if (list_test != null) {
 					for (Test test : list_test) {
-						dates.add(test.getDate() + "/" + test.getTo() + "/"
+						dates.add(test.getDate() + "/" + test.getFrom() + "/"
 								+ test.getName() + "/" + test.getCode());
 					}
 				}
