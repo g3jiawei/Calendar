@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+    package="com.elvenware.menubasic"
+    android:versionCode="1"
+    android:versionName="1.0" >    
+	<group android:id="@+id/menuGroup_Main">
+    	<item android:id="@+id/menu_testPick"
+        	android:orderInCategory="5"
+        	android:title="Text Pick" />    
+    	<item android:id="@+id/menuGroup_Bar"
+        	android:orderInCategory="6"
+        	android:title="Text Pick6" />        
+	</group>    
+
+</menu>

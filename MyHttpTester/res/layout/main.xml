@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello" />
+
+    <Button
+        android:id="@+id/buttonHttpPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onPostClick"
+        android:text="@string/OnPostClickButton">
+    </Button>
+
+    <Button
+        android:id="@+id/buttonHttpGet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onGetClick"
+        android:text="@string/OnGetClick" >
+    </Button>
+
+    <TextView
+        android:id="@+id/viewText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.12" >
+        <requestFocus />
+    </TextView>
+
+</LinearLayout>

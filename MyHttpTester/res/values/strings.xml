@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello from the computer, MyTesterActivity!</string>
+    <string name="app_name">MyTester</string>
+    <string name="Sam">Live the wild Android Live</string>
+    <string name="Joe">Surf the wild Android life forever.</string>
+    <string name="OnPostClickButton">Send Http Post</string>
+    <string name="OnGetClick">Try HTTP Get</string>
+</resources>
