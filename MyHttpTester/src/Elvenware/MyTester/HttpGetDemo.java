@@ -3,6 +3,7 @@ package Elvenware.MyTester;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -65,12 +66,16 @@ public class HttpGetDemo extends AsyncTask<TextView, Void, String> {
 	        int i, len;
 	        len = newJSON.length(); 
 	        
+	        HashMap<String, String> MyMap = new HashMap<String, String>(); 	        
+	        
 	        for(i=0; i<len; i++){
 	        	jsonObject = new JSONObject(newJSON.get(i).toString());
 	        	
-		        System.out.println(jsonObject.getInt("id"));
-		        System.out.println(jsonObject.getString("code"));
-		        System.out.println(jsonObject.getString("title"));
+	        	MyMap.put(jsonObject.getString("code"), jsonObject.getString("title")); 
+	        	
+		        //System.out.println(jsonObject.getInt("id"));
+		        //System.out.println(jsonObject.getString("code"));
+		        //System.out.println(jsonObject.getString("title"));
 	        }
 
 	     		
