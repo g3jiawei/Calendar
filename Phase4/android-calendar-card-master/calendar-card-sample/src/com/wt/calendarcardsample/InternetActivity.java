@@ -98,6 +98,7 @@ public class InternetActivity extends Activity implements OnClickListener {
 			textView = (TextView) findViewById(R.id.viewText1);
 			new HttpGetDemo().execute(textView);
 			// pb.setVisibility(View.GONE);
+			Toast.makeText(this, "loaded", Toast.LENGTH_LONG).show();
 			finish();
 		} else {
 			Toast.makeText(this, "invalid password", Toast.LENGTH_LONG).show();
