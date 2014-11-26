@@ -180,7 +180,7 @@ public class CountDownActivity extends Activity {
 
 		@Override
 		public void onFinish() {
-			textViewTime2.setText("DUE!");
+			textViewTime2.setText("Good Luck!");
 		}
 
 		@SuppressLint("NewApi")

@@ -46,7 +46,7 @@ public class MenuActivity extends Activity {
 		startActivity(intent);
 	}
 
-	public void handload(View v) {
+	public void handleAdd(View v) {
 		Intent intent = new Intent(this, AddCourseActivity.class);
 		//intent.putExtra("studentKey", student);
 		startActivity(intent);

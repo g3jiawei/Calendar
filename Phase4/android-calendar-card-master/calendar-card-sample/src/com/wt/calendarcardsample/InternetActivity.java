@@ -1,9 +1,22 @@
 package com.wt.calendarcardsample;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Set;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -14,13 +27,18 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.calendarcardsample.backend.Course;
+import com.calendarcardsample.backend.Student;
 
 public class InternetActivity extends Activity implements OnClickListener {
 
 	private EditText value;
 	private Button btn;
 	private ProgressBar pb;
+	TextView textView;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -30,8 +48,8 @@ public class InternetActivity extends Activity implements OnClickListener {
 		value = (EditText) findViewById(R.id.editText1);
 		btn = (Button) findViewById(R.id.button1);
 		pb = (ProgressBar) findViewById(R.id.progressBar1);
-		pb.setVisibility(View.GONE);
 		btn.setOnClickListener(this);
+		pb.setVisibility(View.GONE);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
@@ -49,75 +67,101 @@ public class InternetActivity extends Activity implements OnClickListener {
 			// out of range
 			Toast.makeText(this, "please enter password", Toast.LENGTH_LONG)
 					.show();
-		} else if((value.getText().toString().trim().toLowerCase().equals("123456"))){
+		} else if ((value.getText().toString().trim().toLowerCase()
+				.equals("123456"))) {
 			pb.setVisibility(View.VISIBLE);
-			
-			// pb.setProgress(progress[0]);
-		}else{
-			Toast.makeText(this, "invalid password", Toast.LENGTH_LONG)
-			.show();
+			textView = (TextView) findViewById(R.id.viewText1);
+			new HttpGetDemo().execute(textView);
+			// pb.setVisibility(View.GONE);
+			finish();
+		} else {
+			Toast.makeText(this, "invalid password", Toast.LENGTH_LONG).show();
 		}
 
 	}
 
-	// private class MyAsyncTask extends AsyncTask<String, Integer, Double> {
-	//
-	// @Override
-	// protected Double doInBackground(String... params) {
-	// // TODO Auto-generated method stub
-	// //postData(params[0]);
-	// return null;
-	// }
-	//
-	// protected void onPostExecute(Double result) {
-	// pb.setVisibility(View.GONE);
-	// Toast.makeText(getApplicationContext(), "password sent",
-	// Toast.LENGTH_LONG).show();
-	// }
-	//
-	// protected void onProgressUpdate(Integer... progress) {
-	// pb.setProgress(progress[0]);
-	// }
+	public class HttpGetDemo extends AsyncTask<TextView, Void, String> {
 
-	// URL url = new
-	// URL("http://dev-firmament-772.appspot.com/index.php/api/calendar/course/");
-	// HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
-	// httpCon.setDoOutput(true);
-	// httpCon.setRequestMethod("PUT");
-	// OutputStreamWriter out = new OutputStreamWriter(
-	// httpCon.getOutputStream());
-	// out.write("Resource content");
-	// out.close();
-	// httpCon.getInputStream();
+		TextView myTextView;
+		String result = "fail";
 
-	// public void postData(String valueIWantToSend) {
-	// // Create a new HttpClient and Post Header
-	// HttpClient httpclient = new DefaultHttpClient();
-	// HttpPost httppost = new HttpPost(
-	// "http://dev-firmament-772.appspot.com/index.php/api/calendar/courses/assignments?lecture_id=1");
-	//
-	// try {
-	// // Add your data
-	// List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-	// nameValuePairs.add(new BasicNameValuePair("myHttpData",
-	// valueIWantToSend));
-	// httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-	//
-	// // Execute HTTP Post Request
-	// HttpResponse response = httpclient.execute(httppost);
-	// // Intent intent = new Intent(getApplicationContext(),
-	// // MenuActivity.class);
-	// // intent.putExtra("response", response);
-	// // startActivity(intent);
-	//
-	// } catch (ClientProtocolException e) {
-	// // TODO Auto-generated catch block
-	// } catch (IOException e) {
-	// // TODO Auto-generated catch block
-	// }
-	// }
+		@Override
+		protected String doInBackground(TextView... params) {
+			myTextView = params[0];
+			return makeHttpRequest();
+		}
 
-	// }
+		final String makeHttpRequest() {
+			String url = "http://dev-firmament-772.appspot.com/index.php/api/calendar/courses";
+			BufferedReader inStream = null;
+			try {
+				HttpClient httpClient = new DefaultHttpClient();
+				HttpGet httpRequest = new HttpGet(url);
+				HttpResponse response = httpClient.execute(httpRequest);
+				inStream = new BufferedReader(new InputStreamReader(response
+						.getEntity().getContent()));
+
+				StringBuffer buffer = new StringBuffer("");
+				String line = "";
+				String NL = System.getProperty("line.separator");
+				while ((line = inStream.readLine()) != null) {
+					buffer.append(line + NL);
+				}
+				inStream.close();
+
+				result = buffer.toString();
+
+				System.out.println(result);
+
+				String jsonString = result;
+
+				// System.out.println(jsonString);
+				JSONObject jsonObject = (JSONObject) new JSONObject(jsonString);
+				// System.out.println(jsonObject);
+				JSONArray newJSON = jsonObject.getJSONArray("courses");
+
+				// System.out.println(newJSON.toString());
+
+				int i, len;
+				boolean exist = false;
+				len = newJSON.length();
+
+				for (i = 0; i < len; i++) {
+					jsonObject = new JSONObject(newJSON.get(i).toString());
+					String courseCode = jsonObject.getString("code");
+					String courseTitle = jsonObject.getString("title");
+					Set<Course> courses = Student.courseAssignments.keySet();
+					for (Course course : courses) {
+						if (course.getCode().equals(courseCode)) {
+							exist = true;
+							break;
+						}
+					}
+					if (!exist) {
+						Course.addCourse(courseCode, courseTitle);
+						Student.saveAssignments(getApplicationContext());
+						Student.saveTests(getApplicationContext());
+						Student.loadAssignments(getApplicationContext());
+						Student.loadTests(getApplicationContext());
+						exist = false;
+					}
+				}
+
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				if (inStream != null) {
+					try {
+						inStream.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			return result;
+		}
+	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
