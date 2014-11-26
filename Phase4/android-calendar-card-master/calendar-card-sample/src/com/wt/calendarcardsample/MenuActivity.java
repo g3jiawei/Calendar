@@ -11,8 +11,8 @@ import android.view.View;
 
 public class MenuActivity extends Activity {
 
-	//private Student student;
-	//private String connect;
+	// private Student student;
+	// private String connect;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -20,11 +20,11 @@ public class MenuActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 
-      //Intent intent = getIntent();
-      //connect = (String) intent.getSerializableExtra("connect");
+		// Intent intent = getIntent();
+		// connect = (String) intent.getSerializableExtra("connect");
 
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		getActionBar().setHomeButtonEnabled(true);
+		// getActionBar().setDisplayHomeAsUpEnabled(true);
+		// getActionBar().setHomeButtonEnabled(true);
 
 	}
 
@@ -39,7 +39,7 @@ public class MenuActivity extends Activity {
 		// intent.putExtra("studentKey", student);
 		startActivity(intent);
 	}
-	
+
 	public void handleSample3(View v) {
 		Intent intent = new Intent(this, InternetActivity.class);
 		// intent.putExtra("studentKey", student);
@@ -48,13 +48,13 @@ public class MenuActivity extends Activity {
 
 	public void handleAdd(View v) {
 		Intent intent = new Intent(this, AddCourseActivity.class);
-		//intent.putExtra("studentKey", student);
+		// intent.putExtra("studentKey", student);
 		startActivity(intent);
 	}
 
 	public void viewCourseList(View view) {
 		Intent intent = new Intent(this, CourseListActivity.class);
-		//intent.putExtra("studentKey", student);
+		// intent.putExtra("studentKey", student);
 		startActivity(intent);
 	}
 

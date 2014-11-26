@@ -19,12 +19,17 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -39,6 +44,7 @@ public class InternetActivity extends Activity implements OnClickListener {
 	private Button btn;
 	private ProgressBar pb;
 	TextView textView;
+	CheckBox mCbShowPwd;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -50,9 +56,28 @@ public class InternetActivity extends Activity implements OnClickListener {
 		pb = (ProgressBar) findViewById(R.id.progressBar1);
 		btn.setOnClickListener(this);
 		pb.setVisibility(View.GONE);
+		mCbShowPwd = (CheckBox) findViewById(R.id.cbShowPwd);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
+
+		mCbShowPwd.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			public void onCheckedChanged(CompoundButton buttonView,
+					boolean isChecked) {
+				// checkbox status is changed from uncheck to checked.
+				if (!isChecked) {
+					// show password
+					value.setTransformationMethod(PasswordTransformationMethod
+							.getInstance());
+				} else {
+					// hide password
+					value.setTransformationMethod(HideReturnsTransformationMethod
+							.getInstance());
+				}
+			}
+		});
+
 	}
 
 	// @Override
@@ -77,7 +102,6 @@ public class InternetActivity extends Activity implements OnClickListener {
 		} else {
 			Toast.makeText(this, "invalid password", Toast.LENGTH_LONG).show();
 		}
-
 	}
 
 	public class HttpGetDemo extends AsyncTask<TextView, Void, String> {

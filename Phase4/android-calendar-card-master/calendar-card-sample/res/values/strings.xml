@@ -10,6 +10,7 @@
     <string name="sel_date">%s</string>
     <string name="enter">Please enter password below:</string>
     <string name="submit">submit</string>
+    <string name="show_pwd">show password</string>
     
     <string name="label_course_test">Course:</string>
     <string name="label_course_assignment">Course:</string>
