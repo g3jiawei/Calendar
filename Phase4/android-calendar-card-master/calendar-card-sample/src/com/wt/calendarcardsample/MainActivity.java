@@ -22,19 +22,6 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_splash);
 		
 		new Student(getApplicationContext());
-		// String url =
-		// "http://dev-firmament-772.appspot.com/index.php/api/calendar/courses";
-		// // ������������������
-		// Map<String, String> map = new HashMap<String, String>();
-		// map.put("var1", "123");
-		// map.put("var2", "234");
-		// try {
-		// connect = Student.sendGetRequest(url, map);
-		// } catch (Exception e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-		
 		displaySplashScreen();
 
 	}
