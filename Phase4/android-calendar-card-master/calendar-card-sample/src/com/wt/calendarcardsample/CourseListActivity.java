@@ -188,7 +188,7 @@ public class CourseListActivity extends Activity {
 				// outside its borders.
 				.setTitle(course.getCode() + ": " + course.getTitle())
 				.setMessage(
-						"Warning:\nOnce you edit or delete the course, all the information about this course will be lost!")
+						"Warning:\nOnce you delete the course, all the information about this course will be lost!")
 				.setCancelable(true)
 				// Sets a button on the left for submitting data.
 				.setNegativeButton("Edit",

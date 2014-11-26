@@ -16,8 +16,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.calendarcardsample.backend.Assignment;
 import com.calendarcardsample.backend.Course;
 import com.calendarcardsample.backend.Student;
+import com.calendarcardsample.backend.Test;
 
 public class UpdateCourseActivity extends Activity {
 
@@ -49,14 +51,31 @@ public class UpdateCourseActivity extends Activity {
 				.trim().replaceAll("\\s+", "");
 		String courseTitle = editCourseTitle.getText().toString();
 		if (validateInput(courseCode, courseTitle)) {
-			Course.removeCourse(OldCourseCode);
-			Student.saveAssignments(getApplicationContext());
-			Student.saveTests(getApplicationContext());
-			Student.loadAssignments(getApplicationContext());
-			Student.loadTests(getApplicationContext());
+			Set<Course> courses1 = Student.courseAssignments.keySet();
+			for (Course cur : courses1) {
+				if (cur.getCode().equals(OldCourseCode)) {
+					cur.setCode(courseCode);
+					cur.setTitle(courseTitle);
+					for (Assignment assignment : Student.courseAssignments
+							.get(cur)) {
+						assignment.setCode(courseCode);
+					}
+					break;
+				}
+			}
+			Set<Course> courses2 = Student.courseTests.keySet();
+			for (Course cur : courses2) {
+				if (cur.getCode().equals(OldCourseCode)) {
+					cur.setCode(courseCode);
+					cur.setTitle(courseTitle);
+					for (Test test : Student.courseTests.get(cur)) {
+						test.setCode(courseCode);
+					}
+					break;
+				}
+			}
 			Toast.makeText(getApplicationContext(), "Updated",
 					Toast.LENGTH_SHORT).show();
-			Course.addCourse(courseCode, courseTitle);
 			Student.saveAssignments(getApplicationContext());
 			Student.saveTests(getApplicationContext());
 			Student.loadAssignments(getApplicationContext());

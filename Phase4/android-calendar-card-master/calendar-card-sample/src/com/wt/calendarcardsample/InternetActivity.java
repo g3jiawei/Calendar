@@ -13,11 +13,18 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -29,6 +36,7 @@ public class InternetActivity extends Activity implements OnClickListener {
 	private Button btn;
 	private ProgressBar pb;
 
+	@SuppressLint("NewApi")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,6 +46,9 @@ public class InternetActivity extends Activity implements OnClickListener {
 		pb = (ProgressBar) findViewById(R.id.progressBar1);
 		pb.setVisibility(View.GONE);
 		btn.setOnClickListener(this);
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setHomeButtonEnabled(true);
 	}
 
 //	@Override
@@ -105,5 +116,33 @@ public class InternetActivity extends Activity implements OnClickListener {
 			}
 		}
 
+	}
+	
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		im.hideSoftInputFromWindow(getCurrentFocus()
+				.getApplicationWindowToken(),
+				InputMethodManager.HIDE_NOT_ALWAYS);
+		return super.onTouchEvent(event);
+
+	}
+
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	private void setupActionBar() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+			getActionBar().setDisplayHomeAsUpEnabled(true);
+		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem menuItem) {
+		switch (menuItem.getItemId()) {
+		case android.R.id.home:
+			// ProjectsActivity is my 'home' activity
+			super.onBackPressed();
+			return true;
+		}
+		return (super.onOptionsItemSelected(menuItem));
 	}
 }
