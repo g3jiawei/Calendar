@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -33,28 +35,31 @@ public class AddTestActivity extends Activity {
 	private Spinner spinner;
 	private ArrayAdapter<String> adapter;
 	private TreeMap<Course, List<Test>> courseTestsTree;
+	EditText editName;
+	EditText editFrom;
+	EditText editTo;
+	EditText editLocation;
 
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_newtest);
-
+		// Receive data
 		Intent intent = this.getIntent();
 		date = (String) intent.getSerializableExtra("clickDate");
-
+		// Action bar
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
-
+		// Get all course in order
 		courseTestsTree = new TreeMap<Course, List<Test>>(Student.courseTests);
 		Set<Course> courses = courseTestsTree.keySet();
 
 		final ArrayList<String> list = new ArrayList<String>();
-
 		for (Course cur : courses) {
 			list.add(cur.getCode());
 		}
-
+		// Spinner thing
 		spinner = (Spinner) findViewById(R.id.Spinner01);
 		adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, list);
@@ -69,33 +74,27 @@ public class AddTestActivity extends Activity {
 				code = (String) item;
 			}
 
+			// Interface umimplemented function
 			public void onNothingSelected(AdapterView<?> parent) {
 			}
 		});
 
 	}
 
-	/**
-	 * Attempt to create a new patient when save button is clicked. * @param
-	 * view The layouts view.
-	 */
+	// Save test
 	public void saveNewTest(View view) {
-		EditText editName = (EditText) findViewById(R.id.et_name_test);
-		EditText editFrom = (EditText) findViewById(R.id.et_fromtime);
-		EditText editTo = (EditText) findViewById(R.id.et_totime);
-		EditText editLocation = (EditText) findViewById(R.id.et_location);
-
+		// Define views
+		editName = (EditText) findViewById(R.id.et_name_test);
+		editFrom = (EditText) findViewById(R.id.et_fromtime);
+		editTo = (EditText) findViewById(R.id.et_totime);
+		editLocation = (EditText) findViewById(R.id.et_location);
+		// Get info from input
 		String name = editName.getText().toString();
 		String from = editFrom.getText().toString().toLowerCase().trim();
 		String to = editTo.getText().toString().toLowerCase().trim();
 		String location = editLocation.getText().toString();
-
+		// Save and load
 		if (validateInput(code, name, date, from, to, location)) {
-			// // Gets current date from built-in calendar as the default date
-			// // for arrival time.
-			// Calendar calendar = Calendar.getInstance();
-			// SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-			// String currentDate = df.format(calendar.getTime());
 			Toast.makeText(getApplicationContext(), "Added a new test",
 					Toast.LENGTH_SHORT).show();
 			Test.addTest(code, name, date, from, to, location);
@@ -103,49 +102,32 @@ public class AddTestActivity extends Activity {
 			Student.loadTests(getApplicationContext());
 			finish();
 		}
-		editName.setText(null);
-		editFrom.setText(null);
-		editTo.setText(null);
-		editLocation.setText(null);
 	}
 
-	/**
-	 * Check the validity of the input.
-	 * 
-	 * @param name
-	 *            The patients name.
-	 * @param dateOfBirth
-	 *            The patients date of birth.
-	 * @param healthCardNumber
-	 *            The patients health card number.
-	 * @param arrivalTime
-	 *            The patients arrival time.
-	 * @return true iff input is valid.
-	 */
+	// Checks if input is missing and creates the corresponding
+	// error message if it is.
+	// Checks if the date and time inputs are valid and creates the
+	// corresponding error message if it is.
 	private boolean validateInput(String code, String name, String date,
 			String from, String to, String location) {
-		// Checks if input is missing and creates the corresponding
-		// error message if it is.
+
 		if (code.equals("") || from.equals("") || to.equals("")
 				|| name.equals("") || location.equals("")) {
 			Toast.makeText(getApplicationContext(), "Missing input",
 					Toast.LENGTH_SHORT).show();
 			return false;
-			// Checks if the date and time inputs are valid and creates the
-			// corresponding error message if it is.
-		} else if (!to.equals("")) {
-			if (!to.contains(":")) {
-				Toast.makeText(getApplicationContext(), "invalid time.",
-						Toast.LENGTH_SHORT).show();
-				return false;
-			}
-		} else if (to.indexOf(":") != 2) {
+
+		} else if (!matchDateTime(from) || !matchDateTime(to)) {
 			Toast.makeText(getApplicationContext(), "invalid time.",
 					Toast.LENGTH_SHORT).show();
+			editFrom.setText(null);
+			editTo.setText(null);
 			return false;
 		} else if (!checkTime(from, to)) {
 			Toast.makeText(getApplicationContext(), "Invalid test time",
 					Toast.LENGTH_SHORT).show();
+			editFrom.setText(null);
+			editTo.setText(null);
 			return false;
 		} else if (!name.equals("")) {
 			Set<Course> courses = Student.courseTests.keySet();
@@ -156,53 +138,25 @@ public class AddTestActivity extends Activity {
 							Toast.makeText(getApplicationContext(),
 									"This test already exists.",
 									Toast.LENGTH_SHORT).show();
+							editName.setText(null);
 							return false;
 						}
 					}
 				}
 			}
-		} else if (!code.equals("")) {
-			Set<Course> courses = Student.courseAssignments.keySet();
-			for (Course course : courses) {
-				if (course.getCode().equals(code)) {
-					return true;
-				}
-			}
-			Toast.makeText(getApplicationContext(),
-					"This course doesn't exist.", Toast.LENGTH_SHORT).show();
-			return false;
 		}
 		return true;
 	}
 
-	// /**
-	// * Check the validity of the date and time inputs.
-	// *
-	// * @param dateOfBirth
-	// * The patients date of birth.
-	// * @param arrivalTime
-	// * The patients arrival time.
-	// * @return true iff input is valid.
-	// */
-	// private boolean matchDateTime(String date, String time) {
-	// // Uses a regular expression to make sure the input follows a
-	// // specific format.
-	// Pattern pdate = Pattern.compile("(0[1-9]|[12]\\d|3[01])"
-	// + "/(0[1-9]|1[012])" + "/(19\\d\\d|20[01]\\d)");
-	// Pattern ptime = Pattern.compile("([01]\\d|2[0-3]):([0-5]\\d)");
-	// Matcher mdate = pdate.matcher(date);
-	// Matcher mtime = ptime.matcher(time);
-	//
-	// String[] dates = date.split("/");
-	// Integer day = Integer.parseInt(dates[0]);
-	// Integer month = Integer.parseInt(dates[1]);
-	// Integer year = Integer.parseInt(dates[2]);
-	// // Only returns true if both formats match, and the dates are
-	// // confirmed to be valid by matchDaysInMonth.
-	// return (mdate.matches() && mtime.matches() && matchDaysInMonth(day,
-	// month, year));
-	// }
+	private boolean matchDateTime(String time) {
+		// Uses a regular expression to make sure the input follows a
+		// specific format.
+		Pattern ptime = Pattern.compile("([01]\\d|2[0-3]):([0-5]\\d)");
+		Matcher mtime = ptime.matcher(time);
+		return mtime.matches();
+	}
 
+	// Check if test time make sense
 	private boolean checkTime(String from, String to) {
 		String[] froms = from.split(":");
 		Integer hours1 = Integer.parseInt(froms[0]);
@@ -218,39 +172,7 @@ public class AddTestActivity extends Activity {
 		}
 	}
 
-	// /**
-	// * Checks if the patients date of birth input matches calendar dates.
-	// *
-	// * @param day
-	// * The day the patient was born on.
-	// * @param month
-	// * The month the patient was born on.
-	// * @param year
-	// * The year the patient was born on.
-	// * @return true iff input is valid.
-	// */
-	// private boolean matchDaysInMonth(Integer day, Integer month, Integer
-	// year) {
-	// // Compares inputed date with the calendar dates.
-	// if (month == 4 || month == 6 || month == 9 || month == 11) {
-	// if (day == 31) {
-	// return false;
-	// }
-	// } else if (month == 2) {
-	// // Checks for leap years.
-	// if (year % 4 == 0) {
-	// if (day > 29) {
-	// return false;
-	// }
-	// } else {
-	// if (day > 28) {
-	// return false;
-	// }
-	// }
-	// }
-	// return true;
-	// }
-
+	// Hide keyboard
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -261,6 +183,7 @@ public class AddTestActivity extends Activity {
 
 	}
 
+	// Action bar stuff
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void setupActionBar() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {

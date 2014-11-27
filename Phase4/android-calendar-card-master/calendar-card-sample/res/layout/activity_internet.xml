@@ -11,74 +11,75 @@
         android:layout_below="@+id/button1"
         android:layout_marginTop="68dp" />
 
-     <TextView
-         android:id="@+id/textView2"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignParentTop="true"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="37dp"
-         android:text="@string/username"
-         android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:text="@string/username"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-     <EditText
-         android:id="@+id/editText2"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignRight="@+id/editText1"
-         android:layout_below="@+id/textView2"
-         android:layout_marginTop="15dp"
-         android:ems="10" 
-         android:inputType="textPassword"/>
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/editText1"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="text" >
 
-     <TextView
-         android:id="@+id/textView1"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/textView2"
-         android:layout_below="@+id/editText2"
-         android:layout_marginTop="20dp"
-         android:text="@string/enter"
-         android:textAppearance="?android:attr/textAppearanceLarge" />
+        <requestFocus />
+    </EditText>
 
-     <EditText
-         android:id="@+id/editText1"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/textView1"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="14dp"
-         android:ems="10"
-         android:inputType="textPassword" >
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="20dp"
+        android:text="@string/enter"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-         <requestFocus />
-     </EditText>
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="textPassword" >
+    </EditText>
 
-     <CheckBox
-         android:id="@+id/cbShowPwd"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/editText1"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="18dp"
-         android:text="@string/show_pwd" />
+    <CheckBox
+        android:id="@+id/cbShowPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/show_pwd" />
 
-     <ProgressBar
-         android:id="@+id/progressBar1"
-         style="?android:attr/progressBarStyleLarge"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/cbShowPwd"
-         android:layout_centerHorizontal="true" />
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbShowPwd"
+        android:layout_centerHorizontal="true" />
 
-     <Button
-         android:id="@+id/button1"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/textView1"
-         android:layout_alignRight="@+id/textView1"
-         android:layout_below="@+id/progressBar1"
-         android:layout_marginTop="26dp"
-         android:text="@string/submit" />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/progressBar1"
+        android:layout_marginTop="26dp"
+        android:text="@string/submit" />
 
 </RelativeLayout>

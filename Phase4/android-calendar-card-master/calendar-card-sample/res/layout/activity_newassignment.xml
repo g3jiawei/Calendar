@@ -42,10 +42,14 @@
         android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
         android:ems="10"
         android:hint="@string/hint_name_assignment"
+        android:textColorHint="#6E6E6E"
         android:inputType="text"
         android:maxLength="35"
         android:padding="8dp"
-        android:textColor="#000000" />
+        android:textColor="#000000" >
+        
+        <requestFocus />
+    </EditText>
 
     <TextView
         android:id="@+id/tv_course_assignment"
@@ -79,12 +83,11 @@
         android:digits="0123456789:"
         android:ems="10"
         android:hint="@string/hint_time"
+        android:textColorHint="#6E6E6E"
         android:inputType="time"
         android:maxLength="12"
         android:padding="8dp"
-        android:textColor="#000000" >
+        android:textColor="#000000" />
 
-        <requestFocus />
-    </EditText>
 
 </RelativeLayout>

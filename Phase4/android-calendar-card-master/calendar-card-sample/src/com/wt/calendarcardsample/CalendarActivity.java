@@ -42,19 +42,12 @@ public class CalendarActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_calendar);
 
-		// Intent intent = getIntent();
-		// student = (Student) intent.getSerializableExtra("studentKey");
-
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
 
 		// CalendarCard.setCell(cell);
 		// CardGridItem testItem = null;
 		// testItem.isEnabled();
-
-		// Calendar calendar = Calendar.getInstance();
-		// SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-		// final String currentDate = df.format(calendar.getTime());
 
 		mCalendarCardPager = (CalendarCardPager) findViewById(R.id.calendarCard1);
 		dates1 = getAllDates1();
@@ -85,7 +78,7 @@ public class CalendarActivity extends Activity {
 						if (!dates2.contains(new SimpleDateFormat("dd/MM/yyyy",
 								Locale.getDefault()).format(item.getDate()
 								.getTime()))) {
-							info += "No Assignment Today\n";
+							info += "  No Assignment Today\n";
 						}
 						for (Course cur : courses1) {
 							for (Assignment assign : Student.courseAssignments
@@ -95,9 +88,9 @@ public class CalendarActivity extends Activity {
 												Locale.getDefault())
 												.format(item.getDate()
 														.getTime()))) {
-									info += (assign.getCode() + " "
+									info += ("  " + assign.getCode() + ": "
 											+ assign.getName() + "\n");
-									info += ("Due at " + assign.getTime() + "\n");
+									info += ("  Due at " + assign.getTime() + "\n");
 								}
 							}
 						}
@@ -106,7 +99,7 @@ public class CalendarActivity extends Activity {
 						if (!dates1.contains(new SimpleDateFormat("dd/MM/yyyy",
 								Locale.getDefault()).format(item.getDate()
 								.getTime()))) {
-							info += "No Test Today\n";
+							info += "  No Test Today\n";
 						}
 						for (Course cur : courses2) {
 							for (Test test : Student.courseTests.get(cur)) {
@@ -115,9 +108,9 @@ public class CalendarActivity extends Activity {
 												Locale.getDefault())
 												.format(item.getDate()
 														.getTime()))) {
-									info += (test.getCode() + " "
+									info += ("  " + test.getCode() + ": "
 											+ test.getName() + "\n");
-									info += ("From " + test.getFrom()
+									info += ("  From " + test.getFrom()
 											+ " to " + test.getTo() + " at "
 											+ test.getLocation() + "\n");
 								}

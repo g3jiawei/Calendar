@@ -19,30 +19,29 @@ import com.calendarcardsample.backend.Course;
 import com.calendarcardsample.backend.Student;
 
 public class AddCourseActivity extends Activity {
-
+    
+	EditText editCourseCode;
+	EditText editCourseTitle;
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_newcourse);
-
-		// Intent intent = this.getIntent();
-		// student = (Student) intent.getSerializableExtra("studentKey");
-		// course = (Course) intent.getSerializableExtra("courseKey");
-
+        //Action bar stuff
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
 
 	}
 
 	/**
-	 * Attempt to create a new patient when save button is clicked. * @param
+	 * Attempt to save when save button is clicked. * @param
 	 * view The layouts view.
 	 */
 	public void saveNewCourse(View view) {
-		EditText editCourseCode = (EditText) findViewById(R.id.et_coursecode);
-		EditText editCourseTitle = (EditText) findViewById(R.id.et_coursetitle);
-
+		//Define views
+		editCourseCode = (EditText) findViewById(R.id.et_coursecode);
+		editCourseTitle = (EditText) findViewById(R.id.et_coursetitle);
+        //Get info from input
 		String courseCode = editCourseCode.getText().toString().toUpperCase()
 				.trim().replaceAll("\\s+", "");
 		String courseTitle = editCourseTitle.getText().toString();
@@ -56,9 +55,6 @@ public class AddCourseActivity extends Activity {
 			Student.loadTests(getApplicationContext());
 			super.onBackPressed();
 		}
-		editCourseCode.setText(null);
-		editCourseTitle.setText(null);
-
 	}
 
 	/**
@@ -77,6 +73,7 @@ public class AddCourseActivity extends Activity {
 				if (course.getCode().equals(code)) {
 					Toast.makeText(getApplicationContext(), "Course Exists",
 							Toast.LENGTH_SHORT).show();
+					editCourseCode.setText(null);
 					return false;
 				}
 			}
@@ -84,6 +81,7 @@ public class AddCourseActivity extends Activity {
 		return true;
 	}
     
+	//Hide the keyboard
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -94,6 +92,7 @@ public class AddCourseActivity extends Activity {
 
 	}
 	
+	//Action bar stuff
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void setupActionBar() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {

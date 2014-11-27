@@ -25,12 +25,16 @@
         android:background="@drawable/text_border"
         android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
         android:hint="@string/hint_course"
+        android:textColorHint="#6E6E6E"
         android:imeOptions="actionNext"
         android:inputType="text"
         android:maxLength="35"
         android:padding="8dp"
         android:singleLine="true"
-        android:textColor="#000000" />
+        android:textColor="#000000" >
+        
+        <requestFocus />
+    </EditText>
 
     <TextView
         android:id="@+id/tv_coursetitle"
@@ -54,6 +58,7 @@
         android:digits="QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm0123456789,.&apos;- "
         android:ems="10"
         android:hint="@string/hint_coursetitle"
+        android:textColorHint="#6E6E6E"
         android:imeOptions="actionNext"
         android:inputType="text"
         android:maxLength="35"
