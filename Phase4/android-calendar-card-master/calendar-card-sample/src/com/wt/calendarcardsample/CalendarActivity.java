@@ -95,9 +95,9 @@ public class CalendarActivity extends Activity {
 												Locale.getDefault())
 												.format(item.getDate()
 														.getTime()))) {
-									info += ("  " + assign.getCode() + " "
+									info += (assign.getCode() + " "
 											+ assign.getName() + "\n");
-									info += ("  Due at " + assign.getTime() + "\n");
+									info += ("Due at " + assign.getTime() + "\n");
 								}
 							}
 						}
@@ -115,9 +115,9 @@ public class CalendarActivity extends Activity {
 												Locale.getDefault())
 												.format(item.getDate()
 														.getTime()))) {
-									info += ("  " + test.getCode() + " "
+									info += (test.getCode() + " "
 											+ test.getName() + "\n");
-									info += ("  From " + test.getFrom()
+									info += ("From " + test.getFrom()
 											+ " to " + test.getTo() + " at "
 											+ test.getLocation() + "\n");
 								}
