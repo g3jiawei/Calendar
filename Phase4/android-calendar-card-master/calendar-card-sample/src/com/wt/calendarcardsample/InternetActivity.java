@@ -52,8 +52,8 @@ public class InternetActivity extends Activity implements OnClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_internet);
-		value = (EditText) findViewById(R.id.editText1);
 		name = (EditText) findViewById(R.id.editText2);
+		value = (EditText) findViewById(R.id.editText1);
 		btn = (Button) findViewById(R.id.button1);
 		pb = (ProgressBar) findViewById(R.id.progressBar1);
 		btn.setOnClickListener(this);
@@ -174,8 +174,8 @@ public class InternetActivity extends Activity implements OnClickListener {
 						Student.saveTests(getApplicationContext());
 						Student.loadAssignments(getApplicationContext());
 						Student.loadTests(getApplicationContext());
-						exist = false;
 					}
+					exist = false;
 				}
 
 			} catch (Exception e) {
