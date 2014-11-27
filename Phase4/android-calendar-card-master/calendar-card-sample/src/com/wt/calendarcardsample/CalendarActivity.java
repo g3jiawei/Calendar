@@ -47,10 +47,10 @@ public class CalendarActivity extends Activity {
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
-		
-		//CalendarCard.setCell(cell);
-//		CardGridItem testItem = null;
-//		testItem.isEnabled();
+
+		// CalendarCard.setCell(cell);
+		// CardGridItem testItem = null;
+		// testItem.isEnabled();
 
 		// Calendar calendar = Calendar.getInstance();
 		// SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
@@ -59,13 +59,13 @@ public class CalendarActivity extends Activity {
 		mCalendarCardPager = (CalendarCardPager) findViewById(R.id.calendarCard1);
 		dates1 = getAllDates1();
 		dates2 = getAllDates2();
-        
+
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Calendar today = Calendar.getInstance();
 		String a = dateFormat.format(today.getTime());
 		TextView view = (TextView) findViewById(R.id.textView1);
-		view.setText("Today is "+ a);
-		
+		view.setText("Today is " + a);
+
 		mCalendarCardPager.setOnCellItemClick(new OnCellItemClick() {
 
 			@Override
@@ -95,9 +95,9 @@ public class CalendarActivity extends Activity {
 												Locale.getDefault())
 												.format(item.getDate()
 														.getTime()))) {
-									info += (assign.getCode() + " "
+									info += ("  " + assign.getCode() + " "
 											+ assign.getName() + "\n");
-									info += ("Due at " + assign.getTime() + "\n");
+									info += ("  Due at " + assign.getTime() + "\n");
 								}
 							}
 						}
@@ -115,10 +115,10 @@ public class CalendarActivity extends Activity {
 												Locale.getDefault())
 												.format(item.getDate()
 														.getTime()))) {
-									info += (test.getCode() + " "
+									info += ("  " + test.getCode() + " "
 											+ test.getName() + "\n");
-									info += ("From " + test.getFrom() + " to "
-											+ test.getTo() + " at "
+									info += ("  From " + test.getFrom()
+											+ " to " + test.getTo() + " at "
 											+ test.getLocation() + "\n");
 								}
 							}

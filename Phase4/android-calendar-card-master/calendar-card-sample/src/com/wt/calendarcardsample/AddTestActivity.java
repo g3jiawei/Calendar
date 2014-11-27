@@ -140,11 +140,11 @@ public class AddTestActivity extends Activity {
 				return false;
 			}
 		} else if (!to.equals("") && (!from.equals(""))) {
-			if(!from.substring(2, 3).equals(":")){
+			if(!from.substring(2, 3).contentequals(":")){
 				Toast.makeText(getApplicationContext(),
 						"invalid time.", Toast.LENGTH_SHORT).show();
 				return false;
-			} else 	if(!to.substring(2, 3).equals(":")){
+			} else 	if(!to.substring(2, 3).contentequals(":")){
 				Toast.makeText(getApplicationContext(),
 						"invalid time.", Toast.LENGTH_SHORT).show();
 				return false;
