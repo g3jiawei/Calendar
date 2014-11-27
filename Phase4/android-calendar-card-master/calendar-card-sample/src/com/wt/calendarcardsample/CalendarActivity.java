@@ -250,7 +250,7 @@ public class CalendarActivity extends Activity {
 		alertDialogBuilder
 				// Makes user unable to leave dialog by clicking
 				// outside its borders.
-				.setTitle("Which event you want to add")
+				.setTitle("Which event you want to add\n")
 				.setItems(R.array.events_array,
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog,
