@@ -129,7 +129,7 @@ public class AddAssignmentActivity extends Activity {
 				}
 			}
 		}else if (!time.equals("")) {
-			if(time.substring(2, 3).equals(":")){
+			if(!time.substring(2, 3).equals(":")){
 				Toast.makeText(getApplicationContext(),
 						"invalid time.", Toast.LENGTH_SHORT).show();
 				return false;

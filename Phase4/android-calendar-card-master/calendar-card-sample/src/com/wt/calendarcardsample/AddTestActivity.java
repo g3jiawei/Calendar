@@ -139,14 +139,14 @@ public class AddTestActivity extends Activity {
 						Toast.LENGTH_SHORT).show();
 				return false;
 			}
-		} else if (!to.equals("") && (!to.equals(""))) {
-			if (to.contains(":")) {
-				Toast.makeText(getApplicationContext(), "invalid time.",
-						Toast.LENGTH_SHORT).show();
+		} else if (!to.equals("") && (!from.equals(""))) {
+			if(!from.substring(2, 3).equals(":")){
+				Toast.makeText(getApplicationContext(),
+						"invalid time.", Toast.LENGTH_SHORT).show();
 				return false;
-			} else if (from.contains(":")) {
-				Toast.makeText(getApplicationContext(), "invalid time.",
-						Toast.LENGTH_SHORT).show();
+			} else 	if(!to.substring(2, 3).equals(":")){
+				Toast.makeText(getApplicationContext(),
+						"invalid time.", Toast.LENGTH_SHORT).show();
 				return false;
 			} else if (!checkTime(from, to)) {
 				Toast.makeText(getApplicationContext(), "Invalid test time",
