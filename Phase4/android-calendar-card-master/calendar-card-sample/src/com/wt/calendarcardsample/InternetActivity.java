@@ -40,10 +40,11 @@ import com.calendarcardsample.backend.Student;
 
 public class InternetActivity extends Activity implements OnClickListener {
 
+	TextView textView1;
 	private EditText value;
+	private EditText name;
 	private Button btn;
 	private ProgressBar pb;
-	TextView textView;
 	CheckBox mCbShowPwd;
 
 	@SuppressLint("NewApi")
@@ -52,6 +53,7 @@ public class InternetActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_internet);
 		value = (EditText) findViewById(R.id.editText1);
+		name = (EditText) findViewById(R.id.editText2);
 		btn = (Button) findViewById(R.id.button1);
 		pb = (ProgressBar) findViewById(R.id.progressBar1);
 		btn.setOnClickListener(this);
@@ -92,11 +94,15 @@ public class InternetActivity extends Activity implements OnClickListener {
 			// out of range
 			Toast.makeText(this, "please enter password", Toast.LENGTH_LONG)
 					.show();
+		} else if (!(name.getText().toString().trim().toLowerCase()
+				.equals("group10"))) {
+			Toast.makeText(this, "user doesn't exist", Toast.LENGTH_LONG)
+					.show();
 		} else if ((value.getText().toString().trim().toLowerCase()
 				.equals("123456"))) {
 			pb.setVisibility(View.VISIBLE);
-			textView = (TextView) findViewById(R.id.viewText1);
-			new HttpGetDemo().execute(textView);
+			textView1 = (TextView) findViewById(R.id.viewText1);
+			new HttpGetDemo().execute(textView1);
 			// pb.setVisibility(View.GONE);
 			Toast.makeText(this, "loaded", Toast.LENGTH_LONG).show();
 			finish();

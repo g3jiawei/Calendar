@@ -9,6 +9,7 @@
     <string name="internet">Load Data</string>
     <string name="sel_date">%s</string>
     <string name="enter">Please enter password below:</string>
+    <string name="username">Please enter username below:</string>
     <string name="submit">submit</string>
     <string name="show_pwd">show password</string>
     
