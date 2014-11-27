@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
 		// Sets main layout as a splash screen.
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_splash);
-		
+
 		new Student(getApplicationContext());
 		displaySplashScreen();
 
@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
 		Thread logoTimer = new Thread() {
 			public void run() {
 				try {
+
 					int logoTimer = 0;
 					// Pauses for SPLASH_TIME amount of time
 					while (logoTimer < SPLASH_TIME) {

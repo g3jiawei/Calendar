@@ -133,10 +133,26 @@ public class AddTestActivity extends Activity {
 			return false;
 			// Checks if the date and time inputs are valid and creates the
 			// corresponding error message if it is.
-		} else if (!checkTime(from, to)) {
-			Toast.makeText(getApplicationContext(), "Invalid test time",
-					Toast.LENGTH_SHORT).show();
-			return false;
+		} else if (!to.equals("")) {
+			if (to.contains(":")) {
+				Toast.makeText(getApplicationContext(), "invalid time.",
+						Toast.LENGTH_SHORT).show();
+				return false;
+			}
+		} else if (!to.equals("") && (!to.equals(""))) {
+			if (to.contains(":")) {
+				Toast.makeText(getApplicationContext(), "invalid time.",
+						Toast.LENGTH_SHORT).show();
+				return false;
+			} else if (from.contains(":")) {
+				Toast.makeText(getApplicationContext(), "invalid time.",
+						Toast.LENGTH_SHORT).show();
+				return false;
+			} else if (!checkTime(from, to)) {
+				Toast.makeText(getApplicationContext(), "Invalid test time",
+						Toast.LENGTH_SHORT).show();
+				return false;
+			}
 		} else if (!name.equals("")) {
 			Set<Course> courses = Student.courseTests.keySet();
 			for (Course course : courses) {

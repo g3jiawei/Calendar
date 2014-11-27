@@ -128,6 +128,12 @@ public class AddAssignmentActivity extends Activity {
 					}
 				}
 			}
+		}else if (!time.equals("")) {
+			if(time.substring(2, 3).equals(":")){
+				Toast.makeText(getApplicationContext(),
+						"invalid time.", Toast.LENGTH_SHORT).show();
+				return false;
+			}
 		} else if (!code.equals("")) {
 			Set<Course> courses = Student.courseAssignments.keySet();
 			for (Course course : courses) {

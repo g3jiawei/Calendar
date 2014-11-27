@@ -47,6 +47,13 @@ public final class R {
         public static int app_name=0x7f060000;
     }
     public static final class style {
+        public static int CalendarCard=0x7f070001;
+        public static int CalendarCard_Cell=0x7f070007;
+        public static int CalendarCard_Day=0x7f070004;
+        public static int CalendarCard_Days=0x7f070005;
+        public static int CalendarCard_Grid=0x7f070006;
+        public static int CalendarCard_Root=0x7f070002;
+        public static int CalendarCard_Title=0x7f070003;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -56,18 +63,9 @@ public final class R {
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
-         */
-        public static int AppBaseTheme=0x7f070000;
-        /**  Application theme. 
+ Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static int AppTheme=0x7f070001;
-        public static int CalendarCard=0x7f070002;
-        public static int CalendarCard_Cell=0x7f070008;
-        public static int CalendarCard_Day=0x7f070005;
-        public static int CalendarCard_Days=0x7f070006;
-        public static int CalendarCard_Grid=0x7f070007;
-        public static int CalendarCard_Root=0x7f070003;
-        public static int CalendarCard_Title=0x7f070004;
+        public static int Theme_Material=0x7f070000;
     }
 }
