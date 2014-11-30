@@ -5,9 +5,11 @@ Which features (that weren't a part of the original handout) did you choose to f
 How do you expect a typical user to use your product? (i.e. run us through a quick scenario or two).
 Give your TA and/or instructor some context, before they see your live presentation.
 
-The typical user is immediately educated of this benefits of using _____. The focus is emphasized with the use of a cover page that allows the user to register.  
+Our value proposition is the following:
+- 
+The typical user is immediately educated of the benefits of using iCalendar. The focus is optimally emphasized with the use of a cover page that allows the user to register, this will be added on in later phases when product is complete to vision.  
 It's all about the focus, afterall it is a student focuessed product.
-
+Without input, the user will not have the managing capability of iCalendar. 
 However, this product has the potential to rise above the student niche....
 One additional feature that has not been completed is the synchronization between schedules. This immediately relates to the
 current design where users optionally add courses/committments they have. 
