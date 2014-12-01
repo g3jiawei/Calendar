@@ -1,5 +1,5 @@
 Our value proposition is the following:
-Manage course content in the most convenient way, both offline and online. Online provides the immediate feed from classmates as opposed to the traditional information generated from the instructor. Reversely, asking questions to the right audience. Ultimately improve your academic efficiency in a mobile-friendly environment, in terms of information receiving and collaboration.
+Manage course content in the most convenient way, both offline and online. Online provides the immediate feed from classmates as opposed to the traditional information generated from the instructor. Reversely, asking questions to the right audience. Ultimately improve your academic efficiency in a mobile-friendly environment, in terms of information receiving and peer collaboration.
 
 Many use cases and personas were analyzed before the product development. Our design closely reinforces the need of students and we focussed on the time importance of the courses, exemplified by the countdown function, calendar interface and many others.
 The typical user is immediately educated of the benefits of using iCalendar. The focus is optimally emphasized with the use of a cover page that allows the user to register, this will be added on in later phases when product is complete to vision.  
