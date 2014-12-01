@@ -8,13 +8,13 @@ Give your TA and/or instructor some context, before they see your live presentat
 Our value proposition is the following:
 Manage course content in the most convenient way, both offline and online. Online provides the immediate feed from classmates as opposed to the traditional information generated from the instructor. Reversely, asking questions to the right audience. Ultimately improve your academic efficiency in a mobile-friendly environment, in terms of information receiving and collaboration.
 The typical user is immediately educated of the benefits of using iCalendar. The focus is optimally emphasized with the use of a cover page that allows the user to register, this will be added on in later phases when product is complete to vision.  
-It's all about the focus, afterall it is a student focuessed product.
-Without input, the user will not have the managing capability of iCalendar. The student can add an enrolled course and this is displayed on the calendar 
+It's all about the focus, afterall it is a student focussed product.
 
 However, this product has the potential to rise above the student niche....
 One additional feature that has not been completed is the synchronization between schedules. This immediately relates to the
 current design where users optionally add courses/committments they have. 
 
+Without user input, the user will not have the managing capability of iCalendar. Our database has a repository of all the courses in a certain institution. Thereby, the student can add an enrolled course and this is displayed on the calendar.
 Adding courses is more indicative of a person's background and interests than individual committments. Since a course embodies 
 many students, this is classified as a common interest.
 Load data button is to allow the student to log in, which we consider as a synonym to log in. The choice of words is to play a subconscious role in the user mentality, where they have to load their course information to be able to access the functionalities of the application.
