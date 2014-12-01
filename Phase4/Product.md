@@ -17,6 +17,7 @@ current design where users optionally add courses/committments they have.
 
 Adding courses is more indicative of a person's background and interests than individual committments. Since a course embodies 
 many students, this is classified as a common interest.
+Load data button is to allow the student to log in, which we consider as a synonym to log in. The choice of words is to play a subconscious role in the user mentality, where they have to load their course information to be able to access the functionalities of the application.
 The emphasis of a virtual calendar is done through the calendar interface. The visual in...
 
 With the embodiment of common interests, we would like to implement a group-focussed feature where students can communicate with one another, knowing that others are on there.
