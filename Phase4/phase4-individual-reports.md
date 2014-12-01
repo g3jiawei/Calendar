@@ -44,4 +44,11 @@ TODO: Fill in the report
  * I understood the implementation of the server and helped to communicate the logic of the server to the one responsible for the connection between server and client. Also, I took the lead in idea generation/product design in the first phase, which was convenient for me to elaborate on the reports.
  * I could have assisted more in the development process, but most of the time I played catch up to others' technical skills.
 
+----
+
+## Shihao66
+* My most significant contribution is 
+* 
+* 
+* 
 
