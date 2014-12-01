@@ -14,6 +14,7 @@ However, this product has the potential to rise above the student niche....
 One additional feature that has not been completed is the synchronization between schedules. This immediately relates to the
 current design where users optionally add courses/committments they have. 
 
+To achieve our vision, great user experience is needed to highlight and transmit our value proposition.
 Without user input, the user will not have the managing capability of iCalendar. Our database has a repository of all the courses in a certain institution. Thereby, the student can add an enrolled course and this is displayed on the calendar.
 Adding courses is more indicative of a person's background and interests than individual committments. Since a course embodies 
 many students, this is classified as a common interest.
