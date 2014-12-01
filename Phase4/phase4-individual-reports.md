@@ -37,6 +37,12 @@ TODO: Fill in the report
  * I could implement more stuff - I once want to add pushing notification function to this app, but it seems difficult and I don't have enough time to do that, whcih is a big pity for me. If there is more time for me, I could do better.
 
 ----
+
+## Name (chouchua)
+* My most significant contribution was the design and implementation of Component X (links to relevant and interesting source-files/commits/issues).
+ * While working on our Android app (and then later in class), I learned about adapters (links to relevant and interesting source-files/commits/issues).
+ * I am always helping my teammates - I am the most experienced coder on the team, and I helped other teammates set up their development environment, and get up to speed with the tools we've used (give examples of specific tools).
+ * I could keep people more informed of what I am doing - I made a few large commits that conflicted with everybody else's code, and merging everyth
 ...
 
 
