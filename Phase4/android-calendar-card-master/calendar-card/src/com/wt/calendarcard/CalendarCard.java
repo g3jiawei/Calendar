@@ -25,7 +25,7 @@ public class CalendarCard extends RelativeLayout {
 	private Calendar dateDisplay;
 	private ArrayList<CheckableLayout> cells = new ArrayList<CheckableLayout>();
 	private LinearLayout cardGrid;
-	private int axis=5;
+	private int axis=0;
 	private boolean first = true;	
 	
 	public CalendarCard(Context context, AttributeSet attrs, int defStyle) {
