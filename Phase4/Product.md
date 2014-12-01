@@ -17,9 +17,15 @@ Without user input, the user will not have the managing capability of iCalendar.
 Adding courses is more indicative of a person's background and interests than individual committments. Since a course embodies 
 many students, this is classified as a common interest.
 Load data button is to allow the student to log in, which we consider as a synonym to log in. The choice of words is to play a subconscious role in the user mentality, where they have to load their course information to be able to access the functionalities of the application.
-The emphasis of a virtual calendar is done through the calendar interface. The visual in...
+
+The emphasis of a virtual calendar is done through the calendar interface. The added committment in terms of an assignment and ...
+
+The is immediately reminded to the user in the main menu under the button "COUNT DOWN". But note, this is "not the count down of your life" as mentioned in our presentation. Currently, only the earliest upcoming committment is being set, but more will be added in later development phases.
 
 With the embodiment of common interests, we would like to implement a group-focussed feature where students can communicate with one another, knowing that others are on there.
 While many appilcations are often used beyond of their original purposed design, such as the facebook groups being used for course.
+
+Icalendar is a simplistic design, but powerful given the above detailed description....
+
 discussion, we predict that _____ will be used between students as another form of communication. This type of communication is annonymousity, impowering everyone to freely ask. 
 These are features that rely on ...
