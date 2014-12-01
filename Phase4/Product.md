@@ -10,9 +10,7 @@ Manage course content in the most convenient way, both offline and online. Onlin
 The typical user is immediately educated of the benefits of using iCalendar. The focus is optimally emphasized with the use of a cover page that allows the user to register, this will be added on in later phases when product is complete to vision.  
 It's all about the focus, afterall it is a student focussed product.
 
-However, this product has the potential to rise above the student niche....
-One additional feature that has not been completed is the synchronization between schedules. This immediately relates to the
-current design where users optionally add courses/committments they have. 
+However, this product has the potential to rise above the student niche with the addition of the following functionality. This additional feature that has not been completed is the synchronization between schedules. Students will be able to have visibility of others in the same class and provided the ability to locate and then chat with the specific classmate. This immediately relates to the current design where users optionally add courses/committments they have, because the registeration of committed course is a direct visibility for other people enroleed in the same course.
 
 To achieve our vision, great user experience is needed to highlight and transmit our value proposition.
 Without user input, the user will not have the managing capability of iCalendar. Our database has a repository of all the courses in a certain institution. Thereby, the student can add an enrolled course and this is displayed on the calendar.
