@@ -39,10 +39,10 @@ TODO: Fill in the report
 ----
 
 ## Name (chouchua)
-* My most significant contribution was the design and implementation of Component X (links to relevant and interesting source-files/commits/issues).
- * While working on our Android app (and then later in class), I learned about adapters (links to relevant and interesting source-files/commits/issues).
+* My most significant contribution was the review of the reports to be handed in for each phase. Implementation of Component X (links to relevant and interesting source-files/commits/issues).
+ * While working on our Android app, I learned about essential libraries to use for the android environment and reading JSON responses from the database. 
  * I am always helping my teammates - I am the most experienced coder on the team, and I helped other teammates set up their development environment, and get up to speed with the tools we've used (give examples of specific tools).
- * I could keep people more informed of what I am doing - I made a few large commits that conflicted with everybody else's code, and merging everyth
+ * I could have assisted more in the development process, but most of the time I played catch up to others technical skills. people more informed of what I am doing - I made a few large commits that conflicted with everybody else's code, and merging everyth
 ...
 
 
