@@ -49,7 +49,7 @@
  Link: https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/commit/13df197e2207f30d4d62264a7e1f82069be874ab
 * One thing I learned is that in a real app development process, it's crucial to find a good mature prototype(library) at the first place, because this starting point can determine how far and how difficult you can implement your ideas. If you want to build a perfect calendar, for example, you should find the best prototype at first.
  Link: https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/master/Phase4/android-calendar-card-master/calendar-card
-* My main strength is the flexibility I have while implementing our app, I could find the gaps we need to fill at that moment and find the way to solve/implement it. 
+* My main strength is the flexibility I have while implementing our app, I could find the gaps we need to fill at that moment and find the way to solve/implement it. For example, when I found we need to have choices for adding events, I made a few dialogue boxes for that.
 * My main weakness is that I could not make fully use of what I have learnt before. For example, I have learnt database(csc343) before, but I did not help much on that part. So I find it is important to trully understand and integrate what you are learning from each course, and always: the deeper the better.
 
 ----
