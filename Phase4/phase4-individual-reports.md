@@ -59,8 +59,8 @@ We would like you to be concise yet informative.
 ----
 
 ## Shihao66
-* My most significant contribution is 
-* 
-* 
-* 
+* My most significant individual contribution is the implementation of backend and UI part, including backend classes like student and activities like CourseListActivity etc.
+* One thing I learned is that in a real app development process, it's crucial to find a good mature prototype(library) at the first place, because this starting point can determine how far and how difficult you can implement your ideas. If you want to build a perfect calendar, for example, you should find the best prototype at first.
+* My main strength is the flexibility I have while implementing our app, I could find the gaps we need to fill at that moment and find the way to solve/implement it. 
+* My main weakness is that I could not make fully use of what I have learnt before. For example, I have learnt database(csc343) before, but I did not helped a lot on that part. So I find it is important to trully understand and integrate what you are learning from each course, and always the deeper the better.
 
