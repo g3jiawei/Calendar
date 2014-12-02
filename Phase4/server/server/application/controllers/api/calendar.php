@@ -8,7 +8,7 @@ class Calendar extends REST_Controller {
     $arr['error_code'] = 0;
     $arr['error'] = 'success';
     $arr['courses'] = $result_array;
-    $this->response(json_encode($arr));
+    $this->response($arr);
   }
   
   function course_get($id) {
