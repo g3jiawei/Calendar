@@ -78,3 +78,15 @@ We would like you to be concise yet informative.
 * My main strength as a team member is that I am capable to do things efficiently and in high quality. The server is done nicely all by myself.
 
 * My main weakness is probably lack of communication. During the project we are not very well organized and sometimes members didn't know what they should be doing.
+* 
+
+
+
+
+## Name (g3nwakac)
+
+* My most significant contrubution was in the designing of the crc cards, user stories and the DAO Design Pathern. 
+	 Link: https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/Phase3/
+* While working on our Android app, I learnt how the MVC works and how to implement it. 
+* My main strength is my ability to test and debug code.
+* My weakness was when I keep on procastinating on getting my part done until a few days before it was due. 
