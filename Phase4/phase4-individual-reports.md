@@ -68,3 +68,13 @@ We would like you to be concise yet informative.
 * My main strength is the flexibility I have while implementing our app, I could find the gaps we need to fill at that moment and find the way to solve/implement it. 
 * My main weakness is that I could not make fully use of what I have learnt before. For example, I have learnt database(csc343) before, but I did not help much on that part. So I find it is important to trully understand and integrate what you are learning from each course, and always: the deeper the better.
 
+
+## Hongyi Guo(guohongyi)
+* My most significant individual contribution is the server. Basically, I designed the database, wrote the server and its document, and put it on the internet. Also, I provided some help to our android team, mainly about http request and JSON.
+	* http://dev-firmament-772.appspot.com/index.php/api/
+
+* I learned to use MVC pattern as well as REST architecture for the server api.
+
+* My main strength as a team member is that I am capable to do things efficiently and in high quality. The server is done nicely all by myself.
+
+* My main weakness is probably lack of communication. During the project we are not very well organized and sometimes members didn't know what they should be doing.
