@@ -16,7 +16,19 @@ We would like you to be concise yet informative.
 
 ## Name (liuzhon4)
 
-TODO: Fill in the report
+* My most significant contribution in Phase 4 is the final presentation, Process and Architecture 
+	* [Final presentation](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/commit/73471bed89e2ec6b0756d7f515808016fa518fd7)
+	* [Process](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/commit/ca6f0d66f8aab2be1799c139cee2dc7b8ca0557f)
+	* [Architecture](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/commit/66e15dfa8a666ea0b2fbfa2d0fedaa036735b474)
+	 
+	(I cannot cancel the login or make it accessible for everyone)
+
+* While working on our Android app, I learned about how to **PUT**, **FETCH** and **POST** data from our app to server with the help of Hongyi and Manke.  
+
+* I am always available to my teammates. Also, I help my teammates to setup Eclipse&Android environment and emulator.
+
+* I am not very good at Android programming. I need to keep asking friends or learn them myself. 
+
 
 ----
 
