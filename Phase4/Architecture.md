@@ -48,6 +48,6 @@ After this, you will be able to see it in the **calendar view** and **CURRENT CO
 	
 **Decision:**
 
-We decided to use save data temporarily into a file and then send them back to the database. By this decision, we don't have to access our server again and again and require users have Internet connection all the time. 
+We decided to use save data temporarily into a file and then send them back to the database. By this decision, we didn't have to access our server again and again and require users have Internet connection all the time. 
 
 We still believe this is a good decision.
