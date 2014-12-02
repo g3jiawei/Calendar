@@ -35,9 +35,9 @@ We would like you to be concise yet informative.
 ## Manke Luo (luomanke)
 
 * My most significant contribution was connecting the server and client (e.g. fnished the GET function by decoding JSON strings from the server) 
-	*[Server Connection](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/server-connection)
+	* [Server Connection](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/server-connection)
 * While working on our Android app, I learned about how to get infomation from server, and how to test my code using a real Android phone. 
-	*[GET/POST on Android](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/server-connection/MyHttpTester/src/Elvenware/MyTester)
+	* [GET/POST on Android](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/server-connection/MyHttpTester/src/Elvenware/MyTester)
 * I talked to the one who wrote server and the one who is coding the Android app at the same time. I asked them what they have and what they need. Furthermore, I pointed out their bugs and helped them fix these bugs.
 * I should help my teammates more often after finishing my job, so that we can have an app with less bugs and more functions. 
 
