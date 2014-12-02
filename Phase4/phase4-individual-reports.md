@@ -54,9 +54,9 @@ We would like you to be concise yet informative.
 
 ## Chuan-Keng Chou (chouchua)
 * My most significant contribution was the review/generation of the reports to be handed in for each phase and the idea generation/ product design in Phase 1.
- * While working on our Android app, I learned about essential libraries to use for the android environment and then running the emulator Genymotion. Another useful technique is being able to read JSON responses from the database, however I was not responsible to parse the JSON response. Also, experienced how the design pattern is essential to task distribution.
- * I understood the implementation of the server and helped to communicate the logic of the server to the one responsible for the connection between server and client. Also, I took the lead in idea generation/product design in the first phase, which was convenient for me to elaborate on the reports.
- * I could have assisted more in the development process, but most of the time I played catch up to others' technical skills. Being assigned in the server/database was a challenge, but in the end all worked well.
+* While working on our Android app, I learned about essential libraries to use for the android environment and then running the emulator Genymotion. Another useful technique is being able to read JSON responses from the database, however I was not responsible to parse the JSON response. Also, experienced how the design pattern is essential to task distribution.
+* I understood the implementation of the server and helped to communicate the logic of the server to the one responsible for the connection between server and client. Also, I took the lead in idea generation/product design in the first phase, which was convenient for me to elaborate on the reports.
+* I could have assisted more in the development process, but most of the time I played catch up to others' technical skills. Being assigned in the server/database was a challenge, but in the end all worked well.
 
 ----
 
