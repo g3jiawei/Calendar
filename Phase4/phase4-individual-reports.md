@@ -34,14 +34,16 @@ We would like you to be concise yet informative.
 
 ## Manke Luo (luomanke)
 
-* My most significant contribution was connecting the server and client (e.g. fnished the GET function by decoding JSON strings from the server) *[Server Connection](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/server-connection)
-* While working on our Android app, I learned about how to get infomation from server, and how to test my code using a real Android phone. *[GET/POST on Android](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/server-connection/MyHttpTester/src/Elvenware/MyTester)
+* My most significant contribution was connecting the server and client (e.g. fnished the GET function by decoding JSON strings from the server) 
+	*[Server Connection](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/server-connection)
+* While working on our Android app, I learned about how to get infomation from server, and how to test my code using a real Android phone. 
+	*[GET/POST on Android](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/server-connection/MyHttpTester/src/Elvenware/MyTester)
 * I talked to the one who wrote server and the one who is coding the Android app at the same time. I asked them what they have and what they need. Furthermore, I pointed out their bugs and helped them fix these bugs.
 * I should help my teammates more often after finishing my job, so that we can have an app with less bugs and more functions. 
 
 ----
 
-## Name (g3jiawei)
+## Jiawei Li (g3jiawei)
 
  * My most significant contribution was the design and implementation of android app (https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/master/Phase4/android-calendar-card-master).
  * While working on our Android app (and then later in class), I learned a bunch of skills on how to build an app and how to develope it step by step. Also I understand how to import libraries to our app to make it more powerful and how to add the theme to make it looks cool.                                                                                            (links to library -- https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/master/Phase4/android-calendar-card-master/calendar-card-sample/libs                                                                                            links to theme -- https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/Phase4/android-calendar-card-master/calendar-card-sample/res/values/styles.xml                                                                             links to activities -- https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/master/Phase4/android-calendar-card-master/calendar-card-sample/src/com/wt/calendarcardsample).
@@ -50,7 +52,7 @@ We would like you to be concise yet informative.
 
 ----
 
-## Name (chouchua)
+## Chuan-Keng Chou (chouchua)
 * My most significant contribution was the review/generation of the reports to be handed in for each phase and the idea generation/ product design in Phase 1.
  * While working on our Android app, I learned about essential libraries to use for the android environment and then running the emulator Genymotion. Another useful technique is being able to read JSON responses from the database, however I was not responsible to parse the JSON response. Also, experienced how the design pattern is essential to task distribution.
  * I understood the implementation of the server and helped to communicate the logic of the server to the one responsible for the connection between server and client. Also, I took the lead in idea generation/product design in the first phase, which was convenient for me to elaborate on the reports.
@@ -58,7 +60,7 @@ We would like you to be concise yet informative.
 
 ----
 
-## Shihao66
+## Shihao Zhao(Shihao66)
 * My most significant individual contribution is the implementation of backend and UI part, including backend classes like student and activities like CourseListActivity etc.
  Link: https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/commit/13df197e2207f30d4d62264a7e1f82069be874ab
 * One thing I learned is that in a real app development process, it's crucial to find a good mature prototype(library) at the first place, because this starting point can determine how far and how difficult you can implement your ideas. If you want to build a perfect calendar, for example, you should find the best prototype at first.
