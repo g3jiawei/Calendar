@@ -41,7 +41,7 @@ We would like you to be concise yet informative.
 
 ----
 
-## Name (Jiawei Li)
+## Name (g3jiawei)
 
  * My most significant contribution was the design and implementation of android app (https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/master/Phase4/android-calendar-card-master).
  * While working on our Android app (and then later in class), I learned a bunch of skills on how to build an app and how to develope it step by step. Also I understand how to import libraries to our app to make it more powerful and how to add the theme to make it looks cool.                                                                                            (links to library -- https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/master/Phase4/android-calendar-card-master/calendar-card-sample/libs                                                                                            links to theme -- https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/Phase4/android-calendar-card-master/calendar-card-sample/res/values/styles.xml                                                                             links to activities -- https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/tree/master/Phase4/android-calendar-card-master/calendar-card-sample/src/com/wt/calendarcardsample).
