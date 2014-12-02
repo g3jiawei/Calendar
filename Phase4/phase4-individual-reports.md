@@ -14,7 +14,7 @@ We would like you to be concise yet informative.
 
 ----
 
-## Name (liuzhon4)
+## Zhonghao Liu (liuzhon4)
 
 * My most significant contribution in Phase 4 is the final presentation, Process and Architecture 
 	* [Final presentation](https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/commit/73471bed89e2ec6b0756d7f515808016fa518fd7)
