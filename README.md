@@ -5,5 +5,5 @@ Proj-Morning-Team10-repo
 
 
 ![Image of team10]
-(https://github.com/csc301-fall2014/Proj-Morning-Team10-repo/blob/master/301Team.jpg)
+(https://github.com/g3jiawei/Calendar/blob/master/screenshots/Screenshot_2014-11-27-20-37-08.png)
 
