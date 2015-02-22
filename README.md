@@ -1,4 +1,4 @@
-Proj-Morning-Team10-repo
+Calendar API
 ========================
 
 ##Screenshots
